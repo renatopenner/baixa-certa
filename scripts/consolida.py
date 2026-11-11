@@ -22,6 +22,8 @@ FONTES = [
     RAIZ / "pesquisa" / "links-a.json",
     RAIZ / "pesquisa" / "links-b.json",
     RAIZ / "pesquisa" / "links-c.json",
+    RAIZ / "pesquisa" / "links-d.json",
+    RAIZ / "pesquisa" / "links-e.json",
 ]
 CATEGORIAS = json.loads((DADOS / "categorias.json").read_text(encoding="utf-8"))
 
@@ -83,11 +85,60 @@ ICONES = {
     "0ad": "0ad",
     "supertuxkart": "supertuxkart",
     "openttd": "openttd",
+    # grupo D — desktop do dia a dia
+    "winrar": "winrar",
+    "localsend": "localsend",
+    "rustdesk": "rustdesk",
+    "balenaetcher": "balenaetcher",
+    "virtualbox": "virtualbox",
+    "calibre": "calibre",
+    "anki": "anki",
+    "winmerge": "winmerge",
+    "bruno": "bruno",
+    "powershell": "powershell",
+    "ditto": None,
+    "quicklook": None,
+    "imageglass": "imageglass",
+    "musicbee": "musicbee",
+    "kodi": "kodi",
+    "jellyfin-media-player": "jellyfin",
+    "gpuz": None,
+    "crystaldiskmark": "crystaldiskmark",
+    "treesize": None,
+    "cryptomator": "cryptomator",
+    "angryip": None,
+    "gog-galaxy": "gogdotcom",
+    "memtest86": "memtest86",
+    # grupo E — celular (Android)
+    "whatsapp-messenger": "whatsapp",
+    "telegram-messenger": "telegram",
+    "signal-messenger": "signal",
+    "firefox-android": "firefox",
+    "vlc-android": "vlcmediaplayer",
+    "fdroid": "fdroid",
+    "bitwarden-android": "bitwarden",
+    "keepassdx": "keepassdx",
+    "aegis-authenticator": "aegisauthenticator",
+    "protonvpn-android": "protonvpn",
+    "tor-browser-android": "torproject",
+    "localsend-android": "localsend",
+    "syncthing-android": "syncthing",
+    "tailscale-android": "tailscale",
+    "jellyfin-android": "jellyfin",
+    "kodi-android": "kodi",
+    "ankidroid": "ankidroid",
+    "open-camera": None,
+    "material-files": None,
+    "waze": "waze",
+    "joplin-android": "joplin",
+    "nextcloud-android": "nextcloud",
+    "obsidian-android": "obsidian",
+    "termux": "termux",
 }
 
 DESTAQUES = [
     "libreoffice", "vlc", "davinci-resolve", "obs-studio",
-    "gimp", "7zip", "vscode", "qbittorrent",
+    "gimp", "7zip", "vscode", "qbittorrent", "winrar", "localsend",
 ]
 
 ESPERADOS = {
@@ -104,6 +155,18 @@ ESPERADOS = {
     "syncthing", "duplicati", "ollama", "lmstudio", "jan", "epic-games", "steam",
     # grupo C (jogos verificados manualmente; drift-hunters descartado)
     "0ad", "supertuxkart", "openttd",
+    # grupo D (desktop do dia a dia)
+    "winrar", "localsend", "rustdesk", "balenaetcher", "virtualbox", "calibre", "anki",
+    "winmerge", "bruno", "powershell", "ditto", "quicklook", "imageglass", "musicbee",
+    "kodi", "jellyfin-media-player", "gpuz", "crystaldiskmark", "treesize", "cryptomator",
+    "angryip", "gog-galaxy", "memtest86",
+    # grupo E (celular Android)
+    "whatsapp-messenger", "telegram-messenger", "signal-messenger", "firefox-android",
+    "vlc-android", "fdroid", "bitwarden-android", "keepassdx", "aegis-authenticator",
+    "protonvpn-android", "tor-browser-android", "localsend-android", "syncthing-android",
+    "tailscale-android", "jellyfin-android", "kodi-android", "ankidroid", "open-camera",
+    "material-files", "waze", "joplin-android", "nextcloud-android", "obsidian-android",
+    "termux",
 }
 
 CAMPOS_OBRIG = ("slug", "nome", "fabricante", "categoria", "site_oficial", "url_download",
@@ -166,11 +229,14 @@ def main() -> int:
                 continue
             vistos.add(app["slug"])
             app.setdefault("so", ["windows"])
-            app["so"] = [s for s in app["so"] if s in ("windows", "mac", "linux", "web")] or ["windows"]
+            app["so"] = [s for s in app["so"]
+                         if s in ("windows", "mac", "linux", "android", "ios", "web")] or ["windows"]
             app["destaques"] = [limpa(d) for d in (app.get("destaques") or []) if limpa(d)][:4]
             app["icone"] = ICONES.get(app["slug"])
             app["destaque"] = app["slug"] in DESTAQUES
             app["url_verificado_em"] = app.get("url_verificado_em") or dados.get("verificado_em") or date.today().isoformat()
+            if app.get("categoria") == "celular" and "android" not in app["so"]:
+                erros.append(f"{app['slug']}: app de celular precisa ter android em 'so'")
             valida(app, erros)
             apps.append(app)
 

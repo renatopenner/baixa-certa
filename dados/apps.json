@@ -1,6 +1,6 @@
 {
   "atualizado": "2026-11-11",
-  "total": 66,
+  "total": 113,
   "apps": [
     {
       "slug": "0ad",
@@ -67,6 +67,143 @@
       "observacoes": "O site 7-zip.org passou a divulgar o instalador pelos releases oficiais do projeto no GitHub; o arquivo é o mesmo. Instalador sem ofertas.",
       "icone": "7zip",
       "destaque": true,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "aegis-authenticator",
+      "nome": "Aegis Authenticator",
+      "fabricante": "Beem Development",
+      "categoria": "celular",
+      "site_oficial": "https://getaegis.app/",
+      "url_download": "https://github.com/beemdevelopment/Aegis/releases/download/v3.4.3/aegis-v3.4.3.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/beemdevelopment/Aegis/releases/download/v3.4.3/aegis-v3.4.3.apk",
+      "status_http": 206,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "6,6 MB",
+      "versao": "3.4.3",
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "GPL-3.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios nem compras",
+      "resumo": "Autenticador 2FA (TOTP e HOTP) que guarda os códigos só no aparelho, com backup criptografado e ícones dos serviços.",
+      "descricao": "O Aegis guarda os códigos de verificação em dois fatores no próprio aparelho, sem sincronização em nuvem. Aceita TOTP e HOTP, importa de outros autenticadores e permite backups criptografados que você salva onde quiser. Tem bloqueio por biometria, pesquisa por nome e organização por pastas. É open source, sem anúncios e sem conta.",
+      "destaques": [
+        "Códigos 2FA guardados só no aparelho",
+        "Backup criptografado exportável",
+        "Suporta TOTP e HOTP",
+        "Sem anúncios, sem compras e sem conta"
+      ],
+      "requisitos": "Celular Android com instalação de APK liberada; biometria é opcional para desbloquear o cofre.",
+      "observacoes": "APK oficial do GitHub, também disponível no F-Droid e na Play Store. Sem conta e sem nuvem: faça o backup criptografado e guarde o arquivo, senão perde o acesso aos códigos se trocar de aparelho. Para o essencial, não precisa de permissão de rede.",
+      "icone": "aegisauthenticator",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "angryip",
+      "nome": "Angry IP Scanner",
+      "fabricante": "Angry IP Scanner (projeto open source)",
+      "categoria": "internet",
+      "site_oficial": "https://angryip.org/",
+      "url_download": "https://github.com/angryip/ipscan/releases/download/3.12.1/ipscan-3.12.1-setup.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/angryip/ipscan/releases/download/3.12.1/ipscan-3.12.1-setup.exe",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "24,0 MB",
+      "versao": "3.12.1",
+      "so": [
+        "windows",
+        "mac",
+        "linux"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "GPL-2.0",
+      "gratis": "100% grátis e open source",
+      "resumo": "Varre a rede local e lista IPs ativos, portas abertas, MAC e hostname, com exportação dos resultados.",
+      "descricao": "O Angry IP Scanner varre faixas de IP da rede local e mostra quais endereços estão ativos, com portas abertas, nome do host, fabricante do MAC e tempo de resposta. Serve para descobrir aparelhos conectados no roteador, achar impressoras e câmeras, diagnosticar conflito de IP e documentar a rede. Exporta para CSV, TXT, XML e SQL, tem versão portátil e roda em Windows, macOS e Linux.",
+      "destaques": [
+        "Varre faixas de IP e portas",
+        "Mostra MAC, hostname e fabricante",
+        "Exporta CSV, XML e SQL",
+        "Código aberto (GPLv2)"
+      ],
+      "requisitos": "Windows 10/11 64 bits (o instalador já traz o Java)",
+      "observacoes": "O instalador para Windows inclui o Java necessário; existe também versão menor sem JRE para quem já tem Java instalado, além de .zip portátil. Alguns antivírus sinalizam scanners de porta por heurística — o projeto é open source e assinado. Use apenas em redes que você administra.",
+      "icone": null,
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "anki",
+      "nome": "Anki",
+      "fabricante": "Ankitects",
+      "categoria": "escritorio",
+      "site_oficial": "https://apps.ankiweb.net/",
+      "url_download": "https://github.com/ankitects/anki/releases/download/26.09.4/anki-26.09.4-win-x64.msi",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/ankitects/anki/releases/download/26.09.4/anki-26.09.4-win-x64.msi",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "192 MB",
+      "versao": "26.09.4",
+      "so": [
+        "windows",
+        "mac",
+        "linux",
+        "android"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "AGPL-3.0-or-later",
+      "gratis": "Grátis no computador e no Android; o app para iOS é pago",
+      "resumo": "Flashcards com repetição espaçada para memorizar de verdade, usado em concurso, idiomas e faculdade.",
+      "descricao": "O Anki usa repetição espaçada: cada cartão reaparece no momento em que você está prestes a esquecer, o que torna a memorização muito mais eficiente do que reler o material. Você cria baralhos de perguntas e respostas com texto, imagens, áudio e fórmulas, ou baixa baralhos prontos. Sincroniza entre computador e celular pelo AnkiWeb e é gratuito no desktop e no Android; a versão para iPhone e iPad é paga e ajuda a manter o projeto.",
+      "destaques": [
+        "Repetição espaçada comprovada",
+        "Baralhos com texto, áudio e imagens",
+        "Sincroniza entre PC e celular",
+        "Grátis no desktop e no Android"
+      ],
+      "requisitos": "Windows 10/11 64 bits",
+      "observacoes": "O app iOS é pago (compra única) e financia o desenvolvimento. A sincronização pelo AnkiWeb exige conta gratuita e é opcional; os baralhos também podem ser exportados como arquivos .apkg. O instalador é um .msi x64.",
+      "icone": "anki",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "ankidroid",
+      "nome": "AnkiDroid",
+      "fabricante": "AnkiDroid Open Source Team",
+      "categoria": "celular",
+      "site_oficial": "https://ankidroid.org/",
+      "url_download": "https://github.com/ankidroid/Anki-Android/releases/download/v2.25.3/AnkiDroid-2.25.3-full-universal.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/ankidroid/Anki-Android/releases/download/v2.25.3/AnkiDroid-2.25.3-full-universal.apk",
+      "status_http": 206,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "107 MB",
+      "versao": "2.25.3",
+      "so": [
+        "android"
+      ],
+      "arquitetura": "universal",
+      "licenca": "GPL-3.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios nem assinatura",
+      "resumo": "App de flashcards com repetição espaçada para decorar idiomas, medicina e qualquer conteúdo, com sync grátis.",
+      "descricao": "O AnkiDroid é a versão Android do Anki: monta baralhos de cartões e usa repetição espaçada para revisar no momento certo. Tem milhares de baralhos prontos, áudio e imagens nos cartões, estatísticas de estudo e sincronização gratuita com o AnkiWeb (também há servidor próprio). É ideal para provas, concursos e idiomas. Não tem anúncios nem limite de baralhos.",
+      "destaques": [
+        "Repetição espaçada para memorizar",
+        "Milhares de baralhos prontos",
+        "Sync grátis com AnkiWeb",
+        "Sem anúncios e sem limite"
+      ],
+      "requisitos": "Celular Android com instalação de APK liberada; conta AnkiWeb gratuita só se quiser sincronizar.",
+      "observacoes": "O APK universal tem cerca de 107 MB e vem do GitHub oficial; o mesmo release tem builds menores por arquitetura. O sync com AnkiWeb é gratuito e a conta é opcional. Baralhos podem ser criados no próprio celular, mas o Anki para PC facilita a edição em massa.",
+      "icone": "ankidroid",
+      "destaque": false,
       "url_verificado_em": "2026-11-11"
     },
     {
@@ -138,6 +275,41 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "balenaetcher",
+      "nome": "balenaEtcher",
+      "fabricante": "Balena",
+      "categoria": "utilidades",
+      "site_oficial": "https://etcher.balena.io/",
+      "url_download": "https://github.com/balena-io/etcher/releases/download/v2.1.9/balenaEtcher-2.1.9.Setup.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/balena-io/etcher/releases/download/v2.1.9/balenaEtcher-2.1.9.Setup.exe",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "262 MB",
+      "versao": "2.1.9",
+      "so": [
+        "windows",
+        "mac",
+        "linux"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "Apache-2.0",
+      "gratis": "100% grátis e open source",
+      "resumo": "Grava imagens ISO e IMG em pendrive ou cartão SD com três cliques, validando a gravação e evitando erros.",
+      "descricao": "O balenaEtcher grava arquivos de imagem (.iso, .img, .zip, .dmg) em pendrives e cartões SD de forma guiada: você escolhe a imagem, escolhe o destino e clica em Flash. Ele valida a gravação depois de terminar, reduzindo o risco de pendrive que não dá boot, e bloqueia a seleção do disco do sistema para evitar acidentes. É a ferramenta mais usada para criar pendrive de instalação do Linux, do Raspberry Pi e de imagens de recuperação.",
+      "destaques": [
+        "Grava ISO e IMG em USB ou cartão SD",
+        "Valida a gravação ao final",
+        "Aviso e trava contra apagar o disco do sistema",
+        "Interface simples em português"
+      ],
+      "requisitos": "Windows 10 ou mais recente, 64 bits",
+      "observacoes": "Instalador Electron grande (cerca de 262 MB) por trazer o runtime junto; existe versão portátil .zip. O app pode enviar estatísticas anônimas de uso, e isso pode ser desativado nas configurações. Ao gravar, todo o conteúdo do pendrive ou cartão é apagado.",
+      "icone": "balenaetcher",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "bitwarden",
       "nome": "Bitwarden",
       "fabricante": "Bitwarden Inc.",
@@ -169,6 +341,39 @@
       ],
       "requisitos": "Windows 10 ou 11, 64 bits",
       "observacoes": "O arquivo baixado é o instalador de download da Bitwarden (stub pequeno): ele baixa o restante do programa durante a instalação, então é preciso estar online. Exige criar uma conta gratuita.",
+      "icone": "bitwarden",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "bitwarden-android",
+      "nome": "Bitwarden",
+      "fabricante": "Bitwarden Inc.",
+      "categoria": "celular",
+      "site_oficial": "https://bitwarden.com/download/",
+      "url_download": "https://github.com/bitwarden/android/releases/download/v2026.10.1-bwpm/com.x8bit.bitwarden.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/bitwarden/android/releases/download/v2026.10.1-bwpm/com.x8bit.bitwarden.apk",
+      "status_http": 206,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "182 MB",
+      "versao": "2026.10.1",
+      "so": [
+        "android"
+      ],
+      "arquitetura": "universal",
+      "licenca": "GPL-3.0 · gratuito (premium opcional)",
+      "gratis": "grátis para uso pessoal; assinatura Premium opcional",
+      "resumo": "Gerenciador de senhas open source com sincronização criptografada, preenchimento automático e geração de senhas fortes.",
+      "descricao": "O Bitwarden guarda senhas, cartões e notas em um cofre criptografado e sincroniza entre celular, PC e navegador. O plano gratuito cobre uso pessoal: senhas ilimitadas, preenchimento automático em apps e sites e gerador de senhas. O código é aberto e auditado, e o app exige uma conta gratuita para sincronizar. Também funciona como autenticador TOTP.",
+      "destaques": [
+        "Cofre criptografado e sincronizado",
+        "Preenchimento automático em apps e sites",
+        "Senhas ilimitadas no plano grátis",
+        "Código aberto e auditado"
+      ],
+      "requisitos": "Celular Android com instalação de APK liberada; conta gratuita para sincronizar o cofre.",
+      "observacoes": "O APK do GitHub é a build oficial para instalação manual; o arquivo com -fdroid no nome é a variante distribuída pelo F-Droid. Exige conta para sincronizar, mas o cofre abre offline. O plano Premium (pago) adiciona recursos como 2FA avançado e relatórios; o básico não precisa.",
       "icone": "bitwarden",
       "destaque": false,
       "url_verificado_em": "2026-11-11"
@@ -278,6 +483,76 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "bruno",
+      "nome": "Bruno",
+      "fabricante": "Bruno (usebruno)",
+      "categoria": "dev",
+      "site_oficial": "https://www.usebruno.com/",
+      "url_download": "https://github.com/usebruno/bruno/releases/download/v4.3.0/bruno_4.3.0_x64_win.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/usebruno/bruno/releases/download/v4.3.0/bruno_4.3.0_x64_win.exe",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "117 MB",
+      "versao": "4.3.0",
+      "so": [
+        "windows",
+        "mac",
+        "linux"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "MIT",
+      "gratis": "100% grátis e open source",
+      "resumo": "Cliente de API gratuito que guarda coleções em arquivos locais versionados no Git, alternativa ao Postman.",
+      "descricao": "O Bruno é um cliente de API para testar requisições REST, GraphQL e gRPC sem nuvem: as coleções ficam em arquivos de texto na sua pasta, o que permite versionar tudo no Git e compartilhar com a equipe. Tem ambientes, variáveis, scripts de teste, coleções importadas do Postman e do Insomnia e interface leve. É a escolha de quem quer fugir de assinatura e de sincronização obrigatória na nuvem.",
+      "destaques": [
+        "Coleções em arquivos locais versionáveis",
+        "REST, GraphQL e gRPC",
+        "Importa Postman e Insomnia",
+        "Código aberto (MIT)"
+      ],
+      "requisitos": "Windows 10/11 64 bits",
+      "observacoes": "O release também publica instalador .msi, pacote portátil .zip e builds para macOS e Linux. O download do GitHub redireciona para o CDN de releases com URL assinada temporária.",
+      "icone": "bruno",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "calibre",
+      "nome": "Calibre",
+      "fabricante": "Kovid Goyal",
+      "categoria": "escritorio",
+      "site_oficial": "https://calibre-ebook.com/",
+      "url_download": "https://github.com/kovidgoyal/calibre/releases/download/v9.18.0/calibre-64bit-9.18.0.msi",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/kovidgoyal/calibre/releases/download/v9.18.0/calibre-64bit-9.18.0.msi",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "278 MB",
+      "versao": "9.18.0",
+      "so": [
+        "windows",
+        "mac",
+        "linux"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "GPL-3.0",
+      "gratis": "100% grátis e open source",
+      "resumo": "Gerencia, converte e organiza ebooks em EPUB, MOBI, PDF e outros formatos, com biblioteca, metadados e envio para leitor.",
+      "descricao": "O Calibre é uma biblioteca completa de ebooks: importa arquivos, busca capa e metadados, converte entre EPUB, MOBI, PDF, AZW3 e vários outros formatos e envia livros para Kindle, Kobo e outros leitores. Também tem leitor interno, editor de EPUB, servidor de biblioteca para acessar pelo celular e sincronização com dispositivos. É a ferramenta padrão de quem organiza muitos livros digitais e não quer pagar assinatura.",
+      "destaques": [
+        "Converte EPUB, MOBI, PDF e AZW3",
+        "Organiza biblioteca com capas e metadados",
+        "Envia livros para Kindle e Kobo",
+        "Servidor para ler no celular"
+      ],
+      "requisitos": "Windows 10/11 64 bits",
+      "observacoes": "A página oficial de download redireciona para o GitHub do projeto, onde fica o .msi x64. Existe versão portátil separada no site oficial. A primeira conversão pode baixar componentes extras automaticamente.",
+      "icone": "calibre",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "cpuz",
       "nome": "CPU-Z",
       "fabricante": "CPUID",
@@ -311,6 +586,43 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "cryptomator",
+      "nome": "Cryptomator",
+      "fabricante": "Skymatic GmbH",
+      "categoria": "seguranca",
+      "site_oficial": "https://cryptomator.org/",
+      "url_download": "https://github.com/cryptomator/cryptomator/releases/download/1.19.6/Cryptomator-1.19.6-x64.msi",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/cryptomator/cryptomator/releases/download/1.19.6/Cryptomator-1.19.6-x64.msi",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "50,8 MB",
+      "versao": "1.19.6",
+      "so": [
+        "windows",
+        "mac",
+        "linux",
+        "android",
+        "ios"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "GPL-3.0",
+      "gratis": "Grátis no desktop (open source); os apps móveis são pagos",
+      "resumo": "Criptografa arquivos antes de enviar para a nuvem, criando cofres protegidos que só você consegue abrir.",
+      "descricao": "O Cryptomator cria um cofre criptografado dentro da sua pasta do Dropbox, OneDrive ou Google Drive: os arquivos são cifrados no seu computador antes de subir, e você abre o cofre como se fosse uma pasta normal, digitando a senha. Assim, nem o provedor de nuvem consegue ler o conteúdo. A criptografia é transparente, funciona em Windows, macOS, Linux, Android e iOS e o código do desktop é aberto e auditável.",
+      "destaques": [
+        "Cifra arquivos antes de ir para a nuvem",
+        "Cofre abre como pasta normal",
+        "Compatível com Dropbox, OneDrive e Drive",
+        "Código aberto no desktop (GPLv3)"
+      ],
+      "requisitos": "Windows 10/11 64 bits",
+      "observacoes": "No Android e no iOS o app é pago (compra única) e sustenta o projeto; no desktop é gratuito e open source. O formato de cofre é aberto e documentado, e a senha não pode ser recuperada se for esquecida. O release publica .msi e .exe, além de builds para macOS e Linux.",
+      "icone": "cryptomator",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "crystaldiskinfo",
       "nome": "CrystalDiskInfo",
       "fabricante": "Crystal Dew World (hiyohiyo)",
@@ -340,6 +652,39 @@
       "requisitos": "Windows 7 ou mais recente (64 bits)",
       "observacoes": "O download passa por um redirecionador do site oficial até o SourceForge do projeto, e o instalador padrão inclui anúncios (há variantes Aoi/Shizuku, também com ads). Por isso foi registrada a página de download em vez de uma URL direta instável.",
       "icone": null,
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "crystaldiskmark",
+      "nome": "CrystalDiskMark",
+      "fabricante": "hiyohiyo (Crystal Dew World)",
+      "categoria": "utilidades",
+      "site_oficial": "https://crystalmark.info/en/software/crystaldiskmark/",
+      "url_download": "https://crystalmark.info/en/download/",
+      "tipo_download": "pagina",
+      "url_download_final": "https://crystalmark.info/en/download/",
+      "status_http": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "tamanho_arquivo": "18 KB",
+      "versao": "9.0.3",
+      "so": [
+        "windows"
+      ],
+      "arquitetura": null,
+      "licenca": "Freeware (proprietário)",
+      "gratis": "Grátis (freeware), sem prazo de avaliação",
+      "resumo": "Mede a velocidade de leitura e gravação de SSDs, HDs e pendrives, com testes sequenciais e aleatórios.",
+      "descricao": "O CrystalDiskMark mede a velocidade real de armazenamento com testes sequenciais e aleatórios de leitura e gravação, em blocos de tamanhos diferentes. É o benchmark mais usado para conferir se um SSD entrega o que promete, comparar modelos antes de comprar e verificar se o disco está saudável depois de uma troca de sistema. Também tem variantes para medir desempenho em filas e threads, e versão portátil em .zip.",
+      "destaques": [
+        "Testes sequenciais e aleatórios",
+        "Compara SSD, HD e pendrive",
+        "Lê e grava com dados reais",
+        "Versão portátil disponível"
+      ],
+      "requisitos": "Windows 10/11, 64 bits",
+      "observacoes": "A página oficial de download tem anúncios e o link do arquivo passa por uma página de redirecionamento de anúncio da própria crystalmark.info antes de chegar ao SourceForge oficial do projeto — por isso o botão leva à página, não ao .exe. A versão atual é a 9.0.3 e há edição portátil .zip. O tamanho do instalador não foi confirmado.",
+      "icone": "crystaldiskmark",
       "destaque": false,
       "url_verificado_em": "2026-11-11"
     },
@@ -484,6 +829,39 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "ditto",
+      "nome": "Ditto",
+      "fabricante": "Scott Brogden (sabrogden)",
+      "categoria": "utilidades",
+      "site_oficial": "https://ditto-cp.sourceforge.io/",
+      "url_download": "https://github.com/sabrogden/Ditto/releases/download/3.25.113.0/DittoSetup_3_25_113_0.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/sabrogden/Ditto/releases/download/3.25.113.0/DittoSetup_3_25_113_0.exe",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "5,5 MB",
+      "versao": "3.25.113.0",
+      "so": [
+        "windows"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "GPL-3.0",
+      "gratis": "100% grátis e open source",
+      "resumo": "Guarda o histórico da área de transferência, com busca, favoritos e sincronização entre computadores da rede.",
+      "descricao": "O Ditto guarda tudo o que você copia e permite recuperar qualquer item antigo com atalho e busca, em vez de depender do Ctrl+V do último item. Tem suporte a imagens, favoritos fixos, grupos e sincronização entre PCs na mesma rede. É um dos programas mais úteis para quem trabalha com muito copiar e colar, digita códigos e textos repetidos e quer parar de perder o que copiou.",
+      "destaques": [
+        "Histórico completo do Ctrl+C e Ctrl+V",
+        "Busca rápida e itens favoritos",
+        "Sincroniza entre PCs da rede",
+        "Funciona na bandeja do sistema"
+      ],
+      "requisitos": "Windows 7 ou mais recente, 64 bits",
+      "observacoes": "O release oficial fica no GitHub do autor, com instalador .exe e versão portátil .zip. A página antiga do SourceForge bloqueia verificação automática (403), por isso o link de download aponta para o release do GitHub. O histórico pode ser protegido por senha e limitado por tamanho nas opções.",
+      "icone": null,
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "duplicati",
       "nome": "Duplicati",
       "fabricante": "Duplicati Team",
@@ -586,6 +964,39 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "fdroid",
+      "nome": "F-Droid",
+      "fabricante": "F-Droid",
+      "categoria": "celular",
+      "site_oficial": "https://f-droid.org/",
+      "url_download": "https://f-droid.org/F-Droid.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://f-droid.org/F-Droid.apk",
+      "status_http": 206,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "12 MB",
+      "versao": "2.0.3",
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "GPL-3.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios",
+      "resumo": "Loja de apps livres para Android: catálogo só com software open source, sem rastreamento e sem conta.",
+      "descricao": "O F-Droid é uma loja alternativa que hospeda apenas aplicativos de código aberto, com builds feitas pelo próprio projeto. Todos os APKs são assinados e verificados, e não é preciso criar conta nem entregar dados pessoais. Serve para instalar e manter atualizados apps livres como Termux, Aegis e Syncthing-Fork. O APK do cliente é baixado direto do site oficial.",
+      "destaques": [
+        "Só apps de código aberto e auditáveis",
+        "Sem conta e sem rastreamento",
+        "APK direto do site oficial",
+        "Atualiza os apps instalados por ela"
+      ],
+      "requisitos": "Android 7.0 ou superior (informado na página do app no F-Droid) e permissão para instalar APK de fora da loja.",
+      "observacoes": "Para instalar, libere 'instalar apps desconhecidos' para o navegador ou gerenciador de arquivos. O F-Droid não tem os apps proprietários da Play Store (WhatsApp, bancos e outros). A versão 2.0.3 exige Android 7.0 ou mais recente.",
+      "icone": "fdroid",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "filezilla",
       "nome": "FileZilla Client",
       "fabricante": "FileZilla Project (Tim Kosse)",
@@ -617,6 +1028,39 @@
       "requisitos": "Windows 10 ou 11 (64 bits)",
       "observacoes": "O instalador oficial oferece programas de terceiros durante a instalação — avance com atenção e recuse as ofertas. O site bloqueia checagem automática (HTTP 403).",
       "icone": "filezilla",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "firefox-android",
+      "nome": "Firefox para Android",
+      "fabricante": "Mozilla",
+      "categoria": "celular",
+      "site_oficial": "https://www.mozilla.org/pt-BR/firefox/browsers/mobile/android/",
+      "url_download": "https://play.google.com/store/apps/details?id=org.mozilla.firefox",
+      "tipo_download": "pagina",
+      "url_download_final": "https://play.google.com/store/apps/details?id=org.mozilla.firefox",
+      "status_http": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho_arquivo": "199 KB",
+      "versao": null,
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "MPL-2.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios",
+      "resumo": "Navegador da Mozilla com bloqueio de rastreadores, abas abertas entre aparelhos e suporte a extensões no Android.",
+      "descricao": "O Firefox para Android traz o motor Gecko, bloqueio de rastreadores por padrão e sincronização de abas, favoritos e senhas com a conta Mozilla. É o único grande navegador móvel que aceita extensões de verdade, como o uBlock Origin, e tem modo privado que apaga o histórico ao fechar. A Mozilla não vende dados de navegação e o código é aberto.",
+      "destaques": [
+        "Bloqueio de rastreadores por padrão",
+        "Suporte a extensões como uBlock Origin",
+        "Sincroniza abas e senhas com a conta Mozilla",
+        "Código aberto e sem anúncios"
+      ],
+      "requisitos": "Celular Android com Play Store; a loja mostra a versão mínima exigida.",
+      "observacoes": "O caminho oficial mais simples é a Google Play; a Mozilla publica canais beta e nightly no próprio site para quem quer testar antes. A conta Mozilla é opcional e serve só para sincronizar. A telemetria pode ser desligada nos ajustes.",
+      "icone": "firefox",
       "destaque": false,
       "url_verificado_em": "2026-11-11"
     },
@@ -731,7 +1175,7 @@
       "site_oficial": "https://www.gimp.org/",
       "url_download": "https://download.gimp.org/gimp/v3.2/windows/gimp-3.2.8-setup.exe",
       "tipo_download": "direto",
-      "url_download_final": "https://gimp.mirror.edgeuno.com/pub/gimp/v3.2/windows/gimp-3.2.8-setup.exe",
+      "url_download_final": "https://stix.mm.fcix.net/gimp/gimp/v3.2/windows/gimp-3.2.8-setup.exe",
       "status_http": 206,
       "content_type": "application/octet-stream",
       "tamanho_arquivo": "177 MB",
@@ -827,6 +1271,73 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "gog-galaxy",
+      "nome": "GOG Galaxy",
+      "fabricante": "GOG.com (CD Projekt)",
+      "categoria": "jogos",
+      "site_oficial": "https://www.gog.com/galaxy",
+      "url_download": "https://www.gog.com/galaxy",
+      "tipo_download": "pagina",
+      "url_download_final": "https://www.gog.com/galaxy",
+      "status_http": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "tamanho_arquivo": "97 KB",
+      "versao": null,
+      "so": [
+        "windows",
+        "mac"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "Freeware (proprietário)",
+      "gratis": "Grátis (o launcher); os jogos são comprados à parte",
+      "resumo": "Launcher gratuito da GOG que reúne jogos de várias lojas, com atualização automática e recursos sociais.",
+      "descricao": "O GOG Galaxy é o launcher oficial da loja GOG.com: instala, atualiza e organiza os jogos comprados na GOG, com recursos de nuvem, conquistas e amigos. Também pode conectar contas de Steam, Epic, Xbox e outras lojas para reunir toda a biblioteca em um só lugar. É opcional — os jogos da GOG continuam podendo ser baixados direto do site, sem DRM e sem precisar do launcher.",
+      "destaques": [
+        "Instala e atualiza jogos da GOG",
+        "Reúne bibliotecas de outras lojas",
+        "Conquistas, nuvem e amigos",
+        "Jogos sem DRM na GOG"
+      ],
+      "requisitos": "Windows 10/11 64 bits",
+      "observacoes": "O site da GOG não publica URL direta do instalador: o download é gerado por JavaScript e o uso do launcher exige conta GOG. Versão e tamanho do instalador não foram confirmados. Para quem só quer os jogos, o site da GOG permite baixar cada título sem o Galaxy.",
+      "icone": "gogdotcom",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "gpuz",
+      "nome": "GPU-Z",
+      "fabricante": "TechPowerUp",
+      "categoria": "utilidades",
+      "site_oficial": "https://www.techpowerup.com/gpuz/",
+      "url_download": "https://www.techpowerup.com/download/techpowerup-gpu-z/",
+      "tipo_download": "pagina",
+      "url_download_final": "https://www.techpowerup.com/download/techpowerup-gpu-z/",
+      "status_http": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "tamanho_arquivo": "0 KB",
+      "versao": "2.71.0",
+      "so": [
+        "windows"
+      ],
+      "arquitetura": "x86 e x64",
+      "licenca": "Freeware (proprietário)",
+      "gratis": "Grátis para uso pessoal e comercial; redistribuição proibida",
+      "resumo": "Mostra detalhes da placa de vídeo, sensores, clocks, temperatura e memória, além de backup da BIOS da GPU.",
+      "descricao": "O GPU-Z é o utilitário de referência para identificar a placa de vídeo e acompanhar o que ela está fazendo. Mostra modelo, GPU, memória, clocks, temperatura, uso, tensão, consumo e velocidade do barramento, e permite salvar a BIOS da placa e validar resultados online. Serve para conferir se a placa é original, diagnosticar superaquecimento e comparar desempenho depois de um overclock.",
+      "destaques": [
+        "Identifica GPU, memória e clocks",
+        "Sensores de temperatura e consumo",
+        "Backup da BIOS da placa de vídeo",
+        "Não precisa instalar (versão portátil)"
+      ],
+      "requisitos": "Windows 7 a 11, 32 e 64 bits",
+      "observacoes": "A TechPowerUp não expõe URL direta estável: o download fica em uma página com espelhos e JS, por isso o botão aponta para a página oficial. A versão 2.71.0 é a atual. O app é freeware para uso pessoal e comercial, mas a licença proíbe redistribuir como parte de pacote comercial.",
+      "icone": null,
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "handbrake",
       "nome": "HandBrake",
       "fabricante": "HandBrake Team",
@@ -891,6 +1402,41 @@
       "requisitos": "Windows 7 ou mais recente (64 bits)",
       "observacoes": "O arquivo é hospedado no servidor do próprio autor (sac.sk), indicado na página de download do hwinfo.com. Versão gratuita é para uso pessoal; uso comercial exige licença Pro.",
       "icone": null,
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "imageglass",
+      "nome": "ImageGlass",
+      "fabricante": "Duong Dieu Phap (d2phap)",
+      "categoria": "imagem",
+      "site_oficial": "https://imageglass.org/",
+      "url_download": "https://github.com/d2phap/ImageGlass/releases/download/10.0.6.906/ImageGlass_10.0.6.906_win-x64.msi",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/d2phap/ImageGlass/releases/download/10.0.6.906/ImageGlass_10.0.6.906_win-x64.msi",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "33,8 MB",
+      "versao": "10.0.6.906",
+      "so": [
+        "windows",
+        "mac",
+        "linux"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "GPL-3.0",
+      "gratis": "100% grátis e open source",
+      "resumo": "Visualizador de imagens leve e rápido para Windows, com suporte a WEBP, AVIF, SVG, HEIC e mais de 80 formatos.",
+      "descricao": "O ImageGlass é um visualizador de imagens rápido, que abre arquivos em WEBP, AVIF, SVG, HEIC, RAW e dezenas de outros formatos sem precisar de plugins. Tem zoom suave, navegação entre pastas, miniaturas, comparação lado a lado e suporte a múltiplos monitores. É a opção para quem não quer o visualizador pesado do Windows e precisa abrir formatos modernos com agilidade.",
+      "destaques": [
+        "Mais de 80 formatos de imagem",
+        "Abre WEBP, AVIF, SVG e HEIC",
+        "Zoom suave e miniaturas",
+        "Código aberto (GPL-3.0)"
+      ],
+      "requisitos": "Windows 10/11, 64 bits",
+      "observacoes": "O release 10 também publica builds para macOS e Linux, pacote portátil .zip e versão MSIX. O .msi x64 é o instalador recomendado para Windows.",
+      "icone": "imageglass",
       "destaque": false,
       "url_verificado_em": "2026-11-11"
     },
@@ -965,6 +1511,74 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "jellyfin-android",
+      "nome": "Jellyfin",
+      "fabricante": "Jellyfin",
+      "categoria": "celular",
+      "site_oficial": "https://jellyfin.org/",
+      "url_download": "https://github.com/jellyfin/jellyfin-android/releases/download/v2.7.3/jellyfin-android-v2.7.3-proprietary-release.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/jellyfin/jellyfin-android/releases/download/v2.7.3/jellyfin-android-v2.7.3-proprietary-release.apk",
+      "status_http": 206,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "9,4 MB",
+      "versao": "2.7.3",
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "GPL-2.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios ou assinatura",
+      "resumo": "Cliente Android do Jellyfin para assistir sua biblioteca de filmes, séries e músicas do próprio servidor.",
+      "descricao": "O app conecta no servidor Jellyfin que você mantém em casa ou em uma VPS e reproduz filmes, séries, músicas e fotos sem mensalidade. Tem retomada de onde parou, legendas, faixas de áudio, download offline e suporte a Chromecast na build da Play. É open source e não tem anúncios nem rastreamento. Sem um servidor Jellyfin configurado, o app não tem conteúdo.",
+      "destaques": [
+        "Assiste sua biblioteca do servidor Jellyfin",
+        "Sem assinatura e sem anúncios",
+        "Download para ver offline",
+        "Retomada e legendas integradas"
+      ],
+      "requisitos": "Celular Android com instalação de APK liberada; um servidor Jellyfin acessível na rede ou na internet.",
+      "observacoes": "O APK do GitHub é a build 'proprietary' (a mesma da Play, com Chromecast e Firebase); existe a build 'libre', que é a do F-Droid. Sem servidor configurado o app fica vazio. A biblioteca é sua: o Jellyfin não vende conteúdo nem assinatura.",
+      "icone": "jellyfin",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "jellyfin-media-player",
+      "nome": "Jellyfin Media Player",
+      "fabricante": "Jellyfin",
+      "categoria": "multimidia",
+      "site_oficial": "https://github.com/jellyfin/jellyfin-media-player",
+      "url_download": "https://github.com/jellyfin/jellyfin-desktop/releases/download/v1.12.0/JellyfinMediaPlayer-1.12.0-windows-x64.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/jellyfin/jellyfin-desktop/releases/download/v1.12.0/JellyfinMediaPlayer-1.12.0-windows-x64.exe",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "149 MB",
+      "versao": "1.12.0",
+      "so": [
+        "windows",
+        "mac",
+        "linux"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "GPL-2.0",
+      "gratis": "100% grátis e open source (o servidor é seu)",
+      "resumo": "Cliente desktop do Jellyfin para assistir sua biblioteca de filmes e séries no PC, com transmissão direta.",
+      "descricao": "O Jellyfin Media Player é o cliente oficial de desktop para quem tem um servidor Jellyfin em casa ou na rede. Ele reproduz filmes e séries direto do servidor, com suporte a legendas, faixas de áudio, transcodificação quando necessário e sincronização de progresso. Como o Jellyfin é aberto e roda no seu próprio computador ou NAS, não há assinatura nem limite de usuários — este player só precisa apontar para o endereço do servidor.",
+      "destaques": [
+        "Cliente oficial do servidor Jellyfin",
+        "Legendas e faixas de áudio",
+        "Sincroniza progresso de onde parou",
+        "Sem assinatura e sem limite de usuários"
+      ],
+      "requisitos": "Windows 10/11 64 bits e um servidor Jellyfin na rede",
+      "observacoes": "O repositório jellyfin/jellyfin-media-player foi renomeado para jellyfin/jellyfin-desktop; o release 1.12.0 é o cliente oficial atual. Exige um servidor Jellyfin configurado (o servidor é gratuito e separado). Há builds para x86, macOS e Linux no mesmo release.",
+      "icone": "jellyfin",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "joplin",
       "nome": "Joplin",
       "fabricante": "Laurent Cozic / Joplin",
@@ -995,6 +1609,39 @@
       ],
       "requisitos": "Windows 10/11 64-bit; cerca de 500 MB livre",
       "observacoes": "Instalador oficial publicado no GitHub do projeto (cerca de 352 MB); o GitHub redireciona para um CDN com URL assinada temporária. Há também versão portátil.",
+      "icone": "joplin",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "joplin-android",
+      "nome": "Joplin",
+      "fabricante": "Laurent Cozic",
+      "categoria": "celular",
+      "site_oficial": "https://joplinapp.org/",
+      "url_download": "https://f-droid.org/repo/net.cozic.joplin_2097817.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://f-droid.org/repo/net.cozic.joplin_2097817.apk",
+      "status_http": 206,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "148 MB",
+      "versao": "3.7.8",
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "AGPL-3.0 · gratuito",
+      "gratis": "100% grátis e open source; sincronização própria e Joplin Cloud pago opcional",
+      "resumo": "App de notas com Markdown, cadernos, tags e sincronização criptografada; sem conta obrigatória e open source.",
+      "descricao": "O Joplin é um caderno digital com Markdown, anexos, tags e pesquisa. Sincroniza entre celular e PC por OneDrive, Dropbox, WebDAV ou Joplin Cloud, com criptografia de ponta a ponta opcional. Guarda tudo em arquivos seus e exporta em Markdown ou PDF. É ótimo para notas de estudo, trabalho e diário. O app é gratuito e o plano de nuvem pago é opcional.",
+      "destaques": [
+        "Notas em Markdown com anexos e tags",
+        "Sincronização criptografada opcional",
+        "Funciona offline, sem conta obrigatória",
+        "Exporta para Markdown e PDF"
+      ],
+      "requisitos": "Celular Android com instalação de APK liberada; a sincronização exige um destino (OneDrive, Dropbox, WebDAV ou Joplin Cloud).",
+      "observacoes": "APK do repositório oficial do F-Droid (versão 3.7.8); a Play Store e o site do Joplin também distribuem. Sem conta obrigatória: a nuvem é só para sincronizar. A criptografia de ponta a ponta precisa ser ligada nas opções de sincronização.",
       "icone": "joplin",
       "destaque": false,
       "url_verificado_em": "2026-11-11"
@@ -1035,6 +1682,39 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "keepassdx",
+      "nome": "KeePassDX",
+      "fabricante": "Kunzisoft",
+      "categoria": "celular",
+      "site_oficial": "https://www.keepassdx.com/",
+      "url_download": "https://github.com/Kunzisoft/KeePassDX/releases/download/4.5.8/KeePassDX-4.5.8-free.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/Kunzisoft/KeePassDX/releases/download/4.5.8/KeePassDX-4.5.8-free.apk",
+      "status_http": 206,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "16 MB",
+      "versao": "4.5.8",
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "GPL-3.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios; doações e compra opcional na Play",
+      "resumo": "Leitor de cofres KeePass (.kdbx) no Android, com preenchimento automático, biometria e banco 100% local, sem nuvem e sem conta.",
+      "descricao": "O KeePassDX abre arquivos de banco de senhas no formato KeePass (.kdbx) e funciona como gerenciador completo: preenchimento automático em apps, desbloqueio por biometria, geração de senhas e organização por grupos. O arquivo fica só no seu aparelho, ou onde você quiser sincronizar, então não existe conta em servidor nenhum. É open source e não tem anúncios.",
+      "destaques": [
+        "Abre cofres KeePass .kdbx",
+        "Preenchimento automático e biometria",
+        "Banco local, sem conta e sem nuvem",
+        "Código aberto e sem anúncios"
+      ],
+      "requisitos": "Celular Android com instalação de APK liberada; você precisa já ter um cofre .kdbx criado.",
+      "observacoes": "O APK 'free' é o mesmo publicado na Play Store; a variante 'libre' atende quem usa o F-Droid e não quer dependências de cobrança. Sem conta: se perder o arquivo do cofre, perde as senhas, então faça backup. Na Play existe compra opcional para recursos extras, mas o básico é gratuito.",
+      "icone": "keepassdx",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "keepassxc",
       "nome": "KeePassXC",
       "fabricante": "KeePassXC Team",
@@ -1066,6 +1746,75 @@
       "requisitos": "Windows 10 ou 11, 64 bits",
       "observacoes": "Existe versão portátil em ZIP e instalador por usuário na mesma página de releases. Instalador sem ofertas.",
       "icone": "keepassxc",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "kodi",
+      "nome": "Kodi",
+      "fabricante": "XBMC Foundation",
+      "categoria": "multimidia",
+      "site_oficial": "https://kodi.tv/",
+      "url_download": "https://mirrors.kodi.tv/releases/windows/win64/kodi-21.3-Omega-x64.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://ftp.halifax.rwth-aachen.de/xbmc/releases/windows/win64/kodi-21.3-Omega-x64.exe",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "74,0 MB",
+      "versao": "21.3",
+      "so": [
+        "windows",
+        "mac",
+        "linux",
+        "android"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "GPL-2.0-or-later",
+      "gratis": "100% grátis e open source",
+      "resumo": "Central de mídia que organiza filmes, séries, música e fotos em uma interface de TV, com add-ons e controle remoto.",
+      "descricao": "O Kodi transforma o PC em uma central de mídia: cataloga filmes, séries, música e fotos, busca capas e sinopses e apresenta tudo em uma interface feita para controle remoto e TV. Suporta legendas, vários formatos de vídeo e áudio, add-ons para canais e serviços e sincronização de biblioteca entre aparelhos. A versão 21.3 Omega é a última estável, e o projeto é mantido pela XBMC Foundation.",
+      "destaques": [
+        "Interface de TV com controle remoto",
+        "Catálogo com capas e sinopses",
+        "Add-ons e legendas automáticas",
+        "Código aberto (GPLv2+)"
+      ],
+      "requisitos": "Windows 10 ou mais recente, 64 bits",
+      "observacoes": "A 21.3 Omega é a última versão estável; a 22.0 Piers ainda está em beta/RC. A URL mirrors.kodi.tv redireciona para um dos espelhos oficiais do projeto (a URL final muda conforme o espelho), então o link estável é o do mirrors.kodi.tv.",
+      "icone": "kodi",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "kodi-android",
+      "nome": "Kodi",
+      "fabricante": "Kodi Foundation",
+      "categoria": "celular",
+      "site_oficial": "https://kodi.tv/",
+      "url_download": "https://play.google.com/store/apps/details?id=org.xbmc.kodi",
+      "tipo_download": "pagina",
+      "url_download_final": "https://play.google.com/store/apps/details?id=org.xbmc.kodi",
+      "status_http": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho_arquivo": "189 KB",
+      "versao": null,
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "GPL-2.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios ou assinatura",
+      "resumo": "Central de mídia que organiza e reproduz vídeos, séries, músicas e fotos do seu acervo em qualquer tela.",
+      "descricao": "O Kodi vira um media center completo: cataloga filmes e séries com capas e sinopses, reproduz músicas, fotos e transmissões, e aceita controles remotos e teclado. Funciona com arquivos locais, HD externo, rede (SMB/NFS) ou servidor de mídia. Add-ons ampliam funções, mas os não oficiais são de terceiros e por sua conta. Não tem anúncios nem assinatura.",
+      "destaques": [
+        "Organiza o acervo com capas e sinopses",
+        "Lê arquivos locais e da rede",
+        "Controle remoto pelo celular",
+        "Sem anúncios e sem assinatura"
+      ],
+      "requisitos": "Celular Android com Play Store; arquivos ou uma fonte de mídia acessível.",
+      "observacoes": "Add-ons de terceiros para filmes e séries por streaming não fazem parte do Kodi e podem ser ilegais; a loja oficial só traz os oficiais. O app pede permissão de armazenamento e, para usar a rede, precisa acessar a mesma rede do servidor. A versão do site oficial é a mesma da Play.",
+      "icone": "kodi",
       "destaque": false,
       "url_verificado_em": "2026-11-11"
     },
@@ -1175,6 +1924,142 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "localsend",
+      "nome": "LocalSend",
+      "fabricante": "LocalSend (projeto open source)",
+      "categoria": "utilidades",
+      "site_oficial": "https://localsend.org/",
+      "url_download": "https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-windows-x86-64.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-windows-x86-64.exe",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "19,0 MB",
+      "versao": "1.18.2",
+      "so": [
+        "windows",
+        "mac",
+        "linux",
+        "android",
+        "ios"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "Apache-2.0",
+      "gratis": "100% grátis e open source",
+      "resumo": "Transfere arquivos entre PC, celular e tablet na mesma rede Wi-Fi, sem nuvem, sem conta e sem limite de tamanho.",
+      "descricao": "O LocalSend envia arquivos e textos entre aparelhos que estejam na mesma rede local, usando o Wi-Fi de casa em vez da internet. Funciona em Windows, macOS, Linux, Android e iOS, tem interface em português e não pede cadastro nem login. Você escolhe o aparelho de destino, confirma do outro lado e a transferência roda na velocidade da rede, com criptografia HTTPS. É a forma mais simples de passar fotos e vídeos do celular para o PC sem cabo e sem passar por servidor de terceiros.",
+      "destaques": [
+        "PC, celular e tablet na mesma rede",
+        "Sem conta, sem nuvem e sem anúncios",
+        "Criptografia HTTPS na transferência",
+        "Código aberto (Apache-2.0)"
+      ],
+      "requisitos": "Windows 10 ou mais recente, 64 bits",
+      "observacoes": "Os dois aparelhos precisam estar na mesma rede Wi-Fi. O release oficial traz instalador .exe para Windows, pacote portátil .zip, APK para Android e pacotes para macOS e Linux. A versão da Microsoft Store é publicada separadamente.",
+      "icone": "localsend",
+      "destaque": true,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "localsend-android",
+      "nome": "LocalSend",
+      "fabricante": "LocalSend",
+      "categoria": "celular",
+      "site_oficial": "https://localsend.org/",
+      "url_download": "https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-android-arm64v8.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-android-arm64v8.apk",
+      "status_http": 206,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "44 MB",
+      "versao": "1.18.2",
+      "so": [
+        "android"
+      ],
+      "arquitetura": "arm64-v8a",
+      "licenca": "Apache-2.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios; doação opcional no app",
+      "resumo": "Envia arquivos e textos entre celular e PC pela mesma rede Wi-Fi, sem nuvem e sem conta, no estilo AirDrop.",
+      "descricao": "O LocalSend transfere fotos, vídeos, documentos e texto entre aparelhos conectados à mesma rede local, sem passar pela internet. Não tem conta, não usa servidor externo e o código é aberto. Funciona com Android, Windows, macOS, Linux e iOS, desde que o app esteja nos dois lados. É prático para tirar arquivos do celular sem cabo.",
+      "destaques": [
+        "Transferência pela rede local, sem nuvem",
+        "Sem conta e sem servidor externo",
+        "Funciona entre Android, PC e Mac",
+        "Código aberto, sem anúncios"
+      ],
+      "requisitos": "Celular Android com instalação de APK liberada; escolha a build arm64-v8a (64 bits) para celulares atuais.",
+      "observacoes": "A ficha da Play marca 'Compras no app' (doação para o projeto), mas o app é gratuito. O release do GitHub traz APK por arquitetura: arm64v8 para celulares atuais, arm32v7 e x64 para os demais. Os dois aparelhos precisam estar na mesma rede e com o app aberto para se encontrarem.",
+      "icone": "localsend",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "material-files",
+      "nome": "Material Files",
+      "fabricante": "Hai Zhang",
+      "categoria": "celular",
+      "site_oficial": "https://github.com/zhanghai/MaterialFiles",
+      "url_download": "https://github.com/zhanghai/MaterialFiles/releases/download/v1.7.5/app-release-universal.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/zhanghai/MaterialFiles/releases/download/v1.7.5/app-release-universal.apk",
+      "status_http": 206,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "13 MB",
+      "versao": "1.7.5",
+      "so": [
+        "android"
+      ],
+      "arquitetura": "universal",
+      "licenca": "GPL-3.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios nem compras",
+      "resumo": "Gerenciador de arquivos Material Design com acesso a raiz (root), FTP e armazenamento em nuvem em abas.",
+      "descricao": "O Material Files organiza o armazenamento do celular com abas, pesquisa rápida, favoritos e atalhos. Abre ZIP e outros formatos, acessa servidores FTP, SFTP e WebDAV, e com root mexe em pastas do sistema. A interface segue o Material You e é leve. É open source, sem anúncios e sem conta; a permissão de root é opcional.",
+      "destaques": [
+        "Interface Material You, leve e limpa",
+        "Abre ZIP e acessa FTP/SFTP e WebDAV",
+        "Recursos extras com root (opcional)",
+        "Sem anúncios e sem compras"
+      ],
+      "requisitos": "Celular Android com instalação de APK liberada; root só se quiser acessar pastas do sistema.",
+      "observacoes": "O APK universal do GitHub é a build oficial e corresponde à versão 1.7.5 do F-Droid. Para acessar pastas de sistema é preciso root; sem ele, o app fica restrito ao armazenamento normal. Também está na Play Store.",
+      "icone": null,
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "memtest86",
+      "nome": "MemTest86",
+      "fabricante": "PassMark Software",
+      "categoria": "utilidades",
+      "site_oficial": "https://www.memtest86.com/",
+      "url_download": "https://www.memtest86.com/downloads/memtest86-usb.zip",
+      "tipo_download": "direto",
+      "url_download_final": "https://www.memtest86.com/downloads/memtest86-usb.zip",
+      "status_http": 206,
+      "content_type": "application/zip",
+      "tamanho_arquivo": "12,1 MB",
+      "versao": "11.7",
+      "so": [
+        "windows"
+      ],
+      "arquitetura": "x86 e x64",
+      "licenca": "Freeware (edição gratuita; versão Pro paga)",
+      "gratis": "Edição gratuita para uso pessoal; recursos avançados só na versão Pro paga",
+      "resumo": "Testa a memória RAM antes do Windows iniciar, encontrando erros que causam travamentos e telas azuis.",
+      "descricao": "O MemTest86 é o teste de memória RAM mais conhecido: ele roda antes do sistema operacional, a partir de um pendrive, e escreve padrões na memória para encontrar falhas que causam travamentos, telas azuis e corrupção de arquivos. É a ferramenta certa quando o PC reinicia sozinho ou dá erro aleatório e você suspeita dos pentes. Suporta BIOS e UEFI, vários núcleos e testes por tempo determinado.",
+      "destaques": [
+        "Roda antes do Windows, pelo pendrive",
+        "Encontra erros de RAM com precisão",
+        "Suporta BIOS e UEFI",
+        "Edição gratuita para uso pessoal"
+      ],
+      "requisitos": "PC x86/x64 com porta USB e boot por USB (BIOS ou UEFI)",
+      "observacoes": "É uma imagem para criar pendrive bootável: o teste roda fora do Windows, por isso não tem instalador. A edição gratuita é para uso pessoal (a Pro, paga, adiciona relatórios e recursos); a versão atual é a 11.7 (build 1000, de maio de 2026). O .zip inclui o utilitário que grava a imagem no pendrive.",
+      "icone": "memtest86",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "powertoys",
       "nome": "Microsoft PowerToys",
       "fabricante": "Microsoft",
@@ -1274,6 +2159,72 @@
       "requisitos": "Windows 10 ou 11 (64 bits)",
       "observacoes": "Link redirecionador oficial da Mozilla com idioma pt-BR; a versão registrada é a encontrada na verificação. Não vem com complementos de terceiros instalados.",
       "icone": "thunderbird",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "musicbee",
+      "nome": "MusicBee",
+      "fabricante": "Steven Mayall",
+      "categoria": "multimidia",
+      "site_oficial": "https://getmusicbee.com/",
+      "url_download": "https://getmusicbee.com/downloads/",
+      "tipo_download": "pagina",
+      "url_download_final": "https://getmusicbee.com/downloads/",
+      "status_http": 206,
+      "content_type": "text/html; charset=UTF-8",
+      "tamanho_arquivo": null,
+      "versao": "3.7.9796",
+      "so": [
+        "windows"
+      ],
+      "arquitetura": null,
+      "licenca": "Freeware (proprietário)",
+      "gratis": "Grátis (freeware), sem assinatura e sem limite de prazo",
+      "resumo": "Player de música completo para Windows, com biblioteca, playlists, last.fm, equalizador e suporte a FLAC.",
+      "descricao": "O MusicBee é um tocador de música para Windows que organiza a biblioteca inteira, baixa capas e letras, cria playlists inteligentes e envia scrobbles para o last.fm. Suporta MP3, FLAC, ALAC, OGG, WAV e outros formatos, tem equalizador, DSP, visualizações e controle remoto pelo celular. É a escolha de quem tem coleção grande de arquivos e quer algo mais completo e leve que o iTunes ou o Windows Media Player.",
+      "destaques": [
+        "Biblioteca com capas e letras",
+        "FLAC, ALAC, MP3 e OGG",
+        "Playlists inteligentes e last.fm",
+        "Equalizador e DSP"
+      ],
+      "requisitos": "Windows 7, 8, 10 ou 11",
+      "observacoes": "O site oficial não publica URL direta do arquivo: o botão de download leva ao Mega (hospedagem oficial do autor) e há espelho em MajorGeeks e versão na Microsoft Store. Por isso o link é a página de downloads, não o instalador. Versão 3.7.9796, de 29/10/2026, conforme a página oficial. O tamanho do instalador não foi confirmado.",
+      "icone": "musicbee",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "nextcloud-android",
+      "nome": "Nextcloud",
+      "fabricante": "Nextcloud",
+      "categoria": "celular",
+      "site_oficial": "https://nextcloud.com/",
+      "url_download": "https://github.com/nextcloud/android/releases/download/stable-35.0.2/gplay-release-350000290.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/nextcloud/android/releases/download/stable-35.0.2/gplay-release-350000290.apk",
+      "status_http": 206,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "108 MB",
+      "versao": "35.0.2",
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "GPL-2.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios; o custo é só o servidor, se você quiser um",
+      "resumo": "Cliente Android do Nextcloud: envia, sincroniza e compartilha seus arquivos no servidor que você escolher.",
+      "descricao": "O app conecta no seu servidor Nextcloud (próprio, de um provedor ou da empresa) e sincroniza fotos, documentos e contatos. Permite upload automático de fotos, compartilhar por link, editar textos e colaborar em arquivos. É a alternativa auto-hospedada ao Google Drive e ao OneDrive. O app é aberto e gratuito; o custo é só o servidor, quando você não tem um.",
+      "destaques": [
+        "Sincroniza arquivos e fotos no seu servidor",
+        "Upload automático da câmera",
+        "Compartilhamento por link",
+        "Sem anúncios e sem assinatura"
+      ],
+      "requisitos": "Celular Android com instalação de APK liberada; endereço e conta de um servidor Nextcloud.",
+      "observacoes": "O APK do GitHub é a build 'gplay' (a mesma da Play Store, versão 35.0.2); o F-Droid distribui a variante dele. Precisa de um servidor Nextcloud para funcionar; sem ele, o app fica vazio. Permissões de acesso a fotos e arquivos são pedidas no primeiro uso.",
+      "icone": "nextcloud",
       "destaque": false,
       "url_verificado_em": "2026-11-11"
     },
@@ -1381,6 +2332,39 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "obsidian-android",
+      "nome": "Obsidian",
+      "fabricante": "Dynalist Inc.",
+      "categoria": "celular",
+      "site_oficial": "https://obsidian.md/",
+      "url_download": "https://play.google.com/store/apps/details?id=md.obsidian",
+      "tipo_download": "pagina",
+      "url_download_final": "https://play.google.com/store/apps/details?id=md.obsidian",
+      "status_http": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho_arquivo": "190 KB",
+      "versao": null,
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "Proprietário · gratuito para uso pessoal",
+      "gratis": "grátis para uso pessoal; Sync e Publish pagos (opcionais)",
+      "resumo": "Editor de notas em Markdown que guarda tudo em arquivos seus, com links entre notas, grafo visual e plugins.",
+      "descricao": "O Obsidian transforma uma pasta de arquivos Markdown em um sistema de notas conectadas por links, com visual de grafo e milhares de plugins da comunidade. Os arquivos ficam no aparelho (ou no seu Drive ou Syncthing), sem formato proprietário. A sincronização oficial é paga, mas dá para usar Nextcloud, Syncthing ou Google Drive. É gratuito para uso pessoal.",
+      "destaques": [
+        "Notas em Markdown, arquivos seus",
+        "Links entre notas e grafo visual",
+        "Plugins da comunidade",
+        "Grátis para uso pessoal"
+      ],
+      "requisitos": "Celular Android com Play Store; uma pasta de notas local ou sincronizada por outro app.",
+      "observacoes": "Gratuito para uso pessoal; uso comercial exige licença. A sincronização oficial (Obsidian Sync) é paga, mas dá para sincronizar a pasta com Syncthing, Nextcloud ou Google Drive. Não exige conta para usar localmente.",
+      "icone": "obsidian",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "ollama",
       "nome": "Ollama",
       "fabricante": "Ollama",
@@ -1451,6 +2435,39 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "open-camera",
+      "nome": "Open Camera",
+      "fabricante": "Mark Harman",
+      "categoria": "celular",
+      "site_oficial": "https://opencamera.org.uk/",
+      "url_download": "https://f-droid.org/repo/net.sourceforge.opencamera_96.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://f-droid.org/repo/net.sourceforge.opencamera_96.apk",
+      "status_http": 206,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "4,7 MB",
+      "versao": "1.56.2",
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "GPL-3.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios nem compras",
+      "resumo": "Câmera open source com controles manuais, foco por toque, HDR e opções que o app de fábrica costuma esconder.",
+      "descricao": "O Open Camera é uma câmera alternativa com ajustes de ISO, velocidade, foco manual, balanço de branco e exposição. Tem foco e disparo por toque, HDR, modo noturno, grade de composição, timer e geotag opcional. Também grava vídeo e é útil em aparelhos com câmera simples ou sem app avançado. É open source, sem anúncios e sem conta.",
+      "destaques": [
+        "Controles manuais de ISO e velocidade",
+        "HDR, foco por toque e grade",
+        "Sem anúncios e sem conta",
+        "Código aberto e leve"
+      ],
+      "requisitos": "Celular Android com instalação de APK liberada; permissões de câmera e microfone para fotos e vídeos.",
+      "observacoes": "O APK vem do repositório oficial do F-Droid (versão 1.56.2). A ficha na Play Store marca 'Contém anúncios'; a build do F-Droid é livre, sem anúncios nem compras. As fotos podem ir para o armazenamento do aparelho ou para o cartão SD.",
+      "icone": null,
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "openttd",
       "nome": "OpenTTD",
       "fabricante": "OpenTTD Team",
@@ -1481,6 +2498,41 @@
       "requisitos": "Windows 7 ou mais recente, 512 MB de RAM, ~300 MB de disco",
       "observacoes": "É um ZIP portátil: descompacte numa pasta e execute o openttd.exe. O jogo original pede os gráficos base, que já vêm no pacote.",
       "icone": "openttd",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "virtualbox",
+      "nome": "Oracle VirtualBox",
+      "fabricante": "Oracle",
+      "categoria": "utilidades",
+      "site_oficial": "https://www.virtualbox.org/",
+      "url_download": "https://download.virtualbox.org/virtualbox/7.2.22/VirtualBox-7.2.22-175245-Win.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://download.virtualbox.org/virtualbox/7.2.22/VirtualBox-7.2.22-175245-Win.exe",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "170 MB",
+      "versao": "7.2.22",
+      "so": [
+        "windows",
+        "mac",
+        "linux"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "GPL-2.0 (base) + PUEL (Extension Pack)",
+      "gratis": "Grátis para uso pessoal, educacional e avaliação; Extension Pack tem licença PUEL",
+      "resumo": "Cria máquinas virtuais completas para testar outros sistemas sem sair do Windows, com rede, USB e disco.",
+      "descricao": "O VirtualBox permite instalar outro sistema operacional dentro de uma janela, como se fosse um computador separado: serve para testar Linux, conferir programas suspeitos, rodar sistemas antigos e montar laboratórios de estudo. Cada máquina virtual tem disco, memória, rede e USB próprios, e é possível tirar snapshots para voltar ao estado anterior. É gratuito para uso pessoal e educacional e funciona em Windows, macOS e Linux.",
+      "destaques": [
+        "Máquinas virtuais de Windows, Linux e outros",
+        "Snapshots para voltar a estados anteriores",
+        "Rede virtual, USB e pastas compartilhadas",
+        "Grátis para uso pessoal e educacional"
+      ],
+      "requisitos": "Windows 10/11 64 bits com virtualização habilitada na BIOS/UEFI",
+      "observacoes": "O aplicativo base é GPLv2; o Extension Pack (USB 3.0, RDP, criptografia de disco) tem licença PUEL, gratuita só para uso pessoal, educacional e avaliação. O download oficial traz também o SDK e as versões para macOS (Intel e Apple Silicon) e Linux. É preciso habilitar VT-x/AMD-V na BIOS.",
+      "icone": "virtualbox",
       "destaque": false,
       "url_verificado_em": "2026-11-11"
     },
@@ -1551,6 +2603,41 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "powershell",
+      "nome": "PowerShell 7",
+      "fabricante": "Microsoft",
+      "categoria": "dev",
+      "site_oficial": "https://learn.microsoft.com/powershell/",
+      "url_download": "https://github.com/PowerShell/PowerShell/releases/download/v7.7.0/PowerShell-7.7.0-win-x64.zip",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/PowerShell/PowerShell/releases/download/v7.7.0/PowerShell-7.7.0-win-x64.zip",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "110 MB",
+      "versao": "7.7.0",
+      "so": [
+        "windows",
+        "mac",
+        "linux"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "MIT",
+      "gratis": "100% grátis e open source",
+      "resumo": "Shell e linguagem de script modernos da Microsoft, com suporte a Windows, Linux e macOS e código aberto.",
+      "descricao": "O PowerShell 7 é a versão moderna do shell da Microsoft, com sintaxe de pipeline, objetos .NET, remoting sobre SSH e módulos da galeria. Roda lado a lado com o PowerShell 5.1 do Windows, tem suporte a Windows, Linux e macOS e é mantido como projeto aberto. Serve para automatizar tarefas do dia a dia, administrar servidores, escrever scripts de deploy e manipular JSON, CSV e APIs com muito menos código.",
+      "destaques": [
+        "Shell moderno com objetos .NET",
+        "Roda no Windows, Linux e macOS",
+        "Galeria de módulos e remoting SSH",
+        "Código aberto (MIT)"
+      ],
+      "requisitos": "Windows 10/11, 64 bits",
+      "observacoes": "O release 7.7.0 não publicou instalador .msi no GitHub; o pacote oficial win-x64 é um .zip portátil (extraia e rode o pwsh.exe) e há também .msixbundle. A versão 7 convive com o Windows PowerShell 5.1, que continua instalado no sistema.",
+      "icone": "powershell",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "protonvpn",
       "nome": "Proton VPN",
       "fabricante": "Proton AG",
@@ -1559,9 +2646,9 @@
       "url_download": "https://protonvpn.com/download",
       "tipo_download": "pagina",
       "url_download_final": "https://protonvpn.com/download",
-      "status_http": 200,
+      "status_http": 206,
       "content_type": "text/html; charset=utf-8",
-      "tamanho_arquivo": "32 KB",
+      "tamanho_arquivo": null,
       "versao": null,
       "so": [
         "windows",
@@ -1581,6 +2668,39 @@
       ],
       "requisitos": "Windows 10 ou 11; conta gratuita obrigatória",
       "observacoes": "O instalador exige conta no Proton e é entregue pela página oficial de download, que direciona para a versão do sistema — por isso o tipo é página. Os servidores gratuitos são limitados e a velocidade varia.",
+      "icone": "protonvpn",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "protonvpn-android",
+      "nome": "Proton VPN",
+      "fabricante": "Proton AG",
+      "categoria": "celular",
+      "site_oficial": "https://protonvpn.com/",
+      "url_download": "https://play.google.com/store/apps/details?id=ch.protonvpn.android",
+      "tipo_download": "pagina",
+      "url_download_final": "https://play.google.com/store/apps/details?id=ch.protonvpn.android",
+      "status_http": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho_arquivo": "203 KB",
+      "versao": null,
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "GPL-3.0 · gratuito (plano Free)",
+      "gratis": "grátis no plano Free, com servidores e velocidade limitados; planos pagos opcionais",
+      "resumo": "VPN grátis da Proton com criptografia forte, sem anúncios nem registro de histórico — boa para Wi-Fi público.",
+      "descricao": "O Proton VPN cria um túnel criptografado para proteger a navegação em redes públicas e esconder o IP. O plano Free não tem anúncios nem limite de dados, mas oferece poucos países e velocidade menor. Tem proteção contra vazamento de DNS, kill switch e o código do app é aberto. Para liberar todos os servidores é preciso assinar um plano pago.",
+      "destaques": [
+        "Plano grátis sem anúncios e sem limite de dados",
+        "Criptografia forte e kill switch",
+        "Sem registro de histórico de navegação",
+        "Código aberto e auditado"
+      ],
+      "requisitos": "Celular Android com Play Store; conta Proton gratuita para entrar.",
+      "observacoes": "A ficha da Play marca 'Compras no app' por causa das assinaturas pagas. Exige criar conta (e-mail) e, no plano grátis, a lista de países e servidores é curta e a velocidade é menor. Como toda VPN, mostra o ícone de VPN na barra de status e pode consumir mais bateria.",
       "icone": "protonvpn",
       "destaque": false,
       "url_verificado_em": "2026-11-11"
@@ -1689,6 +2809,39 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "quicklook",
+      "nome": "QuickLook",
+      "fabricante": "QL-Win (projeto open source)",
+      "categoria": "utilidades",
+      "site_oficial": "https://github.com/QL-Win/QuickLook",
+      "url_download": "https://github.com/QL-Win/QuickLook/releases/download/4.5.0/QuickLook-4.5.0.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/QL-Win/QuickLook/releases/download/4.5.0/QuickLook-4.5.0.exe",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "61,8 MB",
+      "versao": "4.5.0",
+      "so": [
+        "windows"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "GPL-3.0",
+      "gratis": "100% grátis e open source",
+      "resumo": "Pré-visualiza arquivos com a barra de espaço, no estilo do macOS, incluindo fotos, vídeos, PDFs e Office.",
+      "descricao": "O QuickLook traz para o Windows o hábito do macOS de selecionar um arquivo e apertar a barra de espaço para ver o conteúdo na hora, sem abrir o programa. Funciona com imagens, vídeos, música, PDFs, arquivos do Office, código, .zip e até pastas, e permite fixar a janela para navegar entre arquivos. Abre instantaneamente e evita esperar o Word ou o Acrobat carregarem só para dar uma olhada.",
+      "destaques": [
+        "Barra de espaço pré-visualiza o arquivo",
+        "Fotos, vídeos, PDF, Office e código",
+        "Janela pode ficar fixa na tela",
+        "Código aberto (GPL-3.0)"
+      ],
+      "requisitos": "Windows 10/11, 64 bits",
+      "observacoes": "O repositório oficial é QL-Win/QuickLook (a pauta citava inulute/QuickLook, que é um fork). Há também versão MSIX na Microsoft Store e pacote portátil .zip no release. Pode ser configurado para iniciar com o Windows.",
+      "icone": null,
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "rufus",
       "nome": "Rufus",
       "fabricante": "Akeo (Pete Batard)",
@@ -1718,6 +2871,43 @@
       "requisitos": "Windows 8 ou mais recente; pendrive de 8 GB ou mais",
       "observacoes": "O link baixa direto o executável portátil. Existe versão x86 e para ARM64 na mesma página de releases. Instalador sem ofertas porque nem instalador tem.",
       "icone": "rufus",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "rustdesk",
+      "nome": "RustDesk",
+      "fabricante": "RustDesk (projeto open source)",
+      "categoria": "internet",
+      "site_oficial": "https://rustdesk.com/",
+      "url_download": "https://github.com/rustdesk/rustdesk/releases/download/1.5.3/rustdesk-1.5.3-x86_64.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/rustdesk/rustdesk/releases/download/1.5.3/rustdesk-1.5.3-x86_64.exe",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "25,0 MB",
+      "versao": "1.5.3",
+      "so": [
+        "windows",
+        "mac",
+        "linux",
+        "android",
+        "ios"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "AGPL-3.0",
+      "gratis": "100% grátis e open source (cliente); servidor próprio é opcional",
+      "resumo": "Acesso remoto gratuito e open source: controla outro PC ou celular pela internet, com servidor próprio opcional.",
+      "descricao": "O RustDesk é uma alternativa de código aberto ao TeamViewer e ao AnyDesk: você instala no seu PC e no aparelho que quer acessar, informa o código de sessão e controla a tela de qualquer lugar. Tem transferência de arquivos, área de transferência compartilhada, chat e suporte a multi-monitor. O cliente usa de graça o servidor público do projeto ou pode apontar para um servidor próprio (hbbs/hbbr), o que resolve quem precisa de privacidade e não quer depender de serviço de terceiros.",
+      "destaques": [
+        "Acesso remoto com código de sessão",
+        "Transferência de arquivos e chat",
+        "Servidor próprio gratuito (hbbs/hbbr)",
+        "Código aberto (AGPL-3.0)"
+      ],
+      "requisitos": "Windows 10 ou mais recente, 64 bits",
+      "observacoes": "O servidor público gratuito do projeto atende uso leve; para uso frequente ou comercial vale hospedar o próprio servidor. O release também traz .msi e versão portátil, além de clientes para macOS, Linux, Android e iOS. A instalação pode ser feita só para um usuário ou como serviço do Windows.",
+      "icone": "rustdesk",
       "destaque": false,
       "url_verificado_em": "2026-11-11"
     },
@@ -1820,6 +3010,39 @@
       ],
       "requisitos": "Windows 10 ou 11 (64 bits); celular com Signal para ativar",
       "observacoes": "O instalador vem do domínio oficial de atualizações do Signal. Exige o app no celular para vincular a conta. O nome do arquivo inclui a versão, então o link é atualizado a cada release.",
+      "icone": "signal",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "signal-messenger",
+      "nome": "Signal Messenger",
+      "fabricante": "Signal Foundation",
+      "categoria": "celular",
+      "site_oficial": "https://signal.org/",
+      "url_download": "https://updates.signal.org/android/Signal-Android-website-prod-universal-release-8.34.2.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://updates.signal.org/android/Signal-Android-website-prod-universal-release-8.34.2.apk",
+      "status_http": 206,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "110 MB",
+      "versao": "8.34.2",
+      "so": [
+        "android"
+      ],
+      "arquitetura": "universal",
+      "licenca": "AGPL-3.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios; financiado por doações",
+      "resumo": "Mensageiro focado em privacidade, sem anúncios e sem coleta de dados; pede apenas o número de telefone para criar a conta.",
+      "descricao": "O Signal faz mensagens, chamadas e vídeos com criptografia de ponta a ponta em tudo. Não tem anúncios, rastreamento nem perfil de usuário, e o código do app é aberto para auditoria. O APK oficial é publicado no site do Signal e pode ser instalado sem a Play Store. O histórico fica no aparelho, com backup criptografado opcional.",
+      "destaques": [
+        "Criptografia de ponta a ponta em tudo",
+        "Sem anúncios e sem rastreamento",
+        "Código aberto e auditável",
+        "APK oficial no site do projeto"
+      ],
+      "requisitos": "Android com instalação de APK liberada; número de telefone para validar a conta.",
+      "observacoes": "O APK é universal e vem do domínio oficial de atualizações do Signal. Exige número de telefone e pede permissão de contatos. O nome do arquivo inclui a versão (hoje 8.34.2); a página signal.org/android/apk sempre aponta para a mais recente. A Play Store também distribui o mesmo app.",
       "icone": "signal",
       "destaque": false,
       "url_verificado_em": "2026-11-11"
@@ -1962,6 +3185,72 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "syncthing-android",
+      "nome": "Syncthing-Fork",
+      "fabricante": "Catfriend1",
+      "categoria": "celular",
+      "site_oficial": "https://syncthing.net/",
+      "url_download": "https://f-droid.org/repo/com.github.catfriend1.syncthingfork_2010700.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://f-droid.org/repo/com.github.catfriend1.syncthingfork_2010700.apk",
+      "status_http": 206,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "59 MB",
+      "versao": "2.1.7.0",
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "MPL-2.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios",
+      "resumo": "Sincroniza pastas entre celular e computador ponto a ponto, sem nuvem, com criptografia e versionamento.",
+      "descricao": "O Syncthing-Fork é a versão Android do Syncthing, que mantém pastas iguais em vários aparelhos sem passar por servidor de terceiros. A sincronização é criptografada e ponto a ponto, e cada dispositivo tem um ID próprio. É ótimo para backup automático de fotos e documentos no PC. O fork Catfriend1 corrige bugs e adiciona recursos que a versão original não tem.",
+      "destaques": [
+        "Sincronização ponto a ponto, sem nuvem",
+        "Criptografia entre os aparelhos",
+        "Backup automático de pastas",
+        "Fork ativo com correções extras"
+      ],
+      "requisitos": "Celular Android com instalação de APK liberada; o mesmo app (ou Syncthing) no outro aparelho.",
+      "observacoes": "O APK vem do repositório oficial do F-Droid (versão 2.1.7.0) e o app também tem página no F-Droid. É preciso configurar o ID do outro aparelho para parear. Roda em segundo plano com notificação permanente e pode consumir bateria em pastas grandes.",
+      "icone": "syncthing",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "tailscale-android",
+      "nome": "Tailscale",
+      "fabricante": "Tailscale Inc.",
+      "categoria": "celular",
+      "site_oficial": "https://tailscale.com/",
+      "url_download": "https://play.google.com/store/apps/details?id=com.tailscale.ipn",
+      "tipo_download": "pagina",
+      "url_download_final": "https://play.google.com/store/apps/details?id=com.tailscale.ipn",
+      "status_http": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho_arquivo": "182 KB",
+      "versao": null,
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "BSD-3-Clause · gratuito (plano Free)",
+      "gratis": "grátis no plano pessoal, com limites de usuários e dispositivos",
+      "resumo": "VPN mesh baseada em WireGuard que conecta celular, PCs e servidores como se estivessem na mesma rede.",
+      "descricao": "O Tailscale cria uma rede privada entre seus aparelhos usando WireGuard, sem abrir portas no roteador. Você acessa o PC de casa, o servidor da empresa ou um NAS de qualquer lugar, com IP fixo e nomes próprios. O app Android funciona como VPN do sistema e o plano gratuito cobre uso pessoal. Exige login (Google, Microsoft, GitHub ou e-mail) para entrar na sua tailnet.",
+      "destaques": [
+        "Rede privada entre seus aparelhos",
+        "Baseada em WireGuard, sem abrir portas",
+        "Plano pessoal gratuito",
+        "Funciona como VPN do sistema"
+      ],
+      "requisitos": "Celular Android com Play Store; conta Tailscale (Google, Microsoft, GitHub ou e-mail).",
+      "observacoes": "Exige conta e login: a tailnet é sua e você administra os aparelhos. O plano Free é para uso pessoal, com limites de usuários e dispositivos. Por ser uma VPN sempre ativa, mostra o ícone de VPN na barra de status e pode reduzir a bateria se ficar ligada o dia todo.",
+      "icone": "tailscale",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "telegram",
       "nome": "Telegram Desktop",
       "fabricante": "Telegram FZ-LLC",
@@ -1997,6 +3286,72 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "telegram-messenger",
+      "nome": "Telegram Messenger",
+      "fabricante": "Telegram FZ-LLC",
+      "categoria": "celular",
+      "site_oficial": "https://telegram.org/android",
+      "url_download": "https://telegram.org/dl/android/apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://cdn4.telesco.pe/file/Telegram.apk?token=r8b1X4rCLPPFwaX5VhgSHxpoAxtxQonUXX6oY8cY_wAx-C5I3WJ8iu50MHsYN1z-x8HYSYJFvgqYclmtv3UVOvMjG9FZ61znh5xVAeN-wp7_LkqtEPsCfXc7sllJHs7Kv7kXhHYRfaoR076WqYV__5pYFegfT8va4uMpdZyklZR7-COGc7KNY0nm47YYOdR3ky8lFfZryKzOJLGBr9_BXsEN8AsPL_4KR_98zygXluOxLil_wmLpFA9LlVwrrY3pIjuu1o26ozsoQ7Q9trtF7E1Z6-Is9H63G7p6_B1xZbVQkjEhYoXiQs1X-6YUeB91gc3nD0yWRgylmwZtiIkMRDqhigxudr72MQxUEqe46hLMYeOyGEMXyoZlWL0jJ8qpfsHGwGqlzyc5kjis1LJyIubk8f-96-aF2BK5RujwAW3Y-bAd8GNTUAkwOS-Kr1D9ZP46GkzGCDAcNfhp0T-EuU1fBFCtEZrxI3J6AHFsTk8hr0zIZlO2z_FEJzZDdlU2bmYvVfUDVh6rPNwwrVNeQOGo1ed5VQt3ll5W5VeI9aDCUbwDjtTRW3U1A7r_Lk9i3zfMI0Ycd79WqlSA37tV0JVKCB6JhCd5Qx9kRBba9t8OYEp14ikAzf1-O56fbAk4cyQbNt7xzYnJUQ0fAOSpZceP0Vuqb1TSz1uEtfPDbhhbDF4hKgm6zzkah-4uG8-tfhXc9J-K6zr0EXr2KyWkAtlC3_s1VtCRSZPbKGcbaUckkQDx9U6YRehJ7_c-F6T3DHkZTCculgt7GbwlgcavwfK5JTrRnKx0obiJFJ4ZOPdYjUGPjRKeGpVKRcj7JgnvaYzR3GsDWNSgr2ZdXG4jsxQt8bxJUxPDeD_Kdq2FxhMl8plpuo0vqczr-CZfPl-XJm2TS8426N25vjkhBzx8mOpchw3iwA0G3_j3Bey24zsVlUl6oFyYXzEOKL_QmDZZdcEVE4bgP9sjjtwdS7Dc1VCl3ZUG67NRrx7dMhvVTMGex47DXZWM5pnwnxwjSqPLqDLPnfRZ2YWLe-peAUnwFyf3jdl4L_koAsd2-LEdmdYiN7GrVOCU-OGlBJkEvH9qAoyMxlmR182Tr4Dum2jOXICuah9DLSL01Gk0FSJzplWfKdy8Z0jPo6xJIu5Q8HgTvaOJf4q6-Ay4QwccLoRsEqSXFEF87C16gN_KS_Lxf5c-seE0e3uYYW78_GO3g3941tyLEBdhxkgNVL49IE5y3o8hYRDWlG8Xvf0MbGND3YmqefuLJeHgWGkGZWyiTyaCiW6Q0goJr41ffBw4tZs2383ZanOvgW1bKzpD7VBhjBzX4V7Ge99rYxvzQJGjPeCPkLKzYB2dIa1_4KreuUTKP5kZk1Wub2U7dlxJXUzaqFZE4wnPzxiWcMThvA8OqjiAfkl5AKiDXmZtvfms-vZ-459nsqygqqYkxCjO-l4vEJrA5zgP1oJ2uDS2-LZqYKOO5IYr9N1Xg_ZImp1AsKDyTJ6dMI_kHTO2Gqt17ceN45lQuI2DcgU8QBj9khAroxag0K7rxDp8-0hve8QLwnbkbdK72Scmf1bhcygmv8FPiBhLq4pUkSCqqlF4pK_-Gu6M3eHOK1djFYnzz_jPTUCiM9A0Qg7gB9osrxyDnhn5pHqu7L1Y3tMGiafBrBIbdW-tzVWqS1AVFFG6hVAzffq9SEXwXdhGnGxuft4pjQSLOxM",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "77 MB",
+      "versao": null,
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "Proprietário · gratuito",
+      "gratis": "100% grátis; recursos extras no Telegram Premium (opcional)",
+      "resumo": "Mensageiro rápido com nuvem ilimitada, grupos grandes, canais e bots; o APK do site oficial atualiza fora da Play Store.",
+      "descricao": "O Telegram guarda conversas e arquivos na nuvem, então o histórico aparece em qualquer aparelho e não ocupa espaço no celular. Tem grupos de até 200 mil pessoas, canais, bots e chamadas de voz e vídeo. O APK publicado no telegram.org tem menos restrições que a versão da Play Store e recebe atualizações direto do site. Para instalar, é preciso liberar a instalação de fontes desconhecidas.",
+      "destaques": [
+        "Nuvem ilimitada para mensagens e arquivos",
+        "Grupos grandes, canais e bots",
+        "APK oficial atualizado fora da loja",
+        "Criptografia de ponta a ponta nos chats secretos"
+      ],
+      "requisitos": "Android com instalação de APK liberada em Ajustes → Segurança; funciona com número de telefone.",
+      "observacoes": "Conta obrigatória com número de telefone. O endereço telegram.org/dl/android/apk redireciona para um CDN oficial com token temporário, por isso o campo URL final mantém o link estável. Só os chats secretos têm criptografia de ponta a ponta; os demais ficam na nuvem. A versão do APK muda com frequência e aparece em Ajustes → Sobre.",
+      "icone": "telegram",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "termux",
+      "nome": "Termux",
+      "fabricante": "Termux",
+      "categoria": "celular",
+      "site_oficial": "https://termux.dev/",
+      "url_download": "https://f-droid.org/packages/com.termux/",
+      "tipo_download": "pagina",
+      "url_download_final": "https://f-droid.org/packages/com.termux/",
+      "status_http": 206,
+      "content_type": "text/html",
+      "tamanho_arquivo": null,
+      "versao": null,
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "GPL-3.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios",
+      "resumo": "Terminal Linux no Android com pacotes (apt), SSH, Python e ferramentas de linha de comando, sem precisar de root.",
+      "descricao": "O Termux abre um terminal Linux completo no celular, com gerenciador de pacotes próprio (pkg/apt) e milhares de programas: SSH, Git, Python, Node, ffmpeg, nmap e editores. É útil para administrar servidores, automatizar tarefas e estudar Linux. Não precisa de root e funciona em segundo plano. A instalação recomendada é pelo F-Droid; a versão da Play Store está descontinuada.",
+      "destaques": [
+        "Terminal Linux completo no celular",
+        "Pacotes como SSH, Python e Git",
+        "Funciona sem root",
+        "Instalação recomendada pelo F-Droid"
+      ],
+      "requisitos": "Android atualizado (os builds atuais pedem Android 7 ou superior) e permissão para instalar APK de fora da loja.",
+      "observacoes": "Use o F-Droid, não a Play Store: a versão da loja está descontinuada e o próprio projeto recomenda o F-Droid. Na página há a 0.118.3 (estável) e a 0.119.0-beta.3; o APK direto fica na própria página. Não precisa de root, mas alguns comandos e pacotes só funcionam com aparelho desbloqueado.",
+      "icone": "termux",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "tor-browser",
       "nome": "Tor Browser",
       "fabricante": "Tor Project",
@@ -2028,6 +3383,72 @@
       "requisitos": "Windows 10 ou 11 (64 bits); conexão com a internet",
       "observacoes": "O download é entregue pela página oficial (o diretório dist.torproject.org não expunha o instalador Windows para verificação direta), então o tipo ficou como página. É portátil: extraia e execute. Para máxima segurança, confira a assinatura do pacote no próprio site.",
       "icone": "torproject",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "tor-browser-android",
+      "nome": "Tor Browser",
+      "fabricante": "The Tor Project",
+      "categoria": "celular",
+      "site_oficial": "https://www.torproject.org/",
+      "url_download": "https://dist.torproject.org/torbrowser/16.0.2/tor-browser-android-aarch64-16.0.2.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://dist.torproject.org/torbrowser/16.0.2/tor-browser-android-aarch64-16.0.2.apk",
+      "status_http": 206,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "110 MB",
+      "versao": "16.0.2",
+      "so": [
+        "android"
+      ],
+      "arquitetura": "arm64-v8a",
+      "licenca": "MPL-2.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios",
+      "resumo": "Navegador que passa o tráfego pela rede Tor, escondendo o IP e dificultando rastreamento e bloqueio.",
+      "descricao": "O Tor Browser para Android é o Firefox ESR modificado para usar a rede Tor: cada acesso sai por três relays e o site não vê seu IP. Ele reduz fingerprint e bloqueia scripts conforme o nível de segurança, e não guarda histórico. É mais lento que um navegador comum e alguns sites (bancos, Google) pedem captcha. Existe build para arm64, armv7 e x86_64.",
+      "destaques": [
+        "Navegação anônima pela rede Tor",
+        "Bloqueio de fingerprint e scripts",
+        "Não guarda histórico",
+        "Código aberto e sem anúncios"
+      ],
+      "requisitos": "Celular Android arm64 (64 bits) com instalação de APK liberada; há builds para armv7 e x86_64 no mesmo diretório.",
+      "observacoes": "O APK oficial é o aarch64 (arm64), indicado para celulares atuais, com cerca de 110 MB. O nome do arquivo traz a versão (hoje 16.0.2) e o diretório dist.torproject.org/torbrowser/ lista as demais e as assinaturas .asc. Não pede conta. Em redes muito restritas pode ser preciso usar uma ponte (bridge).",
+      "icone": "torproject",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "treesize",
+      "nome": "TreeSize Free",
+      "fabricante": "JAM Software",
+      "categoria": "utilidades",
+      "site_oficial": "https://www.jam-software.com/treesize_free",
+      "url_download": "https://downloads.jam-software.de/treesize_free/TreeSizeFreeSetup.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://downloads.jam-software.de/treesize_free/TreeSizeFreeSetup.exe",
+      "status_http": 206,
+      "content_type": "application/x-msdos-program",
+      "tamanho_arquivo": "15,5 MB",
+      "versao": "4.8.1",
+      "so": [
+        "windows"
+      ],
+      "arquitetura": null,
+      "licenca": "Freeware para uso pessoal (proprietário)",
+      "gratis": "Grátis para uso pessoal; uso comercial exige licença paga",
+      "resumo": "Mostra o que está ocupando espaço no disco por pasta e arquivo, com filtros e comparação entre unidades.",
+      "descricao": "O TreeSize Free varre o disco e mostra, pasta por pasta e arquivo por arquivo, quanto espaço cada item ocupa, com barras proporcionais e ordenação por tamanho. É a forma mais rápida de descobrir o que está enchendo o SSD, apagar arquivos grandes esquecidos e comparar o tamanho de duas pastas. Também exporta relatórios e tem integração com o menu de contexto do Explorer.",
+      "destaques": [
+        "Mapa de espaço por pasta",
+        "Encontra os maiores arquivos",
+        "Exporta relatórios",
+        "Integra com o Explorer"
+      ],
+      "requisitos": "Windows 7 ou mais recente",
+      "observacoes": "Grátis para uso pessoal; empresas precisam da licença Professional. O instalador é assinado digitalmente pela JAM Software (SHA256 verificado por Authenticode) e a URL oficial tem nome fixo, servindo sempre a versão mais recente (4.8.1, de fevereiro de 2026). A página também oferece builds antigos para Windows XP/2000.",
+      "icone": null,
       "destaque": false,
       "url_verificado_em": "2026-11-11"
     },
@@ -2108,8 +3529,8 @@
       "url_download": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user",
       "tipo_download": "direto",
       "url_download_final": "https://vscode.download.prss.microsoft.com/dbazure/download/stable/69047191fc427f2f92828279aae1d90d8eeda7ab/VSCodeUserSetup-x64-1.146.0.exe",
-      "status_http": 302,
-      "content_type": "text/plain; charset=utf-8",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
       "tamanho_arquivo": "273 MB",
       "versao": "1.146.0",
       "so": [
@@ -2132,6 +3553,39 @@
       "observacoes": "O endpoint oficial code.visualstudio.com redireciona para a build estável atual (1.146.0, cerca de 273 MB). Existe instalador System e builds ARM64.",
       "icone": "visualstudiocode",
       "destaque": true,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "vlc-android",
+      "nome": "VLC for Android",
+      "fabricante": "VideoLAN",
+      "categoria": "celular",
+      "site_oficial": "https://www.videolan.org/vlc/download-android.html",
+      "url_download": "https://play.google.com/store/apps/details?id=org.videolan.vlc",
+      "tipo_download": "pagina",
+      "url_download_final": "https://play.google.com/store/apps/details?id=org.videolan.vlc",
+      "status_http": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho_arquivo": "191 KB",
+      "versao": null,
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "GPL-2.0 · gratuito",
+      "gratis": "100% grátis e open source, sem anúncios",
+      "resumo": "Player de vídeo e áudio que abre praticamente qualquer formato, com legendas, equalizador e reprodução em rede.",
+      "descricao": "O VLC for Android reproduz MP4, MKV, AVI, FLAC, MP3 e dezenas de outros formatos sem instalar codecs. Tem legendas com sincronia, equalizador, controle de velocidade, reprodução em segundo plano e acesso a arquivos por rede (SMB e FTP). Não tem anúncios nem compras e funciona offline, com os arquivos no próprio aparelho.",
+      "destaques": [
+        "Abre quase todos os formatos de vídeo e áudio",
+        "Legendas e equalizador embutidos",
+        "Acessa arquivos em rede (SMB/FTP)",
+        "Sem anúncios e sem compras"
+      ],
+      "requisitos": "Celular Android com Play Store; a loja informa a versão mínima do sistema.",
+      "observacoes": "A versão da Play é a mais prática para manter atualizada. O site oficial (get.videolan.org/vlc-android/) também lista APKs por arquitetura, mas o download passa por uma página de espelhos para navegadores, o que atrapalha a checagem automática. Permissões de armazenamento são pedidas para ler os vídeos locais.",
+      "icone": "vlcmediaplayer",
+      "destaque": false,
       "url_verificado_em": "2026-11-11"
     },
     {
@@ -2170,6 +3624,72 @@
       "url_verificado_em": "2026-11-11"
     },
     {
+      "slug": "waze",
+      "nome": "Waze",
+      "fabricante": "Waze",
+      "categoria": "celular",
+      "site_oficial": "https://www.waze.com/",
+      "url_download": "https://play.google.com/store/apps/details?id=com.waze",
+      "tipo_download": "pagina",
+      "url_download_final": "https://play.google.com/store/apps/details?id=com.waze",
+      "status_http": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho_arquivo": "192 KB",
+      "versao": null,
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "Proprietário · gratuito (com anúncios)",
+      "gratis": "grátis, com anúncios",
+      "resumo": "GPS social com trânsito em tempo real, alertas de radar e rotas alternativas enviadas por outros motoristas.",
+      "descricao": "O Waze calcula rotas com base no trânsito reportado pela própria comunidade: acidentes, radar, obras e congestionamento aparecem no mapa em tempo real. Os usuários podem mandar alertas e corrigir o mapa, o que deixa as rotas atualizadas. É gratuito e tem anúncios de lojas e postos. Exige conta e permissão de localização para funcionar direito.",
+      "destaques": [
+        "Trânsito em tempo real colaborativo",
+        "Alertas de radar e acidentes",
+        "Rotas alternativas automáticas",
+        "Mapa corrigido pela comunidade"
+      ],
+      "requisitos": "Celular Android com Play Store e GPS; conta (Google ou telefone) para entrar.",
+      "observacoes": "Gratuito, mas com anúncios na interface (a ficha da Play confirma 'Contém anúncios'). Exige conta e permissão de localização, inclusive em segundo plano. Baixa mapa e trânsito pela internet, então consome dados móveis.",
+      "icone": "waze",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "whatsapp-messenger",
+      "nome": "WhatsApp Messenger",
+      "fabricante": "Meta",
+      "categoria": "celular",
+      "site_oficial": "https://www.whatsapp.com/android/",
+      "url_download": "https://play.google.com/store/apps/details?id=com.whatsapp",
+      "tipo_download": "pagina",
+      "url_download_final": "https://play.google.com/store/apps/details?id=com.whatsapp",
+      "status_http": 200,
+      "content_type": "text/html; charset=utf-8",
+      "tamanho_arquivo": "186 KB",
+      "versao": null,
+      "so": [
+        "android"
+      ],
+      "arquitetura": null,
+      "licenca": "Proprietário · gratuito",
+      "gratis": "100% grátis, sem assinatura; a loja marca compras opcionais no app",
+      "resumo": "Mensageiro mais usado do país, com chamadas, vídeo, grupos e backup na nuvem; usa o número de telefone como conta.",
+      "descricao": "O WhatsApp usa o número do celular como identidade e mantém as conversas sincronizadas na nuvem. Tem chamadas de voz e vídeo, grupos, mensagens que desaparecem e backup automático no Google Drive. As conversas são criptografadas de ponta a ponta por padrão e o app é gratuito, sem assinatura. Precisa de internet para enviar e receber mensagens e ocupa cerca de 1 GB com o uso.",
+      "destaques": [
+        "Criptografia de ponta a ponta por padrão",
+        "Chamadas de voz e vídeo",
+        "Backup automático no Google Drive",
+        "Gratuito, sem assinatura"
+      ],
+      "requisitos": "Celular Android com Play Store e número de telefone ativo; a loja informa a versão mínima do sistema.",
+      "observacoes": "Exige número de telefone e pede acesso aos contatos para achar quem já usa o app. A ficha na Play mostra 'Compras no app' (itens opcionais, como figurinhas). O backup pode ocupar espaço no Google Drive. A página whatsapp.com/android bloqueia a checagem automática com HTTP 400, mas abre normalmente no navegador.",
+      "icone": "whatsapp",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
       "slug": "whatsapp",
       "nome": "WhatsApp para Windows",
       "fabricante": "Meta",
@@ -2200,6 +3720,72 @@
       "observacoes": "O WhatsApp para Windows agora é distribuído pela Microsoft Store; a página oficial de download bloqueia checagem automática (HTTP 400), mas abre normalmente no navegador.",
       "icone": "whatsapp",
       "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "winmerge",
+      "nome": "WinMerge",
+      "fabricante": "WinMerge Project",
+      "categoria": "dev",
+      "site_oficial": "https://winmerge.org/",
+      "url_download": "https://github.com/WinMerge/winmerge/releases/download/v2.16.60/WinMerge-2.16.60-x64-Setup.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/WinMerge/winmerge/releases/download/v2.16.60/WinMerge-2.16.60-x64-Setup.exe",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "17,8 MB",
+      "versao": "2.16.60",
+      "so": [
+        "windows"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "GPL-2.0",
+      "gratis": "100% grátis e open source",
+      "resumo": "Compara arquivos e pastas lado a lado, mostrando as diferenças e permitindo editar e mesclar cópias com segurança.",
+      "descricao": "O WinMerge compara dois arquivos ou duas pastas e destaca exatamente o que mudou, com edição e mesclagem na própria janela. Suporta texto, código, XML, CSV e até PDF e Office por plugins, tem comparação de três vias para conflitos de Git e gera relatórios em HTML. É útil para revisar alterações de código, conferir backups e descobrir o que foi modificado em arquivos de configuração.",
+      "destaques": [
+        "Comparação lado a lado com destaque",
+        "Compara pastas inteiras e subpastas",
+        "Comparação de três vias para Git",
+        "Edita e mescla direto na janela"
+      ],
+      "requisitos": "Windows 7 SP1 ou mais recente, 64 bits",
+      "observacoes": "O release oficial oferece instalador x64, instalador por usuário (sem pedir admin) e pacote portátil .zip. O instalador padrão cria atalhos no menu Iniciar e integra com o Explorer.",
+      "icone": "winmerge",
+      "destaque": false,
+      "url_verificado_em": "2026-11-11"
+    },
+    {
+      "slug": "winrar",
+      "nome": "WinRAR",
+      "fabricante": "RARLAB",
+      "categoria": "utilidades",
+      "site_oficial": "https://www.win-rar.com/",
+      "url_download": "https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-723br.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-723br.exe",
+      "status_http": 206,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "5,8 MB",
+      "versao": "7.23",
+      "so": [
+        "windows"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "Proprietário (avaliação sem prazo)",
+      "gratis": "Gratuito na prática: avaliação sem prazo que segue funcionando com aviso de compra",
+      "resumo": "Compacta e descompacta RAR, ZIP, 7Z e outros formatos, com recuperação de arquivos corrompidos e senhas fortes.",
+      "descricao": "O WinRAR é o compactador mais usado no Windows: cria e abre RAR, ZIP, 7Z, TAR, GZ e vários outros formatos, com compressão sólida e recuperação de arquivos danificados. A versão 7.23 em português do Brasil traz senhas AES-256, divisão em volumes e integração com o Explorer. A licença é proprietária, mas o programa funciona como avaliação sem prazo: depois dos 40 dias de teste ele continua abrindo e criando arquivos, apenas mostrando um aviso para comprar a licença.",
+      "destaques": [
+        "Cria e abre RAR, ZIP, 7Z e mais",
+        "Recupera arquivos compactados danificados",
+        "Senhas AES-256 e divisão em volumes",
+        "Instalador em português do Brasil"
+      ],
+      "requisitos": "Windows 7 ou mais recente, 64 bits",
+      "observacoes": "Não é open source. A avaliação tem 40 dias de teste; passado o prazo, o WinRAR continua funcionando com a janela de aviso para comprar a licença, sem bloquear o uso. O instalador oficial não traz ofertas nem adware. O link é a versão x64 em português do Brasil (winrar-x64-723br.exe, 6.094.752 bytes). Há também build x86 para PCs antigos.",
+      "icone": "winrar",
+      "destaque": true,
       "url_verificado_em": "2026-11-11"
     },
     {

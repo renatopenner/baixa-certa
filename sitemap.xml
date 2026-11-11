@@ -11,6 +11,7 @@
   <url><loc>https://baixa.pennertech.com.br/categoria/backup.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://baixa.pennertech.com.br/categoria/ia.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://baixa.pennertech.com.br/categoria/jogos.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/categoria/celular.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://baixa.pennertech.com.br/sobre.html</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://baixa.pennertech.com.br/como-verificamos.html</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://baixa.pennertech.com.br/contato.html</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
@@ -18,66 +19,113 @@
   <url><loc>https://baixa.pennertech.com.br/a/davinci-resolve.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/gimp.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/libreoffice.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/localsend.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/obs-studio.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/qbittorrent.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/vscode.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/vlc.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/winrar.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/0ad.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/aegis-authenticator.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/angryip.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/anki.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/ankidroid.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/audacity.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/autohotkey.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/balenaetcher.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/bitwarden.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/bitwarden-android.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/bleachbit.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/blender.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/brave.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/bruno.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/calibre.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/cpuz.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/cryptomator.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/crystaldiskinfo.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/crystaldiskmark.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/darktable.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/dbeaver.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/discord.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/ditto.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/duplicati.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/epic-games.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/everything.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/fdroid.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/filezilla.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/firefox-android.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/foobar2000.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/freecad.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/freefilesync.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/git.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/github-desktop.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/gog-galaxy.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/gpuz.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/handbrake.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/hwinfo.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/imageglass.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/inkscape.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/jan.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/jellyfin-android.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/jellyfin-media-player.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/joplin.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/joplin-android.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/kdenlive.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/keepassdx.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/keepassxc.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/kodi.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/kodi-android.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/krita.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/lmstudio.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/localsend-android.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/material-files.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/memtest86.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/powertoys.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/firefox.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/thunderbird.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/musicbee.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/nextcloud-android.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/notepadpp.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/obsidian.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/obsidian-android.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/ollama.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/onlyoffice.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/open-camera.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/openttd.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/virtualbox.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/paintnet.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/pdf24.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/powershell.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/protonvpn.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/protonvpn-android.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/putty.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/python.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/quicklook.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/rufus.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/rustdesk.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/sharex.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/shotcut.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/signal.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/signal-messenger.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/steam.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/sumatrapdf.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/supertuxkart.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/syncthing.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/syncthing-android.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/tailscale-android.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/telegram.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/telegram-messenger.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/termux.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/tor-browser.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/tor-browser-android.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/treesize.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/ventoy.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/veracrypt.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/vlc-android.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/waze.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/whatsapp-messenger.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/whatsapp.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://baixa.pennertech.com.br/a/winmerge.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/wiztree.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://baixa.pennertech.com.br/a/zotero.html</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>

@@ -58,5 +58,11 @@
     "curto": "Jogos",
     "descricao": "Jogos gratuitos de verdade: sem trial, sem demo com data de validade.",
     "icone": "game"
+  },
+  "celular": {
+    "nome": "Celular",
+    "curto": "Celular",
+    "descricao": "Os aplicativos gratuitos que valem instalar no celular: mensageiros, privacidade, mídia, backup e utilitários — pela loja oficial ou pelo site do desenvolvedor.",
+    "icone": "phone"
   }
 }

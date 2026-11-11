@@ -106,15 +106,29 @@ def data_br(iso: str | None) -> str:
 
 
 def plataformas(so: list[str]) -> str:
-    nomes = {"windows": "Windows", "mac": "macOS", "linux": "Linux", "web": "Navegador"}
-    ordem = ["windows", "mac", "linux", "web"]
+    nomes = {"windows": "Windows", "mac": "macOS", "linux": "Linux",
+             "android": "Android", "ios": "iOS", "web": "Navegador"}
+    ordem = ["windows", "mac", "linux", "android", "ios", "web"]
     return " · ".join(nomes[p] for p in ordem if p in so)
 
 
 def plataformas_curto(so: list[str]) -> str:
-    nomes = {"windows": "Windows", "mac": "macOS", "linux": "Linux", "web": "Web"}
-    ordem = ["windows", "mac", "linux", "web"]
+    nomes = {"windows": "Windows", "mac": "macOS", "linux": "Linux",
+             "android": "Android", "ios": "iOS", "web": "Web"}
+    ordem = ["windows", "mac", "linux", "android", "ios", "web"]
     return " · ".join(nomes[p] for p in ordem if p in so)
+
+
+def loja_do_link(url: str) -> str:
+    """Identifica loja oficial para escolher o rótulo do botão."""
+    u = (url or "").lower()
+    if "play.google.com" in u:
+        return "play"
+    if "apps.apple.com" in u or "itunes.apple.com" in u:
+        return "appstore"
+    if "f-droid.org" in u:
+        return "fdroid"
+    return ""
 
 
 def url_app(app: dict) -> str:
@@ -136,6 +150,15 @@ def iniciais(nome: str) -> str:
 
 def plural(n: int, singular: str, plural_: str) -> str:
     return f"{n} {singular if n == 1 else plural_}"
+
+
+def resumo(texto: str, limite: int = 158) -> str:
+    """Corta um texto no limite (palavra inteira) para meta description."""
+    texto = " ".join((texto or "").split())
+    if len(texto) <= limite:
+        return texto
+    corte = texto[:limite].rsplit(" ", 1)[0].rstrip(",.;:")
+    return corte + "…"
 
 
 def icone_app(app: dict, raiz: str = "", classe: str = "") -> str:
@@ -216,6 +239,7 @@ def topo(raiz: str, ativo: str = "") -> str:
     <nav class="menu" aria-label="Principal">
       <a href="{raiz}index.html"{cls('inicio')}>Início</a>
       <a href="{raiz}index.html#categorias">Categorias</a>
+      <a href="{raiz}categoria/celular.html"{cls('celular')}>Celular</a>
       <a href="{raiz}como-verificamos.html"{cls('verificamos')}>Como verificamos</a>
       <a href="{raiz}sobre.html"{cls('sobre')}>Sobre</a>
       <a href="{raiz}contato.html"{cls('contato')}>Contato</a>
@@ -281,12 +305,19 @@ def rodape(raiz: str, apps: list[dict], categorias: dict, atualizado: str) -> st
 
 def card_app(app: dict, raiz: str, categoria_nome: str) -> str:
     url = url_app(app)
-    tipo_tag = (
-        '<span class="tag tag-ok">Link direto</span>' if eh_direto(app)
-        else '<span class="tag tag-link">Página oficial</span>'
-    )
+    loja = loja_do_link(url)
+    if eh_direto(app):
+        tipo_tag = '<span class="tag tag-ok">Link direto</span>'
+        rotulo = "Baixar"
+    else:
+        rotulo_loja = {"play": "Play Store", "appstore": "App Store", "fdroid": "F-Droid"}
+        tipo_tag = (f'<span class="tag tag-link">{rotulo_loja[loja]}</span>' if loja
+                    else '<span class="tag tag-link">Página oficial</span>')
+        rotulo = "Abrir" if loja in ("play", "appstore") else "Baixar no site"
     gratis_tag = '<span class="tag">Grátis</span>'
-    rotulo = "Baixar" if eh_direto(app) else "Baixar no site"
+    fab = app["fabricante"]
+    if app["categoria"] == "celular":
+        fab = f"{fab} · {plataformas_curto(app.get('so') or [])}"
     busca = f"{app['nome']} {app['fabricante']} {categoria_nome} {app['resumo']} {' '.join(app.get('destaques', []))}"
     return f"""<article class="app" data-cat="{esc(app['categoria'])}" data-busca="{esc(busca)}">
   <div class="app-cab">
@@ -295,7 +326,7 @@ def card_app(app: dict, raiz: str, categoria_nome: str) -> str:
     </a>
     <div class="app-tit">
       <h3><a href="{raiz}a/{app['slug']}.html">{esc(app['nome'])}</a></h3>
-      <div class="app-fab">{esc(app['fabricante'])}</div>
+      <div class="app-fab">{esc(fab)}</div>
     </div>
   </div>
   <p class="app-res">{esc(app['resumo'])}</p>
@@ -308,7 +339,13 @@ def card_app(app: dict, raiz: str, categoria_nome: str) -> str:
 
 def card_destaque(app: dict, raiz: str, categoria_nome: str) -> str:
     url = url_app(app)
-    rotulo = "Baixar agora" if eh_direto(app) else "Ver no site oficial"
+    loja = loja_do_link(url)
+    if eh_direto(app):
+        rotulo = "Baixar agora"
+    elif loja in ("play", "appstore"):
+        rotulo = "Abrir na loja"
+    else:
+        rotulo = "Ver no site oficial"
     return f"""<article class="destaque">
   <a class="ico" href="{raiz}a/{app['slug']}.html" tabindex="-1" aria-hidden="true">{icone_app(app, raiz)}</a>
   <div class="corpo">
@@ -363,10 +400,13 @@ def grade_apps(apps: list[dict], raiz: str, categorias: dict) -> str:
 
 def cta_baixar(app: dict, classe: str = "btn btn-baixar btn-grande") -> str:
     url = url_app(app)
-    rotulo = (
-        "Baixar direto do fabricante" if eh_direto(app)
-        else "Abrir página oficial de download"
-    )
+    if eh_direto(app):
+        rotulo = "Baixar direto do fabricante"
+    else:
+        rotulo = {"play": "Abrir na Play Store",
+                  "appstore": "Abrir na App Store",
+                  "fdroid": "Baixar no F-Droid"}.get(loja_do_link(url),
+                                                     "Abrir página oficial de download")
     icone = ICONES["download"]
     return (
         f'<a class="{classe}" href="{esc(url)}" target="_blank" rel="noopener" '
@@ -378,9 +418,9 @@ def cta_baixar(app: dict, classe: str = "btn btn-baixar btn-grande") -> str:
 # páginas
 # --------------------------------------------------------------------------- #
 def pagina_index(apps, categorias, contagem, atualizado) -> str:
-    destaques = [a for a in apps if a.get("destaque")][:8]
+    destaques = [a for a in apps if a.get("destaque")][:10]
     if len(destaques) < 6:
-        destaques = apps[:8]
+        destaques = apps[:10]
     cards_dest = "\n".join(
         card_destaque(a, "", categorias[a["categoria"]]["curto"]) for a in destaques
     )
@@ -458,6 +498,11 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
         ("Faltou um app. Como sugiro?",
          "Manda pela página de contato com o nome do programa e o site oficial. Se ele cumprir os "
          "critérios, entra na próxima atualização do catálogo."),
+        ("Por que alguns apps de celular não têm link da Play Store?",
+         "Quando o desenvolvedor publica o APK no próprio site (F-Droid, GitHub ou página oficial), "
+         "o Baixa Certa prefere esse caminho — é a fonte primária e não passa por loja. Instalar "
+         "fora da loja exige liberar 'fontes desconhecidas' no Android, então confira o domínio na "
+         "barra do navegador antes de abrir o arquivo."),
         ("Este site é afiliado dos programas?",
          "Não. Não recebo comissão dos fabricantes listados aqui e não há anúncio no site. O Baixa "
          "Certa é um projeto da Penner Tech, que vive da loja de recomendações de hardware — "
@@ -538,7 +583,7 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
         <div>
           <span class="olho">Catálogo</span>
           <h2>Escolha pelo que você precisa fazer</h2>
-          <p>Dez categorias, do escritório ao 3D. Todas com a mesma regra: link oficial e versão gratuita.</p>
+          <p>Do escritório ao celular: {len(categorias)} categorias com a mesma regra — link oficial e versão gratuita.</p>
         </div>
       </div>
       <div class="grade-cats">
@@ -684,6 +729,13 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
           site oficial. Se ele cumprir os critérios, entra na próxima atualização do catálogo.</div>
         </details>
         <details>
+          <summary>Por que alguns apps de celular não têm link da Play Store?</summary>
+          <div class="resp">Quando o desenvolvedor publica o APK no próprio site (F-Droid, GitHub ou
+          página oficial), o Baixa Certa prefere esse caminho — é a fonte primária e não passa por
+          loja. Instalar fora da loja exige liberar "fontes desconhecidas" no Android, então confira
+          o domínio na barra do navegador antes de abrir o arquivo.</div>
+        </details>
+        <details>
           <summary>Este site é afiliado dos programas?</summary>
           <div class="resp">Não. Não recebo comissão dos fabricantes listados aqui e não há anúncio
           no site. O Baixa Certa é um projeto da Penner Tech, que vive da loja de recomendações de
@@ -722,9 +774,18 @@ def pagina_categoria(slug: str, cat: dict, apps: list[dict], categorias: dict, c
     }
     extra = ('<script type="application/ld+json">'
              + json.dumps(json_ld, ensure_ascii=False, separators=(",", ":")) + "</script>\n")
+    dica = ""
+    if slug == "celular":
+        dica = (
+            f'<div class="aviso">{ICONES["info"]}'
+            "<div><strong>Antes de instalar no Android:</strong> prefira o link da Play Store. "
+            "Quando o app vem como APK oficial (F-Droid, GitHub ou site do desenvolvedor), o "
+            "Android avisa sobre fontes desconhecidas — libere a instalação só para esse arquivo, "
+            "confira o domínio na barra do navegador e desative a permissão depois.</div></div>"
+        )
     return (
-        head(titulo, cat["descricao"] + f" {len(meus)} apps com link oficial.", canonical, "../", extra_head=extra)
-        + topo("../", "")
+        head(titulo, resumo(cat["descricao"] + f" {len(meus)} apps com link oficial."), canonical, "../", extra_head=extra)
+        + topo("../", "celular" if slug == "celular" else "")
         + f"""
 <main>
   <div class="wrap">
@@ -745,6 +806,7 @@ def pagina_categoria(slug: str, cat: dict, apps: list[dict], categorias: dict, c
       </div>
       {chips_categorias(categorias, contagem, '../', slug, modo='links')}
     </section>
+    {dica}
     <div style="height:8px"></div>
     {grade_apps(meus, '../', categorias)}
     <div class="vazio oculto" id="vazio">
@@ -799,8 +861,11 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
 <div><strong>Antes de instalar:</strong> {esc(app['observacoes'])}</div></div>"""
     tags = [
         '<span class="tag tag-ok">Grátis</span>',
-        '<span class="tag tag-link">Link direto</span>' if eh_direto(app)
-        else '<span class="tag tag-link">Página oficial</span>',
+        ('<span class="tag tag-link">Link direto</span>' if eh_direto(app) else
+         {'play': '<span class="tag tag-link">Play Store</span>',
+          'appstore': '<span class="tag tag-link">App Store</span>',
+          'fdroid': '<span class="tag tag-link">F-Droid</span>'}.get(
+             loja_do_link(url_app(app)), '<span class="tag tag-link">Página oficial</span>')),
         f'<span class="tag">{esc(cat["curto"])}</span>',
         f'<span class="tag">{esc(plataformas_curto(app.get("so") or []))}</span>',
     ]
@@ -810,9 +875,11 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
         espelho = (" — esse endereço pode redirecionar para um espelho oficial do próprio projeto")
     status = int(app.get("status_http") or 200)
     if 200 <= status < 400:
+        alvo = ("O clique baixa o instalador direto do servidor do fabricante."
+                if eh_direto(app) else
+                "O botão abre a página oficial onde o próprio fabricante entrega o download.")
         verificado = (
-            f"Link testado em {esc(data_br(app.get('url_verificado_em') or atualizado))}. "
-            "O arquivo vem do servidor do fabricante."
+            f"Link testado em {esc(data_br(app.get('url_verificado_em') or atualizado))}. {alvo}"
         )
     else:
         verificado = (
@@ -1122,6 +1189,13 @@ sugerir software adicional na instalação.</p>
 <h2>6. Manutenção ativa</h2>
 <p>Projeto abandonado, sem atualização de segurança, não entra. Se um app listado parar de receber
 atualizações ou mudar de licença, ele sai do catálogo.</p>
+
+<h2>7. Apps de celular (Android)</h2>
+<p>Para celular, o link preferido é o <strong>APK publicado pelo próprio desenvolvedor</strong>
+(site oficial, GitHub ou F-Droid); quando o app só existe na loja, usamos a página oficial na
+Google Play. Nenhum APK vem de APKPure, APKMirror, Uptodown ou espelho. A ficha do app avisa sobre
+anúncios, compras dentro do app, conta obrigatória e permissões sensíveis — e vale a mesma regra:
+grátis de verdade, com a condição escrita.</p>
 
 <h2>O que este site não faz</h2>
 <div class="card-bloco">

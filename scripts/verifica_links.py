@@ -118,7 +118,7 @@ def main(argv: list[str]) -> int:
             a["tipo_download"] = "pagina"
         elif ok and any(k in (r["tipo"] or "") for k in
                         ("octet-stream", "msdownload", "x-msi", "dmg", "zip",
-                         "x-apple-diskimage", "7z", "x-7z", "gzip", "x-tar")):
+                         "android", "x-apple-diskimage", "7z", "x-7z", "gzip", "x-tar")):
             a["tipo_download"] = "direto"
         if r["bytes"] and not a.get("tamanho_arquivo"):
             b = r["bytes"]
