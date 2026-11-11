@@ -84,7 +84,7 @@
       "url_download_final": "https://www.adobe.com/br/acrobat/pricing.html",
       "status_http": 403,
       "content_type": "text/html",
-      "tamanho_arquivo": "0 KB",
+      "tamanho_arquivo": null,
       "versao": null,
       "so": [
         "windows",
@@ -124,7 +124,7 @@
       "url_download_final": "https://www.adobe.com/br/products/photoshop-lightroom/plans.html",
       "status_http": 403,
       "content_type": "text/html",
-      "tamanho_arquivo": "0 KB",
+      "tamanho_arquivo": null,
       "versao": null,
       "so": [
         "windows",
@@ -164,7 +164,7 @@
       "url_download_final": "https://www.adobe.com/br/products/photoshop/plans.html",
       "status_http": 403,
       "content_type": "text/html",
-      "tamanho_arquivo": "0 KB",
+      "tamanho_arquivo": null,
       "versao": null,
       "so": [
         "windows",
@@ -204,7 +204,7 @@
       "url_download_final": "https://www.adobe.com/br/products/premiere/plans.html",
       "status_http": 403,
       "content_type": "text/html",
-      "tamanho_arquivo": "0 KB",
+      "tamanho_arquivo": null,
       "versao": null,
       "so": [
         "windows",
@@ -496,7 +496,7 @@
       "url_download_final": "https://www.autodesk.com/br/products/autocad/overview",
       "status_http": 403,
       "content_type": "text/html",
-      "tamanho_arquivo": "0 KB",
+      "tamanho_arquivo": null,
       "versao": null,
       "so": [
         "windows",

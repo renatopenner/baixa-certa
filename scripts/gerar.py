@@ -930,6 +930,21 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
     espelho = ""
     if app.get("url_download_final") and app["url_download_final"] != url_declarada:
         espelho = (" — esse endereço pode redirecionar para um espelho oficial do próprio projeto")
+    if eh_pago(app):
+        alternativas_titulo = "Outros programas pagos"
+        origem_titulo = "De onde vem o preço"
+        origem_texto = ("A página é do próprio fabricante: preço, planos e condições vêm direto de "
+                        "quem desenvolve o programa. Confira o domínio na barra do navegador.")
+    elif app["categoria"] == "celular":
+        alternativas_titulo = "Outros apps de celular"
+        origem_titulo = "De onde vem o download"
+        origem_texto = ("O link é do fabricante ou da loja oficial (Google Play / F-Droid). Confira "
+                        "o pacote e o domínio antes de instalar.")
+    else:
+        alternativas_titulo = "Alternativas gratuitas"
+        origem_titulo = "De onde vem o download"
+        origem_texto = ("O domínio é do fabricante, então o instalador não passou por nenhum "
+                        "intermediário. Confira o endereço na barra do navegador ao baixar.")
     status = int(app.get("status_http") or 200)
     if 200 <= status < 400:
         if eh_pago(app):
@@ -1029,19 +1044,17 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
 
       {obs}
 
-      <h2>De onde vem o download</h2>
+      <h2>{origem_titulo}</h2>
       <p>O botão desta página leva a este endereço:</p>
       <code class="url-dl">{esc(url_declarada)}</code>
-      <p>{('Esse endereço é do projeto e pode redirecionar para um espelho oficial dele. ' if espelho else '')}O
-      domínio é do fabricante, então o instalador não passou por nenhum intermediário. Confira o
-      endereço na barra do navegador ao baixar.</p>
+      <p>{('Esse endereço é do projeto e pode redirecionar para um espelho oficial dele. ' if espelho else '')}{origem_texto}</p>
     </article>
 
     {f'''<section style="padding:10px 0 60px">
       <div class="secao-topo">
         <div>
           <span class="olho">Da mesma categoria</span>
-          <h2>Alternativas gratuitas</h2>
+          <h2>{alternativas_titulo}</h2>
         </div>
         <a class="btn btn-ghost btn-mini" href="../categoria/{app['categoria']}.html">Ver categoria</a>
       </div>

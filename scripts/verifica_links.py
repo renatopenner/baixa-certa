@@ -120,7 +120,12 @@ def main(argv: list[str]) -> int:
                         ("octet-stream", "msdownload", "x-msi", "dmg", "zip",
                          "android", "x-apple-diskimage", "7z", "x-7z", "gzip", "x-tar")):
             a["tipo_download"] = "direto"
-        if r["bytes"] and not a.get("tamanho_arquivo"):
+        # tamanho só faz sentido para arquivo (e nunca a partir de range de 1 byte)
+        if a["tipo_download"] != "direto" or a.get("tamanho_arquivo") in ("0 KB", "0 MB"):
+            if not r["bytes"] or r["bytes"] <= 1024:
+                a["tamanho_arquivo"] = None if a["tipo_download"] != "direto" else a.get("tamanho_arquivo")
+        if (r["bytes"] and r["bytes"] > 1024 and a["tipo_download"] == "direto"
+                and not a.get("tamanho_arquivo")):
             b = r["bytes"]
             a["tamanho_arquivo"] = (f"{b / 1024 / 1024:.0f} MB" if b >= 1024 * 1024 else f"{b / 1024:.0f} KB")
         if a["tipo_download"] == "direto" and not a.get("tamanho_arquivo"):
