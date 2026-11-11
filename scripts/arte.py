@@ -121,7 +121,7 @@ def og_image() -> None:
     d.text((84, 378), "O link é do fabricante.", font=f_h1, fill=AZUL)
 
     d.text((84, 500),
-           "Apps gratuitos com download direto do site oficial — sem instalador falso.",
+           "Apps gratuitos e pagos: link oficial, preço na ficha — sem instalador falso.",
            font=f_sub, fill=CINZA)
     d.text((84, 552), "baixa.pennertech.com.br", font=f_pe, fill=AZUL)
     d.text((360, 552), "·  Penner Tech", font=f_pe, fill=CINZA)

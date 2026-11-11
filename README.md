@@ -4,8 +4,8 @@ Portal de aplicativos gratuitos com **download direto no site oficial do fabrica
 Projeto da [Penner Tech](https://loja.pennertech.com.br/) — função: `baixa.pennertech.com.br`.
 
 Sem anúncio, sem instalador empacotado, sem cadastro. O site não hospeda arquivo: cada botão leva
-ao servidor do próprio desenvolvedor. **113 apps em 11 categorias**, incluindo a aba **Celular**
-(Android), com APK oficial ou página na Google Play.
+ao servidor do próprio desenvolvedor. **129 apps em 12 categorias**, incluindo a aba **Celular**
+(Android, APK oficial ou Google Play) e a aba **Pagos** (preço e link de compra do fabricante).
 
 ## Como o site é feito
 
@@ -13,13 +13,14 @@ Site **estático** (HTML/CSS/JS puro), hospedado no GitHub Pages. Nada de banco 
 as páginas são geradas a partir de dois arquivos de dados.
 
 ```
-dados/categorias.json      # as 11 categorias (nome, descrição, ícone)
-dados/apps.json            # o catálogo (versão, links, licença, textos)
+dados/categorias.json      # as 12 categorias (nome, descrição, ícone)
+dados/apps.json            # o catálogo (versão, links, licença, preço, textos)
 pesquisa/links-a.json      # fonte da pesquisa (grupo A — escritório/mídia/imagem/dev)
 pesquisa/links-b.json      # fonte da pesquisa (grupo B — utilidades/segurança/internet)
 pesquisa/links-c.json      # jogos verificados manualmente (substituem o Drift Hunters)
 pesquisa/links-d.json      # desktop do dia a dia (WinRAR, LocalSend, VirtualBox, Calibre…)
 pesquisa/links-e.json      # aba Celular (Android — APK oficial ou Google Play)
+pesquisa/links-f.json      # aba Pagos (preço oficial conferido no site do fabricante)
 scripts/consolida.py       # pesquisa -> dados/apps.json (valida e completa)
 scripts/verifica_links.py  # checa cada link com curl e atualiza apps.json
 scripts/icones.py          # baixa os ícones de marca (Simple Icons) para img/apps/
@@ -53,13 +54,14 @@ O GitHub Pages republica sozinho em ~1 minuto.
 
 `slug`, `nome`, `fabricante`, `categoria`, `site_oficial`, `url_download`, `tipo_download`
 (`direto` ou `pagina`), `resumo` (60–210 caracteres), `descricao` (180+), `destaques` (2–4),
-`licenca`, `gratis`, `requisitos`, `so`.
+`licenca`, `requisitos`, `so` e — para app grátis — `gratis`.
 
 `so` aceita `windows`, `mac`, `linux`, `android`, `ios`, `web`. App da categoria `celular` precisa
-ter `android`.
+ter `android`. App da categoria `pagos` precisa de `pago: true` e `preco` (texto do plano de entrada,
+conferido na página oficial, com a data em `preco_obs`).
 
-Opcionais: `versao`, `tamanho_arquivo`, `arquitetura`, `observacoes`, `icone` (slug do
-[Simple Icons](https://simpleicons.org)), `destaque` (aparece na home).
+Opcionais: `versao`, `tamanho_arquivo`, `arquitetura`, `observacoes`, `pago`, `preco`, `preco_obs`,
+`icone` (slug do [Simple Icons](https://simpleicons.org)), `destaque` (aparece na home).
 
 ## Regras editoriais
 
@@ -71,8 +73,10 @@ Opcionais: `versao`, `tamanho_arquivo`, `arquitetura`, `observacoes`, `icone` (s
 4. Grátis de verdade: open source, freeware sem prazo ou versão gratuita com a condição escrita
    na ficha. Trial não entra — **exceção registrada: WinRAR**, que é avaliação sem prazo e continua
    funcionando com aviso (a ficha explica).
-5. Instalador com ofertas/telemetria tem aviso na página do app (`observacoes`).
-6. Nunca excluir app sem antes checar: se o projeto morreu, sai do catálogo; se só mudou de
+5. Pago entra na categoria **Pagos**, com preço oficial conferido e data. Nunca revendedor de
+   licença OEM/"vitalícia", marketplace ou crack.
+6. Instalador com ofertas/telemetria tem aviso na página do app (`observacoes`).
+7. Nunca excluir app sem antes checar: se o projeto morreu, sai do catálogo; se só mudou de
    versão, atualiza.
 
 ## Deploy
@@ -95,4 +99,9 @@ Domínio final: ver `DOMINIO.md`.
 - **FileZilla** tem aviso de ofertas no instalador; **CrystalDiskMark** e **CrystalDiskInfo** usam
   redirecionador com ads; **Inkscape** e **WhatsApp** bloqueiam verificação automática (403/400) e
   isso está escrito na ficha do app.
+- **Affinity Photo e Affinity Designer saíram da categoria Pagos**: a Canva tornou o Affinity
+  gratuito em outubro de 2025. Agora entram como gratuitos, com aviso na ficha.
+- **Pagos**: preço conferido na página oficial do fabricante em 11/11/2026 (Adobe, Autodesk,
+  Microsoft, Corel, SketchUp, IDM, Filmora, Camtasia, NordVPN, Malwarebytes, Revo). Adobe e Autodesk
+  bloqueiam `curl`, então o status é 403 de propósito e o preço veio da página renderizada.
 - **PowerShell 7** entra pelo `.zip` oficial (a versão 7.7.0 não publicou MSI).

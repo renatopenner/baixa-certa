@@ -64,5 +64,11 @@
     "curto": "Celular",
     "descricao": "Os aplicativos gratuitos que valem instalar no celular: mensageiros, privacidade, mídia, backup e utilitários — pela loja oficial ou pelo site do desenvolvedor.",
     "icone": "phone"
+  },
+  "pagos": {
+    "nome": "Pagos e assinaturas",
+    "curto": "Pagos",
+    "descricao": "Os programas pagos que dominam o mercado: quanto custa, como é cobrado e onde comprar direto do fabricante — sem licença pirata ou revendedor duvidoso.",
+    "icone": "money"
   }
 }

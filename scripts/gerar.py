@@ -78,6 +78,11 @@ ICONES = {
     "linux": _svg('<rect x="5" y="9" width="14" height="11" rx="4"/>'
                   '<path d="M9 3.8c0-1.1 1.3-1.9 3-1.9s3 .8 3 1.9c0 1.4-.8 2.1-.8 3.2h-4.4c0-1.1-.8-1.8-.8-3.2z"/>'
                   '<path d="M8 14h.01M16 14h.01"/><path d="M9 20v1.5M15 20v1.5"/>'),
+    "phone": _svg('<rect x="6" y="2" width="12" height="20" rx="3"/>'
+                  '<path d="M10.5 5h3"/><path d="M12 18.5h.01"/>'),
+    "money": _svg('<rect x="2" y="6" width="20" height="12" rx="2"/>'
+                  '<circle cx="12" cy="12" r="2.5"/>'
+                  '<path d="M6 12h.01M18 12h.01"/>'),
 }
 
 # --------------------------------------------------------------------------- #
@@ -137,6 +142,25 @@ def url_app(app: dict) -> str:
 
 def eh_direto(app: dict) -> bool:
     return (app.get("tipo_download") or "pagina").lower() == "direto"
+
+
+def eh_pago(app: dict) -> bool:
+    return bool(app.get("pago"))
+
+
+def selo_preco(app: dict) -> str:
+    """Tag de licença: Grátis ou Pago."""
+    if eh_pago(app):
+        return '<span class="tag tag-pago">Pago</span>'
+    return '<span class="tag tag-ok">Grátis</span>'
+
+
+def texto_preco(app: dict) -> str:
+    """Linha de preço/condição exibida no card e na ficha."""
+    if eh_pago(app):
+        preco = app.get("preco") or "preço no site oficial"
+        return f"<span class=\"app-preco\">{esc(preco)}</span>"
+    return ""
 
 
 def iniciais(nome: str) -> str:
@@ -240,6 +264,7 @@ def topo(raiz: str, ativo: str = "") -> str:
       <a href="{raiz}index.html"{cls('inicio')}>Início</a>
       <a href="{raiz}index.html#categorias">Categorias</a>
       <a href="{raiz}categoria/celular.html"{cls('celular')}>Celular</a>
+      <a href="{raiz}categoria/pagos.html"{cls('pagos')}>Pagos</a>
       <a href="{raiz}como-verificamos.html"{cls('verificamos')}>Como verificamos</a>
       <a href="{raiz}sobre.html"{cls('sobre')}>Sobre</a>
       <a href="{raiz}contato.html"{cls('contato')}>Contato</a>
@@ -262,8 +287,8 @@ def rodape(raiz: str, apps: list[dict], categorias: dict, atualizado: str) -> st
           {logo_marca('rodape')}
           <span class="marca-txt"><b>BAIXA</b><em>CERTA</em></span>
         </a>
-        <p class="desc">Os {len(apps)} aplicativos gratuitos que eu instalo e recomendo — com link
-        direto para o site oficial do fabricante. Um projeto
+        <p class="desc">Gratuitos e pagos: os {len(apps)} aplicativos que eu instalo e recomendo, com
+        link direto para o site oficial do fabricante. Um projeto
         <a href="https://loja.pennertech.com.br/" target="_blank" rel="noopener">Penner Tech</a>.</p>
       </div>
       <div>
@@ -318,6 +343,10 @@ def card_app(app: dict, raiz: str, categoria_nome: str) -> str:
     fab = app["fabricante"]
     if app["categoria"] == "celular":
         fab = f"{fab} · {plataformas_curto(app.get('so') or [])}"
+    if eh_pago(app):
+        gratis_tag = selo_preco(app)
+        tipo_tag = '<span class="tag tag-link">Site oficial</span>'
+        rotulo = "Ver preço"
     busca = f"{app['nome']} {app['fabricante']} {categoria_nome} {app['resumo']} {' '.join(app.get('destaques', []))}"
     return f"""<article class="app" data-cat="{esc(app['categoria'])}" data-busca="{esc(busca)}">
   <div class="app-cab">
@@ -330,9 +359,10 @@ def card_app(app: dict, raiz: str, categoria_nome: str) -> str:
     </div>
   </div>
   <p class="app-res">{esc(app['resumo'])}</p>
+  {texto_preco(app)}
   <div class="app-pe">
     <div class="app-tags">{gratis_tag}{tipo_tag}<span class="tag">{esc(categoria_nome)}</span></div>
-    <a class="btn btn-baixar" href="{esc(url)}" target="_blank" rel="noopener" title="{esc(app['nome'])} — download oficial">{rotulo}</a>
+    <a class="btn btn-baixar" href="{esc(url)}" target="_blank" rel="noopener" title="{esc(app['nome'])} — site oficial">{rotulo}</a>
   </div>
 </article>"""
 
@@ -344,15 +374,19 @@ def card_destaque(app: dict, raiz: str, categoria_nome: str) -> str:
         rotulo = "Baixar agora"
     elif loja in ("play", "appstore"):
         rotulo = "Abrir na loja"
+    elif eh_pago(app):
+        rotulo = "Ver preço"
     else:
         rotulo = "Ver no site oficial"
+    etiqueta = selo_preco(app)
     return f"""<article class="destaque">
   <a class="ico" href="{raiz}a/{app['slug']}.html" tabindex="-1" aria-hidden="true">{icone_app(app, raiz)}</a>
   <div class="corpo">
     <h3><a href="{raiz}a/{app['slug']}.html" style="color:inherit">{esc(app['nome'])}</a></h3>
     <p class="res">{esc(app['resumo'])}</p>
+    {texto_preco(app)}
     <div class="pe">
-      <span class="tag tag-ok">Grátis</span>
+      {etiqueta}
       <span class="tag">{esc(categoria_nome)}</span>
       <a class="btn btn-baixar" href="{esc(url)}" target="_blank" rel="noopener">{rotulo}</a>
     </div>
@@ -400,14 +434,16 @@ def grade_apps(apps: list[dict], raiz: str, categorias: dict) -> str:
 
 def cta_baixar(app: dict, classe: str = "btn btn-baixar btn-grande") -> str:
     url = url_app(app)
-    if eh_direto(app):
+    if eh_pago(app):
+        rotulo = "Ver preço no site oficial"
+    elif eh_direto(app):
         rotulo = "Baixar direto do fabricante"
     else:
         rotulo = {"play": "Abrir na Play Store",
                   "appstore": "Abrir na App Store",
                   "fdroid": "Baixar no F-Droid"}.get(loja_do_link(url),
                                                      "Abrir página oficial de download")
-    icone = ICONES["download"]
+    icone = ICONES["download"] if not eh_pago(app) else ICONES["money"]
     return (
         f'<a class="{classe}" href="{esc(url)}" target="_blank" rel="noopener" '
         f'data-app="{esc(app["slug"])}">{icone}<span>{rotulo}</span></a>'
@@ -421,6 +457,8 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
     destaques = [a for a in apps if a.get("destaque")][:10]
     if len(destaques) < 6:
         destaques = apps[:10]
+    n_pagos = sum(1 for a in apps if a.get("pago"))
+    n_gratis = len(apps) - n_pagos
     cards_dest = "\n".join(
         card_destaque(a, "", categorias[a["categoria"]]["curto"]) for a in destaques
     )
@@ -435,7 +473,7 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
     topo_selos = [
         f"<li>{ICONES['escudo']}Só link do site oficial</li>",
         f"<li>{ICONES['cadeado']}Sem instalador empacotado</li>",
-        f"<li>{ICONES['check']}Grátis de verdade, sem trial</li>",
+        f"<li>{ICONES['check']}Preço na ficha, sem pegadinha</li>",
         f"<li>{ICONES['relogio']}Links checados em {esc(data_br(atualizado))}</li>",
     ]
     json_ld = {
@@ -465,7 +503,7 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
             },
             {
                 "@type": "ItemList",
-                "name": "Aplicativos gratuitos recomendados",
+                "name": "Aplicativos recomendados",
                 "numberOfItems": len(apps),
                 "itemListElement": [
                     {
@@ -480,10 +518,15 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
         ],
     }
     faq_pares = [
-        ("Os apps daqui são todos gratuitos mesmo?",
-         "Sim. Entram apenas programas com versão gratuita de uso real — open source ou freeware "
-         "sem prazo. Quando existe limite (por exemplo, grátis para uso pessoal), isso aparece na "
-         "ficha do app antes do botão de download."),
+        ("A maioria é grátis? E os pagos?",
+         f"São {n_gratis} gratuitos e {n_pagos} pagos. Entram gratuitos de uso real (open source "
+         "ou freeware sem prazo) e, na categoria Pagos, os programas que dominam o mercado — com "
+         "preço, modelo de cobrança e link de compra do fabricante na ficha. O que tem limite "
+         "aparece escrito antes do botão."),
+        ("Por que tem aplicativo pago num site de downloads grátis?",
+         "Porque muita gente procura Photoshop, Office ou AutoCAD e cai em site de licença pirata. "
+         "Aqui esses programas ficam numa categoria separada, com preço oficial e o caminho certo "
+         "para comprar — sem revendedor duvidoso, sem crack."),
         ("Por que o botão às vezes abre o site do fabricante em vez do arquivo?",
          "Alguns fabricantes não publicam link direto estável: exigem formulário (caso do DaVinci "
          "Resolve) ou entregam o instalador por uma página dinâmica. Nesses casos o botão leva à "
@@ -537,9 +580,9 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
     <div class="wrap">
       <p class="kicker"><span class="ponto"></span>Download do site oficial, sem enrolação</p>
       <h1>Baixe <em>certo</em>.<br>O link é do fabricante.</h1>
-      <p class="lead">Os {len(apps)} aplicativos gratuitos que eu instalo e recomendo, com
-      <strong>link direto para o download oficial</strong>. Nada de instalador empacotado,
-      cadastro obrigatório ou botão falso de "Baixar aqui".</p>
+      <p class="lead">São {n_gratis} apps gratuitos e {n_pagos} pagos — todos com
+      <strong>link direto para o site oficial do fabricante</strong>. Nada de instalador
+      empacotado, cadastro obrigatório, preço escondido ou botão falso de "Baixar aqui".</p>
       <form class="busca" role="search" onsubmit="return false">
         <label class="busca-in">
           {ICONES['busca']}
@@ -675,9 +718,9 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
         </article>
         <article class="conf">
           <span class="ico">{ICONES['check']}</span>
-          <h3>Não chama trial de grátis</h3>
-          <p>Se é versão gratuita com limite, está escrito na ficha. Se é open source, tem a
-          licença. Se é pago, não entra.</p>
+          <h3>Não esconde o preço</h3>
+          <p>Se é grátis com limite, está escrito na ficha. Se é open source, tem a licença. Se é
+          pago, aparece o preço e o modelo de cobrança antes do botão.</p>
         </article>
         <article class="conf">
           <span class="ico">{ICONES['relogio']}</span>
@@ -699,10 +742,17 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
       </div>
       <div class="faq">
         <details>
-          <summary>Os apps daqui são todos gratuitos mesmo?</summary>
-          <div class="resp">Sim. Entram apenas programas com versão gratuita de uso real — open source
-          ou freeware sem prazo. Quando existe limite (por exemplo, "grátis para uso pessoal"), isso
-          aparece na ficha do app antes do botão de download.</div>
+          <summary>A maioria é grátis? E os pagos?</summary>
+          <div class="resp">São {n_gratis} gratuitos e {n_pagos} pagos. Entram gratuitos de uso real
+          (open source ou freeware sem prazo) e, na categoria <a href="categoria/pagos.html">Pagos</a>,
+          os programas que dominam o mercado — com preço, modelo de cobrança e link de compra do
+          fabricante na ficha. O que tem limite aparece escrito antes do botão.</div>
+        </details>
+        <details>
+          <summary>Por que tem aplicativo pago num site de downloads grátis?</summary>
+          <div class="resp">Porque muita gente procura Photoshop, Office ou AutoCAD e cai em site de
+          licença pirata. Aqui esses programas ficam numa categoria separada, com preço oficial e o
+          caminho certo para comprar — sem revendedor duvidoso, sem crack.</div>
         </details>
         <details>
           <summary>Por que o botão às vezes abre o site do fabricante em vez do arquivo?</summary>
@@ -785,7 +835,7 @@ def pagina_categoria(slug: str, cat: dict, apps: list[dict], categorias: dict, c
         )
     return (
         head(titulo, resumo(cat["descricao"] + f" {len(meus)} apps com link oficial."), canonical, "../", extra_head=extra)
-        + topo("../", "celular" if slug == "celular" else "")
+        + topo("../", slug if slug in ("celular", "pagos") else "")
         + f"""
 <main>
   <div class="wrap">
@@ -831,8 +881,12 @@ def pagina_categoria(slug: str, cat: dict, apps: list[dict], categorias: dict, c
 def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -> str:
     cat = categorias[app["categoria"]]
     canonical = f"{URL_BASE}/a/{app['slug']}.html"
-    titulo = f"{app['nome']} — download grátis e oficial | {SITE}"
-    descricao = app["resumo"][:157]
+    if eh_pago(app):
+        titulo = f"{app['nome']} — preço e onde comprar oficialmente | {SITE}"
+        descricao = resumo(app["resumo"] + (f" Preço: {app['preco']}." if app.get("preco") else ""))
+    else:
+        titulo = f"{app['nome']} — download grátis e oficial | {SITE}"
+        descricao = app["resumo"][:157]
     plataformas_txt = plataformas(app.get("so") or [])
     campos = [
         ("Versão", app.get("versao")),
@@ -840,7 +894,8 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
         ("Licença", app.get("licenca")),
         ("Sistema", plataformas_txt),
         ("Arquitetura", app.get("arquitetura")),
-        ("Gratuito", app.get("gratis")),
+        ("Preço", app.get("preco") if eh_pago(app) else None),
+        ("Gratuito", app.get("gratis") if not eh_pago(app) else None),
     ]
     dl = "".join(
         f"<dt>{esc(k)}</dt><dd>{esc(v)}</dd>" for k, v in campos if v
@@ -857,15 +912,17 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
     )
     obs = ""
     if app.get("observacoes"):
+        titulo_obs = "Antes de comprar" if eh_pago(app) else "Antes de instalar"
         obs = f"""<div class="aviso">{ICONES['info']}
-<div><strong>Antes de instalar:</strong> {esc(app['observacoes'])}</div></div>"""
+<div><strong>{titulo_obs}:</strong> {esc(app['observacoes'])}</div></div>"""
     tags = [
-        '<span class="tag tag-ok">Grátis</span>',
-        ('<span class="tag tag-link">Link direto</span>' if eh_direto(app) else
-         {'play': '<span class="tag tag-link">Play Store</span>',
-          'appstore': '<span class="tag tag-link">App Store</span>',
-          'fdroid': '<span class="tag tag-link">F-Droid</span>'}.get(
-             loja_do_link(url_app(app)), '<span class="tag tag-link">Página oficial</span>')),
+        selo_preco(app),
+        ('<span class="tag tag-link">Site oficial</span>' if eh_pago(app) else
+         ('<span class="tag tag-link">Link direto</span>' if eh_direto(app) else
+          {'play': '<span class="tag tag-link">Play Store</span>',
+           'appstore': '<span class="tag tag-link">App Store</span>',
+           'fdroid': '<span class="tag tag-link">F-Droid</span>'}.get(
+              loja_do_link(url_app(app)), '<span class="tag tag-link">Página oficial</span>'))),
         f'<span class="tag">{esc(cat["curto"])}</span>',
         f'<span class="tag">{esc(plataformas_curto(app.get("so") or []))}</span>',
     ]
@@ -875,15 +932,19 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
         espelho = (" — esse endereço pode redirecionar para um espelho oficial do próprio projeto")
     status = int(app.get("status_http") or 200)
     if 200 <= status < 400:
-        alvo = ("O clique baixa o instalador direto do servidor do fabricante."
-                if eh_direto(app) else
-                "O botão abre a página oficial onde o próprio fabricante entrega o download.")
+        if eh_pago(app):
+            alvo = ("O botão abre a página oficial do fabricante, onde os planos e preços são "
+                    "atualizados — sem revendedor no meio.")
+        elif eh_direto(app):
+            alvo = "O clique baixa o instalador direto do servidor do fabricante."
+        else:
+            alvo = "O botão abre a página oficial onde o próprio fabricante entrega o download."
         verificado = (
             f"Link testado em {esc(data_br(app.get('url_verificado_em') or atualizado))}. {alvo}"
         )
     else:
         verificado = (
-            "O site oficial bloqueia checagem automática, então você baixa direto do endereço "
+            "O site oficial bloqueia checagem automática, então o botão vai direto ao endereço "
             "publicado pelo fabricante — confira o domínio na barra do navegador."
         )
     json_ld = {
@@ -893,7 +954,7 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
                 "@type": "SoftwareApplication",
                 "name": app["nome"],
                 "applicationCategory": cat["nome"],
-                "applicationSubCategory": "Software gratuito",
+                "applicationSubCategory": ("Software pago" if eh_pago(app) else "Software gratuito"),
                 "operatingSystem": plataformas(app.get("so") or []),
                 "softwareVersion": app.get("versao") or None,
                 "softwareRequirements": app.get("requisitos") or None,
@@ -902,7 +963,12 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
                 "url": canonical,
                 "description": app["descricao"],
                 "publisher": {"@type": "Organization", "name": app["fabricante"]},
-                "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
+                "isAccessibleForFree": not eh_pago(app),
+                "offers": ({"@type": "Offer", "priceCurrency": "BRL",
+                            "description": app.get("preco") or "preço no site oficial",
+                            "url": url_app(app)}
+                           if eh_pago(app) else
+                           {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}),
                 "sameAs": app.get("site_oficial") or None,
             },
             {
@@ -1039,10 +1105,16 @@ def main(argv: list[str]) -> int:
     erros = []
     slugs = set()
     for a in apps:
-        for campo in ("slug", "nome", "fabricante", "categoria", "site_oficial", "url_download",
-                      "tipo_download", "resumo", "descricao", "destaques", "licenca", "gratis"):
+        obrigatorios = ("slug", "nome", "fabricante", "categoria", "site_oficial", "url_download",
+                        "tipo_download", "resumo", "descricao", "destaques", "licenca")
+        for campo in obrigatorios:
             if not a.get(campo):
                 erros.append(f"{a.get('slug', '?')}: campo obrigatório vazio -> {campo}")
+        if a.get("pago"):
+            if not a.get("preco"):
+                erros.append(f"{a['slug']}: app pago sem preço")
+        elif not a.get("gratis"):
+            erros.append(f"{a['slug']}: app gratuito sem campo gratis")
         if a.get("categoria") not in categorias:
             erros.append(f"{a['slug']}: categoria inexistente -> {a.get('categoria')}")
         if a["slug"] in slugs:
@@ -1115,9 +1187,10 @@ def gerais(apps, categorias) -> dict:
     """Conteúdo das páginas institucionais."""
     total = len(apps)
     sobre = f"""
-<p>O Baixa Certa é um catálogo de aplicativos gratuitos feito por quem instala software o dia
-inteiro. A ideia é simples: <strong>um lugar só com os programas que valem a pena, apontando para o
-download no site do próprio fabricante</strong>. Hoje são {total} apps, revisados um por um.</p>
+<p>O Baixa Certa é um catálogo de aplicativos feito por quem instala software o dia inteiro —
+<strong>gratuitos e pagos</strong>. A ideia é simples: <strong>um lugar só com os programas que valem
+a pena, apontando para o download (ou a página de preço) no site do próprio fabricante</strong>.
+Hoje são {total} apps, revisados um por um.</p>
 
 <h2>Por que mais um portal de downloads?</h2>
 <p>Porque a experiência de baixar programa no Brasil virou um labirinto. Os primeiros resultados da
@@ -1139,8 +1212,9 @@ loja de recomendações de hardware paga a conta, e o portal fica independente.<
 
 <h2>O que você não vai encontrar aqui</h2>
 <ul>
-  <li>Versão "portátil" modificada, crack, ativador ou serial — nada disso.</li>
+  <li>Versão "portátil" modificada, crack, ativador, serial ou licença OEM de mercado paralelo.</li>
   <li>Software pago disfarçado de grátis, trial com data curta ou demo limitada.</li>
+  <li>Preço escondido: se é pago, o preço e o modelo de cobrança aparecem na ficha.</li>
   <li>Instalador próprio com programas extras marcados por padrão.</li>
   <li>Link de espelho ou agregador: o botão sempre vai ao domínio do fabricante.</li>
   <li>Cadastro, newsletter obrigatória, contagem regressiva ou botão piscando.</li>
@@ -1176,10 +1250,12 @@ espelho.</p>
 O catálogo é regenerado a partir de uma planilha de dados, então essas informações ficam sempre
 visíveis e datadas.</p>
 
-<h2>4. Grátis de verdade</h2>
-<p>Entra app com versão gratuita de uso real: open source ou freeware sem prazo. Programas com
+<h2>4. Grátis de verdade — e pago com preço claro</h2>
+<p>Entra app gratuito com versão de uso real: open source ou freeware sem prazo. Programas com
 limite aparecem com a condição escrita na ficha ("grátis para uso pessoal", "versão gratuita com
-recursos limitados"). Trial de 30 dias não entra.</p>
+recursos limitados"). Trial de 30 dias não entra. Os programas pagos ficam na categoria
+<strong>Pagos</strong>, com o preço do plano de entrada conferido na página oficial do fabricante e
+a data da conferência — nunca com preço inventado ou "promoção" de revendedor.</p>
 
 <h2>5. Reputação do instalador</h2>
 <p>Se o instalador oficial oferece programas extras, telemetria agressiva ou conta obrigatória, isso
@@ -1196,6 +1272,13 @@ atualizações ou mudar de licença, ele sai do catálogo.</p>
 Google Play. Nenhum APK vem de APKPure, APKMirror, Uptodown ou espelho. A ficha do app avisa sobre
 anúncios, compras dentro do app, conta obrigatória e permissões sensíveis — e vale a mesma regra:
 grátis de verdade, com a condição escrita.</p>
+
+<h2>8. Apps pagos</h2>
+<p>Para os programas pagos, o que a ficha entrega é <strong>preço, modelo de cobrança e link de
+compra do fabricante</strong>. O preço é conferido na página oficial de planos (Brasil quando
+existe), com data, e a ficha diz o que o plano gratuito — se houver — não cobre. O Baixa Certa não
+vende licença, não recebe comissão e não indica revendedor de licença OEM ou "vitalícia": o botão
+leva ao site oficial do próprio fabricante.</p>
 
 <h2>O que este site não faz</h2>
 <div class="card-bloco">
@@ -1228,7 +1311,8 @@ suspeito: é por aqui.</p>
 
 <h2>Antes de mandar</h2>
 <ul>
-  <li><strong>Sugestão de app:</strong> mande o nome e o link do site oficial. Se for pago, não entra.</li>
+  <li><strong>Sugestão de app:</strong> mande o nome e o link do site oficial. Grátis ou pago, pode
+  entrar — se for pago, avise que é para a categoria Pagos.</li>
   <li><strong>Link quebrado:</strong> diga o app e o que aconteceu (erro, página errada, versão antiga).</li>
   <li><strong>Problema com instalador:</strong> mande o nome do arquivo baixado e de onde ele veio.</li>
 </ul>

@@ -24,6 +24,7 @@ FONTES = [
     RAIZ / "pesquisa" / "links-c.json",
     RAIZ / "pesquisa" / "links-d.json",
     RAIZ / "pesquisa" / "links-e.json",
+    RAIZ / "pesquisa" / "links-f.json",
 ]
 CATEGORIAS = json.loads((DADOS / "categorias.json").read_text(encoding="utf-8"))
 
@@ -134,6 +135,23 @@ ICONES = {
     "nextcloud-android": "nextcloud",
     "obsidian-android": "obsidian",
     "termux": "termux",
+    # grupo F — apps pagos
+    "microsoft-365": "microsoftoffice",
+    "adobe-photoshop": "adobephotoshop",
+    "adobe-lightroom": "adobelightroom",
+    "adobe-acrobat-pro": "adobeacrobatreader",
+    "adobe-premiere-pro": "adobepremierepro",
+    "affinity-photo": "affinityphoto",
+    "affinity-designer": "affinitydesigner",
+    "coreldraw": "coreldraw",
+    "autocad": "autodesk",
+    "sketchup-pro": "sketchup",
+    "idm": "internetdownloadmanager",
+    "filmora": "wondersharefilmora",
+    "camtasia": "camtasia",
+    "nordvpn": "nordvpn",
+    "malwarebytes-premium": "malwarebytes",
+    "revo-uninstaller-pro": "revouninstaller",
 }
 
 DESTAQUES = [
@@ -167,6 +185,11 @@ ESPERADOS = {
     "tailscale-android", "jellyfin-android", "kodi-android", "ankidroid", "open-camera",
     "material-files", "waze", "joplin-android", "nextcloud-android", "obsidian-android",
     "termux",
+    # grupo F (apps pagos)
+    "microsoft-365", "adobe-photoshop", "adobe-lightroom", "adobe-acrobat-pro",
+    "adobe-premiere-pro", "affinity-photo", "affinity-designer", "coreldraw", "autocad",
+    "sketchup-pro", "idm", "filmora", "camtasia", "nordvpn", "malwarebytes-premium",
+    "revo-uninstaller-pro",
 }
 
 CAMPOS_OBRIG = ("slug", "nome", "fabricante", "categoria", "site_oficial", "url_download",
@@ -186,8 +209,14 @@ def limpa(txt):
 def valida(app: dict, erros: list[str]) -> None:
     slug = app.get("slug", "?")
     for campo in CAMPOS_OBRIG:
+        if campo == "gratis" and app.get("pago"):
+            continue
         if app.get(campo) in (None, "", [], {}):
             erros.append(f"{slug}: campo obrigatório ausente -> {campo}")
+    if app.get("pago") and not app.get("preco"):
+        erros.append(f"{slug}: app pago precisa de 'preco'")
+    if app.get("categoria") == "pagos" and not app.get("pago"):
+        erros.append(f"{slug}: categoria pagos exige pago=true")
     if app.get("categoria") not in CATEGORIAS:
         erros.append(f"{slug}: categoria inválida -> {app.get('categoria')}")
     if app.get("tipo_download") not in ("direto", "pagina"):
@@ -232,6 +261,9 @@ def main() -> int:
             app["so"] = [s for s in app["so"]
                          if s in ("windows", "mac", "linux", "android", "ios", "web")] or ["windows"]
             app["destaques"] = [limpa(d) for d in (app.get("destaques") or []) if limpa(d)][:4]
+            app["pago"] = bool(app.get("pago"))
+            if app["pago"]:
+                app["gratis"] = None
             app["icone"] = ICONES.get(app["slug"])
             app["destaque"] = app["slug"] in DESTAQUES
             app["url_verificado_em"] = app.get("url_verificado_em") or dados.get("verificado_em") or date.today().isoformat()
