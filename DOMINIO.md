@@ -1,6 +1,9 @@
 # Domínio — baixa.pennertech.com.br
 
-**Status:** código pronto; falta apenas o registro DNS no Registro.br (passo manual, 2 minutos).
+**Status 11/11/2026:** site publicado e no ar em `https://pennertech.com.br/baixa-certa/`
+(GitHub Pages do repo `renatopenner/baixa-certa`). Falta apenas o registro DNS do subdomínio,
+que é um passo manual no Registro.br — depois disso o endereço final `https://baixa.pennertech.com.br/`
+passa a valer com HTTPS.
 
 ## Situação
 
