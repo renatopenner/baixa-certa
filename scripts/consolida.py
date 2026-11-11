@@ -18,8 +18,18 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 DADOS = RAIZ / "dados"
-FONTES = [RAIZ / "pesquisa" / "links-a.json", RAIZ / "pesquisa" / "links-b.json"]
+FONTES = [
+    RAIZ / "pesquisa" / "links-a.json",
+    RAIZ / "pesquisa" / "links-b.json",
+    RAIZ / "pesquisa" / "links-c.json",
+]
 CATEGORIAS = json.loads((DADOS / "categorias.json").read_text(encoding="utf-8"))
+
+# apps descartados da pesquisa, com o motivo (não entram no catálogo)
+DESCARTADOS = {
+    "drift-hunters": "sem site oficial do desenvolvedor — só portais e espelhos, o que fere a regra "
+                     "de link oficial; candidatos substitutos verificados em links-c.json",
+}
 
 # slug do site -> slug do ícone no Simple Icons (None = monograma)
 ICONES = {
@@ -70,7 +80,9 @@ ICONES = {
     "ollama": "ollama",
     "epic-games": "epicgames",
     "steam": "steam",
-    "krita": "krita",
+    "0ad": "0ad",
+    "supertuxkart": "supertuxkart",
+    "openttd": "openttd",
 }
 
 DESTAQUES = [
@@ -90,7 +102,8 @@ ESPERADOS = {
     "protonvpn", "bleachbit", "tor-browser", "brave", "firefox", "telegram", "discord",
     "whatsapp", "signal", "thunderbird", "qbittorrent", "filezilla", "putty", "freefilesync",
     "syncthing", "duplicati", "ollama", "lmstudio", "jan", "epic-games", "steam",
-    "drift-hunters",
+    # grupo C (jogos verificados manualmente; drift-hunters descartado)
+    "0ad", "supertuxkart", "openttd",
 }
 
 CAMPOS_OBRIG = ("slug", "nome", "fabricante", "categoria", "site_oficial", "url_download",
@@ -145,6 +158,9 @@ def main() -> int:
         for bruto in dados.get("apps", []):
             app = {k: limpa(v) if isinstance(v, str) else v for k, v in bruto.items()}
             app["slug"] = (app.get("slug") or "").strip().lower()
+            if app["slug"] in DESCARTADOS:
+                print(f"descartado: {app['slug']} — {DESCARTADOS[app['slug']]}", file=sys.stderr)
+                continue
             if app["slug"] in vistos:
                 erros.append(f"{app['slug']}: duplicado")
                 continue

@@ -64,4 +64,18 @@ Opcionais: `versao`, `tamanho_arquivo`, `arquitetura`, `observacoes`, `icone` (s
 ## Deploy
 
 Repositório `renatopenner/baixa-certa`, branch `main`, GitHub Pages na raiz.
-Domínio: ver `DOMINIO.md`.
+Enquanto o DNS não é criado, o site responde em `https://pennertech.com.br/baixa-certa/`
+(o domínio raiz é do repo `renatopenner.github.io`, então o Pages de projeto herda o domínio).
+Domínio final: ver `DOMINIO.md`.
+
+## Decisões editoriais registradas
+
+- **Drift Hunters ficou de fora**: não existe página oficial do desenvolvedor, só portais e
+  espelhos — o que fere a regra de link oficial. No lugar entraram jogos livres com site próprio:
+  0 A.D., SuperTuxKart e OpenTTD (`pesquisa/links-c.json`).
+- **DaVinci Resolve, Paint.NET, Tor, Telegram, WhatsApp, LM Studio, Proton VPN, FileZilla e
+  CrystalDiskInfo** usam a página oficial de download (`tipo_download: "pagina"`), porque o
+  fabricante não publica instalador por URL direta estável.
+- **FileZilla** tem aviso de ofertas no instalador; **CrystalDiskInfo** usa redirecionador com ads;
+  **Inkscape** e **WhatsApp** bloqueiam verificação automática (403/400) e isso está escrito na
+  ficha do app.

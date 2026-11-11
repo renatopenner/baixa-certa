@@ -18,6 +18,7 @@ import json
 import re
 import subprocess
 import sys
+import time
 from datetime import date
 from pathlib import Path
 
@@ -65,23 +66,51 @@ def tamanho_por_head(url: str) -> str | None:
     return (f"{mb / 1024:.1f} GB" if mb >= 1024 else f"{mb:.0f} MB" if mb >= 10 else f"{mb:.1f} MB")
 
 
+def url_estavel(final: str, original: str) -> str:
+    """Não grava URL assinada/temporária (expira e suja a página do app)."""
+    baixo = (final or "").lower()
+    temporaria = (
+        "sig=" in baixo or "x-amz-" in baixo or "release-assets.githubusercontent.com" in baixo
+        or "expires=" in baixo or "response-content-disposition=" in baixo
+    )
+    return original if (not final or temporaria) else final
+
+
 def main(argv: list[str]) -> int:
     dados = json.loads(ARQ.read_text(encoding="utf-8"))
     hoje = date.today().isoformat()
     alvos = set(argv) if argv else None
     problemas = 0
+    anterior = {a["slug"]: (a.get("status_http"), a.get("url_download_final"),
+                            a.get("content_type"), a.get("tipo_download"))
+                for a in dados["apps"]}
 
     for a in dados["apps"]:
         if alvos and a["slug"] not in alvos:
             continue
         url = a.get("url_download") or a.get("url_download_final")
         r = cabeçalho(url)
+        if r["status"] == 0:  # timeout/limite de conexão: tenta mais uma vez
+            time.sleep(2)
+            r = cabeçalho(url)
+        if r["status"] == 0:
+            # segue inconclusivo: mantém o último resultado bom em vez de zerar
+            status_ant, final_ant, tipo_ant, tipo_dl_ant = anterior[a["slug"]]
+            if status_ant and 200 <= int(status_ant) < 400:
+                a["status_http"] = status_ant
+                a["url_download_final"] = final_ant
+                a["content_type"] = tipo_ant
+                a["tipo_download"] = tipo_dl_ant
+                print(f"[TIMEOUT] {a['slug']:<16} mantido status anterior {status_ant}")
+                continue
         status = r["status"]
         ok = 200 <= status < 400
-        if not ok:
+        # 403/400/429 = site oficial barrando robô, não quer dizer link morto
+        bloqueio = status in (400, 403, 406, 429)
+        if not ok and not bloqueio:
             problemas += 1
         a["status_http"] = status
-        a["url_download_final"] = r["final"]
+        a["url_download_final"] = url_estavel(r["final"], url)
         a["content_type"] = r["tipo"]
         a["url_verificado_em"] = hoje
         # se a URL respondeu com HTML, é página e não arquivo

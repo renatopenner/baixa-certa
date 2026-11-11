@@ -241,7 +241,7 @@ def rodape(raiz: str, apps: list[dict], categorias: dict, atualizado: str) -> st
       </div>
       <div>
         <h4>Categorias</h4>
-        <ul>
+        <ul class="cats">
         {links_cat}
         </ul>
       </div>
@@ -323,12 +323,13 @@ def card_destaque(app: dict, raiz: str, categoria_nome: str) -> str:
 def chips_categorias(categorias: dict, contagem: dict, raiz: str,
                      ativa: str = "todos", modo: str = "filtro") -> str:
     """modo='filtro' (index, filtra na tela) ou 'links' (páginas de categoria)."""
+    total = sum(v for k, v in contagem.items() if k != "todos")
     itens = []
     if modo == "links":
         todos_on = ' on' if ativa == "todos" else ""
         itens.append(
             f'<a class="chip{todos_on}" href="{raiz}index.html#catalogo">Todos '
-            f'<span class="n">{sum(contagem.values())}</span></a>'
+            f'<span class="n">{total}</span></a>'
         )
         for s, c in categorias.items():
             on = ' on' if ativa == s else ""
@@ -339,7 +340,7 @@ def chips_categorias(categorias: dict, contagem: dict, raiz: str,
     else:
         itens.append(
             f'<button type="button" class="chip{" on" if ativa == "todos" else ""}" '
-            f'data-chip data-cat="todos">Todos <span class="n">{sum(contagem.values())}</span></button>'
+            f'data-chip data-cat="todos">Todos <span class="n">{total}</span></button>'
         )
         for s, c in categorias.items():
             on = ' on' if ativa == s else ""
@@ -435,6 +436,38 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
             },
         ],
     }
+    faq_pares = [
+        ("Os apps daqui são todos gratuitos mesmo?",
+         "Sim. Entram apenas programas com versão gratuita de uso real — open source ou freeware "
+         "sem prazo. Quando existe limite (por exemplo, grátis para uso pessoal), isso aparece na "
+         "ficha do app antes do botão de download."),
+        ("Por que o botão às vezes abre o site do fabricante em vez do arquivo?",
+         "Alguns fabricantes não publicam link direto estável: exigem formulário (caso do DaVinci "
+         "Resolve) ou entregam o instalador por uma página dinâmica. Nesses casos o botão leva à "
+         "página oficial de download, que é o caminho seguro — e não um espelho de terceiro."),
+        ("É seguro baixar por aqui?",
+         "O Baixa Certa não hospeda nem modifica arquivo nenhum: cada botão aponta para o domínio "
+         "do próprio fabricante. Confira sempre o endereço na barra do navegador antes de executar "
+         "o instalador, como faria em qualquer download."),
+        ("Como vocês escolhem os apps?",
+         "Uso, reputação e manutenção ativa. Programas abandonados, com histórico de adware ou de "
+         "bundle indesejado ficam de fora. A metodologia completa está na página Como verificamos."),
+        ("Faltou um app. Como sugiro?",
+         "Manda pela página de contato com o nome do programa e o site oficial. Se ele cumprir os "
+         "critérios, entra na próxima atualização do catálogo."),
+        ("Este site é afiliado dos programas?",
+         "Não. Não recebo comissão dos fabricantes listados aqui e não há anúncio no site. O Baixa "
+         "Certa é um projeto da Penner Tech, que vive da loja de recomendações de hardware — "
+         "separada deste portal."),
+    ]
+    json_ld["@graph"].append({
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": pergunta,
+             "acceptedAnswer": {"@type": "Answer", "text": resposta}}
+            for pergunta, resposta in faq_pares
+        ],
+    })
     extra = (
         '<script type="application/ld+json">'
         + json.dumps(json_ld, ensure_ascii=False, separators=(",", ":"))
@@ -456,9 +489,9 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
     <div class="wrap">
       <p class="kicker"><span class="ponto"></span>Download do site oficial, sem enrolação</p>
       <h1>Baixe <em>certo</em>.<br>O link é do fabricante.</h1>
-      <p class="lead">Os aplicativos gratuitos que eu instalo e recomendo, com <strong>link direto
-      para o download oficial</strong>. Nada de instalador empacotado, cadastro obrigatório ou
-      botão falso de "Baixar aqui".</p>
+      <p class="lead">Os {len(apps)} aplicativos gratuitos que eu instalo e recomendo, com
+      <strong>link direto para o download oficial</strong>. Nada de instalador empacotado,
+      cadastro obrigatório ou botão falso de "Baixar aqui".</p>
       <form class="busca" role="search" onsubmit="return false">
         <label class="busca-in">
           {ICONES['busca']}
@@ -471,6 +504,12 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
       <ul class="selos">
         {''.join(topo_selos)}
       </ul>
+      <div aria-hidden="true">
+        <div class="hero-grade">
+          {''.join(f'<span class="hero-ico">{icone_app(a)}</span>' for a in destaques[:8])}
+        </div>
+        <span class="hero-selo">{ICONES['check']} {plural(len(apps), 'app', 'apps')} verificados</span>
+      </div>
     </div>
   </section>
 
@@ -762,6 +801,21 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
         f'<span class="tag">{esc(cat["curto"])}</span>',
         f'<span class="tag">{esc(plataformas_curto(app.get("so") or []))}</span>',
     ]
+    url_declarada = app.get("url_download") or url_app(app)
+    espelho = ""
+    if app.get("url_download_final") and app["url_download_final"] != url_declarada:
+        espelho = (" — esse endereço pode redirecionar para um espelho oficial do próprio projeto")
+    status = int(app.get("status_http") or 200)
+    if 200 <= status < 400:
+        verificado = (
+            f"Link testado em {esc(data_br(app.get('url_verificado_em') or atualizado))}. "
+            "O arquivo vem do servidor do fabricante."
+        )
+    else:
+        verificado = (
+            "O site oficial bloqueia checagem automática, então você baixa direto do endereço "
+            "publicado pelo fabricante — confira o domínio na barra do navegador."
+        )
     json_ld = {
         "@context": "https://schema.org",
         "@graph": [
@@ -815,6 +869,7 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
         <h1>{esc(app['nome'])}</h1>
         <p class="fab">por {esc(app['fabricante'])}</p>
         <p class="res">{esc(app['resumo'])}</p>
+        <p class="desc">{esc(app['descricao'])}</p>
         <div class="tags">{''.join(tags)}</div>
       </div>
       <aside class="card-download">
@@ -826,16 +881,12 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
         <dl>{dl}</dl>
         <div class="verificado">
           {ICONES['escudo']}
-          <span>Link testado em {esc(data_br(app.get('url_verificado_em') or atualizado))}.
-          O arquivo vem do servidor do fabricante.</span>
+          <span>{esc(verificado)}</span>
         </div>
       </aside>
     </section>
 
     <article class="app-conteudo">
-      <h2>Sobre o {esc(app['nome'])}</h2>
-      <p>{esc(app['descricao'])}</p>
-
       {f'<h2>Por que vale a pena</h2><ul class="lista-check">{destaques}</ul>' if destaques else ''}
 
       {f'<h2>Requisitos</h2><div class="req">{ICONES["info"]}<span>{esc(app["requisitos"])}</span></div>' if app.get('requisitos') else ''}
@@ -843,9 +894,11 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
       {obs}
 
       <h2>De onde vem o download</h2>
-      <p>O botão desta página aponta para <strong>{esc(app.get('url_download_final') or url_app(app))}</strong>,
-      no domínio do próprio fabricante. Confira esse endereço na barra do navegador ao baixar: é a
-      garantia de que o instalador não passou por nenhum intermediário.</p>
+      <p>O botão desta página leva a este endereço:</p>
+      <code class="url-dl">{esc(url_declarada)}</code>
+      <p>{('Esse endereço é do projeto e pode redirecionar para um espelho oficial dele. ' if espelho else '')}O
+      domínio é do fabricante, então o instalador não passou por nenhum intermediário. Confira o
+      endereço na barra do navegador ao baixar.</p>
     </article>
 
     {f'''<section style="padding:10px 0 60px">

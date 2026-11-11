@@ -1,0 +1,86 @@
+{
+  "verificado_em": "2026-11-11",
+  "apps": [
+    {
+      "slug": "0ad",
+      "nome": "0 A.D.",
+      "fabricante": "Wildfire Games",
+      "categoria": "jogos",
+      "site_oficial": "https://play0ad.com/",
+      "url_download": "https://releases.wildfiregames.com/0ad-0.28.0-win64.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://releases.wildfiregames.com/0ad-0.28.0-win64.exe",
+      "status_http": 200,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": null,
+      "versao": "0.28.0",
+      "so": ["windows", "mac", "linux"],
+      "arquitetura": "x86-64",
+      "licenca": "GPL-2.0+",
+      "gratis": "100% grátis e open source",
+      "resumo": "Jogo de estratégia em tempo real sobre a Antiguidade, gratuito e sem compra dentro do jogo.",
+      "descricao": "O 0 A.D. é um jogo de estratégia em tempo real ambientado entre 500 a.C. e 1 d.C., com facções históricas, campanhas e multiplayer online. É desenvolvido pela comunidade como software livre, roda no Windows, macOS e Linux e não tem anúncio, loot box nem versão paga.",
+      "destaques": [
+        "Estratégia em tempo real com facções históricas",
+        "Multiplayer online gratuito",
+        "Sem anúncio nem compra dentro do jogo"
+      ],
+      "requisitos": "Windows 10/11 64-bit, 4 GB de RAM, placa de vídeo com OpenGL 2.1, ~3 GB de disco",
+      "observacoes": "O instalador tem cerca de 1,5 GB: é um jogo 3D completo, não um aplicativo leve."
+    },
+    {
+      "slug": "supertuxkart",
+      "nome": "SuperTuxKart",
+      "fabricante": "SuperTuxKart Team",
+      "categoria": "jogos",
+      "site_oficial": "https://supertuxkart.net/",
+      "url_download": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-installer-x86_64.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-installer-x86_64.exe",
+      "status_http": 200,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": null,
+      "versao": "1.5",
+      "so": ["windows", "mac", "linux"],
+      "arquitetura": "x86-64",
+      "licenca": "GPL-3.0",
+      "gratis": "100% grátis e open source",
+      "resumo": "Jogo de corrida de kart com personagens livres, multiplayer local e online, sem custo nenhum.",
+      "descricao": "SuperTuxKart é um jogo de corrida estilo kart com pistas, personagens e modos de batalha, feito pela comunidade com software livre. Tem multiplayer local em tela dividida e online, roda em máquinas modestas e não cobra nada por nenhum modo ou item.",
+      "destaques": [
+        "Multiplayer local e online",
+        "Vários modos de corrida e batalha",
+        "Roda bem em PC modesto"
+      ],
+      "requisitos": "Windows 10/11 64-bit, 2 GB de RAM, placa de vídeo com OpenGL 3.1",
+      "observacoes": "O instalador baixa do GitHub oficial do projeto (release 1.5)."
+    },
+    {
+      "slug": "openttd",
+      "nome": "OpenTTD",
+      "fabricante": "OpenTTD Team",
+      "categoria": "jogos",
+      "site_oficial": "https://www.openttd.org/",
+      "url_download": "https://cdn.openttd.org/openttd-releases/15.3/openttd-15.3-windows-win64.zip",
+      "tipo_download": "direto",
+      "url_download_final": "https://cdn.openttd.org/openttd-releases/15.3/openttd-15.3-windows-win64.zip",
+      "status_http": 200,
+      "content_type": "application/zip",
+      "tamanho_arquivo": null,
+      "versao": "15.3",
+      "so": ["windows", "mac", "linux"],
+      "arquitetura": "x86-64",
+      "licenca": "GPL-2.0",
+      "gratis": "100% grátis e open source",
+      "resumo": "Simulador de transporte e logística clássico, com mapas enormes e multiplayer que roda em qualquer PC.",
+      "descricao": "OpenTTD é a versão livre do clássico Transport Tycoon: você constrói ferrovias, estradas, aeroportos e portos para mover carga e passageiros, com economia simulada e mapas gigantes. Tem multiplayer cooperativo, suporte a mods e roda até em máquinas antigas — o download é um ZIP que não precisa de instalador.",
+      "destaques": [
+        "Simulador de logística profundo",
+        "Multiplayer cooperativo",
+        "Download em ZIP, sem instalador"
+      ],
+      "requisitos": "Windows 7 ou mais recente, 512 MB de RAM, ~300 MB de disco",
+      "observacoes": "É um ZIP portátil: descompacte numa pasta e execute o openttd.exe. O jogo original pede os gráficos base, que já vêm no pacote."
+    }
+  ]
+}

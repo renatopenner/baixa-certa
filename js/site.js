@@ -90,5 +90,14 @@
     }
   });
 
+  // busca vinda de link (?q=termo)
+  try {
+    var q = new URLSearchParams(location.search).get('q');
+    if (q) {
+      if (entradaCatalogo) entradaCatalogo.value = q;
+      if (entradaHero) entradaHero.value = q;
+    }
+  } catch (e) { /* navegador antigo: ignora */ }
+
   aplica();
 })();
