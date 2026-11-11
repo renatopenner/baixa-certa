@@ -1,0 +1,9 @@
+# artefatos locais
+_shots/
+_tmp/
+_test*.html
+_teste*.html
+__pycache__/
+*.pyc
+Thumbs.db
+desktop.ini

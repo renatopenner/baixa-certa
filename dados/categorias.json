@@ -1,0 +1,62 @@
+{
+  "escritorio": {
+    "nome": "Escritório e produtividade",
+    "curto": "Escritório",
+    "descricao": "Suítes de escritório, leitores de PDF, notas e ferramentas para trabalhar e estudar — sem mensalidade.",
+    "icone": "doc"
+  },
+  "multimidia": {
+    "nome": "Vídeo e áudio",
+    "curto": "Vídeo e áudio",
+    "descricao": "Players, editores de vídeo, gravadores e conversores para produzir e assistir de tudo.",
+    "icone": "play"
+  },
+  "imagem": {
+    "nome": "Imagem, design e 3D",
+    "curto": "Imagem e 3D",
+    "descricao": "Edição de fotos, ilustração vetorial, pintura digital, modelagem e renderização 3D.",
+    "icone": "image"
+  },
+  "dev": {
+    "nome": "Desenvolvimento",
+    "curto": "Desenvolvimento",
+    "descricao": "Editores de código, controle de versão, bancos de dados e as ferramentas de quem programa.",
+    "icone": "code"
+  },
+  "utilidades": {
+    "nome": "Utilidades do sistema",
+    "curto": "Utilidades",
+    "descricao": "Compactadores, busca de arquivos, diagnóstico de hardware, pendrive bootável e ajustes do Windows.",
+    "icone": "tools"
+  },
+  "seguranca": {
+    "nome": "Segurança e privacidade",
+    "curto": "Segurança",
+    "descricao": "Gerenciadores de senha, criptografia, VPN e limpeza de rastros digitais.",
+    "icone": "shield"
+  },
+  "internet": {
+    "nome": "Internet e comunicação",
+    "curto": "Internet",
+    "descricao": "Navegadores, mensageiros, e-mail, FTP, SSH e clientes de torrent.",
+    "icone": "globe"
+  },
+  "backup": {
+    "nome": "Backup e arquivos",
+    "curto": "Backup",
+    "descricao": "Sincronização de pastas, backup criptografado e nuvem privada no seu computador.",
+    "icone": "backup"
+  },
+  "ia": {
+    "nome": "IA local",
+    "curto": "IA local",
+    "descricao": "Rode modelos de linguagem no seu PC, sem mandar seus dados para nuvem nenhuma.",
+    "icone": "spark"
+  },
+  "jogos": {
+    "nome": "Jogos grátis",
+    "curto": "Jogos",
+    "descricao": "Jogos gratuitos de verdade: sem trial, sem demo com data de validade.",
+    "icone": "game"
+  }
+}
