@@ -152,17 +152,20 @@ def icone_app(app: dict, raiz: str = "", classe: str = "") -> str:
 # --------------------------------------------------------------------------- #
 # componentes
 # --------------------------------------------------------------------------- #
-LOGO_MARCA = (
-    '<svg viewBox="0 0 48 48" role="img" aria-label="Baixa Certa">'
-    '<defs><linearGradient id="lgBx" x1="0" y1="0" x2="1" y2="1">'
-    '<stop offset="0" stop-color="#0a7cbf"/><stop offset="1" stop-color="#12b5d0"/></linearGradient></defs>'
-    '<rect width="48" height="48" rx="13" fill="url(#lgBx)"/>'
-    '<path d="M24 12.5v14.2" stroke="#fff" stroke-width="4" stroke-linecap="round"/>'
-    '<path d="m17.2 21.4 6.8 6.8 6.8-6.8" stroke="#fff" stroke-width="4" stroke-linecap="round" '
-    'stroke-linejoin="round"/>'
-    '<path d="M15 34.6h18" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity=".9"/>'
-    '</svg>'
-)
+def logo_marca(sufixo: str = "topo") -> str:
+    """Logo da marca. O id do gradiente é único por posição (cabeçalho/rodapé)."""
+    gid = f"lgBx-{sufixo}"
+    return (
+        '<svg viewBox="0 0 48 48" role="img" aria-label="Baixa Certa">'
+        f'<defs><linearGradient id="{gid}" x1="0" y1="0" x2="1" y2="1">'
+        '<stop offset="0" stop-color="#0a7cbf"/><stop offset="1" stop-color="#12b5d0"/></linearGradient></defs>'
+        '<rect width="48" height="48" rx="13" fill="url(#%s)"/>' % gid
+        + '<path d="M24 12.5v14.2" stroke="#fff" stroke-width="4" stroke-linecap="round"/>'
+        '<path d="m17.2 21.4 6.8 6.8 6.8-6.8" stroke="#fff" stroke-width="4" stroke-linecap="round" '
+        'stroke-linejoin="round"/>'
+        '<path d="M15 34.6h18" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity=".9"/>'
+        "</svg>"
+    )
 
 
 def head(titulo: str, descricao: str, canonical: str, raiz: str, og_tipo: str = "website",
@@ -207,7 +210,7 @@ def topo(raiz: str, ativo: str = "") -> str:
 <header class="topo">
   <div class="wrap topo-in">
     <a class="marca" href="{raiz}index.html" aria-label="Baixa Certa — início">
-      {LOGO_MARCA}
+      {logo_marca('topo')}
       <span class="marca-txt"><b>BAIXA</b><em>CERTA</em></span>
     </a>
     <nav class="menu" aria-label="Principal">
@@ -232,7 +235,7 @@ def rodape(raiz: str, apps: list[dict], categorias: dict, atualizado: str) -> st
     <div class="rodape-topo">
       <div>
         <a class="marca" href="{raiz}index.html" aria-label="Baixa Certa — início">
-          {LOGO_MARCA}
+          {logo_marca('rodape')}
           <span class="marca-txt"><b>BAIXA</b><em>CERTA</em></span>
         </a>
         <p class="desc">Os {len(apps)} aplicativos gratuitos que eu instalo e recomendo — com link
@@ -476,8 +479,8 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
     return (
         head(
             f"{SITE} — apps grátis com download oficial direto",
-            "Baixe LibreOffice, DaVinci Resolve, VLC, OBS, GIMP, 7-Zip e outros apps gratuitos "
-            "com link direto para o site oficial do fabricante. Sem cadastro, sem instalador falso.",
+            "Baixe LibreOffice, DaVinci Resolve, VLC, OBS, GIMP e outros apps grátis com link "
+            "direto no site oficial do fabricante. Sem cadastro, sem instalador falso.",
             URL_BASE + "/",
             "",
             extra_head=extra,
@@ -1020,7 +1023,8 @@ def main(argv: list[str]) -> int:
 
     # 404
     (RAIZ / "404.html").write_text(
-        head("Página não encontrada | " + SITE, "Essa página não existe no Baixa Certa.",
+        head("Página não encontrada | " + SITE,
+             "Página não encontrada no Baixa Certa. Volte ao catálogo de apps gratuitos com download oficial.",
              URL_BASE + "/404.html", "")
         + topo("", "")
         + """
