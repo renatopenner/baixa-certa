@@ -1,0 +1,329 @@
+{
+  "winrar": {
+    "wiki": "WinRAR"
+  },
+  "powershell": {
+    "wiki": "PowerShell"
+  },
+  "calibre": {
+    "wiki": "Calibre (software)"
+  },
+  "ankidroid": {
+    "wiki": "Anki (software)"
+  },
+  "termux": {
+    "wiki": "Termux"
+  },
+  "openttd": {
+    "wiki": "OpenTTD"
+  },
+  "supertuxkart": {
+    "wiki": "SuperTuxKart"
+  },
+  "winmerge": {
+    "wiki": "WinMerge"
+  },
+  "musicbee": {
+    "wiki": "MusicBee"
+  },
+  "imageglass": {
+    "wiki": "ImageGlass"
+  },
+  "memtest86": {
+    "wiki": "MemTest86"
+  },
+  "balenaetcher": {
+    "wiki": "Balena"
+  },
+  "rufus": {
+    "wiki": "Rufus (software)"
+  },
+  "ventoy": {
+    "wiki": "Ventoy"
+  },
+  "veracrypt": {
+    "wiki": "VeraCrypt"
+  },
+  "handbrake": {
+    "wiki": "HandBrake"
+  },
+  "darktable": {
+    "wiki": "Darktable"
+  },
+  "bleachbit": {
+    "wiki": "BleachBit"
+  },
+  "vscode": {
+    "wiki": "Visual Studio Code"
+  },
+  "keepassdx": {
+    "wiki": "KeePass"
+  },
+  "0ad": {
+    "wiki": "0 A.D. (video game)"
+  },
+  "microsoft-365": {
+    "wiki": "Microsoft 365"
+  },
+  "adobe-photoshop": {
+    "wiki": "Adobe Photoshop"
+  },
+  "adobe-lightroom": {
+    "wiki": "Adobe Lightroom"
+  },
+  "adobe-acrobat-pro": {
+    "wiki": "Adobe Acrobat"
+  },
+  "adobe-premiere-pro": {
+    "wiki": "Adobe Premiere Pro"
+  },
+  "coreldraw": {
+    "wiki": "CorelDRAW"
+  },
+  "autocad": {
+    "wiki": "AutoCAD"
+  },
+  "sketchup-pro": {
+    "wiki": "SketchUp"
+  },
+  "revit": {
+    "wiki": "Autodesk Revit"
+  },
+  "solidworks": {
+    "wiki": "SolidWorks"
+  },
+  "matlab": {
+    "wiki": "MATLAB"
+  },
+  "filmmora": {
+    "wiki": "Filmora"
+  },
+  "camtasia": {
+    "wiki": "Camtasia"
+  },
+  "roblox": {
+    "wiki": "Roblox"
+  },
+  "minecraft": {
+    "wiki": "Minecraft"
+  },
+  "valorant": {
+    "wiki": "Valorant"
+  },
+  "league-of-legends": {
+    "wiki": "League of Legends"
+  },
+  "wps-office": {
+    "wiki": "WPS Office"
+  },
+  "plex": {
+    "wiki": "Plex (software)"
+  },
+  "potplayer": {
+    "wiki": "PotPlayer"
+  },
+  "mpc-hc": {
+    "wiki": "Media Player Classic"
+  },
+  "aimp": {
+    "wiki": "AIMP"
+  },
+  "irfanview": {
+    "wiki": "IrfanView"
+  },
+  "digikam": {
+    "wiki": "DigiKam"
+  },
+  "rawtherapee": {
+    "wiki": "RawTherapee"
+  },
+  "capture-one": {
+    "wiki": "Capture One"
+  },
+  "foxit-reader": {
+    "wiki": "Foxit Reader"
+  },
+  "figma": {
+    "wiki": "Figma"
+  },
+  "canva": {
+    "wiki": "Canva"
+  },
+  "notion": {
+    "wiki": "Notion (productivity software)"
+  },
+  "evernote": {
+    "wiki": "Evernote"
+  },
+  "trello": {
+    "wiki": "Trello"
+  },
+  "todoist": {
+    "wiki": "Todoist"
+  },
+  "spotify": {
+    "wiki": "Spotify"
+  },
+  "deezer": {
+    "wiki": "Deezer"
+  },
+  "kmplayer": {
+    "wiki": "KMPlayer"
+  },
+  "nextcloud-desktop": {
+    "wiki": "Nextcloud"
+  },
+  "google-drive": {
+    "wiki": "Google Drive"
+  },
+  "onedrive": {
+    "wiki": "OneDrive"
+  },
+  "dropbox": {
+    "wiki": "Dropbox (service)"
+  },
+  "mega": {
+    "wiki": "Mega (service)"
+  },
+  "docker-desktop": {
+    "wiki": "Docker (software)"
+  },
+  "intellij-idea": {
+    "wiki": "IntelliJ IDEA"
+  },
+  "pycharm": {
+    "wiki": "PyCharm"
+  },
+  "android-studio": {
+    "wiki": "Android Studio"
+  },
+  "postman": {
+    "wiki": "Postman (software)"
+  },
+  "xampp": {
+    "wiki": "XAMPP"
+  },
+  "mysql-workbench": {
+    "wiki": "MySQL Workbench"
+  },
+  "ssms": {
+    "wiki": "SQL Server Management Studio"
+  },
+  "pgadmin": {
+    "wiki": "PgAdmin"
+  },
+  "sourcetree": {
+    "wiki": "SourceTree"
+  },
+  "wireshark": {
+    "wiki": "Wireshark"
+  },
+  "anydesk": {
+    "wiki": "AnyDesk"
+  },
+  "teamviewer": {
+    "wiki": "TeamViewer"
+  },
+  "1password": {
+    "wiki": "1Password"
+  },
+  "expressvpn": {
+    "wiki": "ExpressVPN"
+  },
+  "avast": {
+    "wiki": "Avast Antivirus"
+  },
+  "kaspersky": {
+    "wiki": "Kaspersky Anti-Virus"
+  },
+  "bitdefender": {
+    "wiki": "Bitdefender"
+  },
+  "ccleaner": {
+    "wiki": "CCleaner"
+  },
+  "msi-afterburner": {
+    "wiki": "MSI Afterburner"
+  },
+  "hwmonitor": {
+    "wiki": "CPUID"
+  },
+  "driver-booster": {
+    "wiki": "IObit"
+  },
+  "chrome": {
+    "wiki": "Google Chrome"
+  },
+  "microsoft-edge": {
+    "wiki": "Microsoft Edge"
+  },
+  "opera": {
+    "wiki": "Opera (web browser)"
+  },
+  "vivaldi": {
+    "wiki": "Vivaldi (web browser)"
+  },
+  "zoom": {
+    "wiki": "Zoom Workplace"
+  },
+  "microsoft-teams": {
+    "wiki": "Microsoft Teams"
+  },
+  "slack": {
+    "wiki": "Slack (software)"
+  },
+  "messenger": {
+    "wiki": "Facebook Messenger"
+  },
+  "viber": {
+    "wiki": "Viber"
+  },
+  "line": {
+    "wiki": "Line (software)"
+  },
+  "webex": {
+    "wiki": "Webex"
+  },
+  "capcut": {
+    "wiki": "CapCut"
+  },
+  "streamlabs": {
+    "wiki": "Streamlabs"
+  },
+  "bandicam": {
+    "wiki": "Bandicam"
+  },
+  "visual-studio": {
+    "wiki": "Visual Studio"
+  },
+  "nodejs": {
+    "wiki": "Node.js"
+  },
+  "java-jdk": {
+    "wiki": "Java (programming language)"
+  },
+  "winscp": {
+    "wiki": "WinSCP"
+  },
+  "glasswire": {
+    "wiki": "GlassWire"
+  },
+  "illustrator": {
+    "wiki": "Adobe Illustrator"
+  },
+  "indesign": {
+    "wiki": "Adobe InDesign"
+  },
+  "after-effects": {
+    "wiki": "Adobe After Effects"
+  },
+  "audition": {
+    "wiki": "Adobe Audition"
+  },
+  "animate": {
+    "wiki": "Adobe Animate"
+  },
+  "acrobat-reader": {
+    "wiki": "Adobe Acrobat"
+  }
+}

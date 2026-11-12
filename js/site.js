@@ -12,7 +12,7 @@
   );
   var contador = document.getElementById('contador');
   var vazio = document.getElementById('vazio');
-  var cards = Array.prototype.slice.call(grade.querySelectorAll('.app'));
+  var cards = Array.prototype.slice.call(grade.querySelectorAll('.app, .top-item'));
   var total = cards.length;
   var catAtiva = 'todos';
 
@@ -38,8 +38,8 @@
     });
 
     if (contador) contador.innerHTML = '<b>' + visiveis + '</b> de ' + total + ' apps';
-    if (vazio) vazio.classList.toggle('oculto', visiveis !== 0);
-    grade.classList.toggle('oculto', visiveis === 0);
+    if (vazio) vazio.classList.toggle('oculto', visiveis !== 0 || total === 0);
+    grade.classList.toggle('oculto', visiveis === 0 && total > 0);
   }
 
   function liga(a) {

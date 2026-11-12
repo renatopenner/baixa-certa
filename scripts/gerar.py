@@ -186,13 +186,14 @@ def resumo(texto: str, limite: int = 158) -> str:
 
 
 def icone_app(app: dict, raiz: str = "", classe: str = "") -> str:
-    """SVG local do app (img/apps/<slug>.svg) ou monograma."""
-    arq = RAIZ / "img" / "apps" / f"{app['slug']}.svg"
-    if arq.exists():
-        return (
-            f'<img src="{raiz}img/apps/{app["slug"]}.svg" alt="" width="40" height="40" '
-            f'loading="lazy" decoding="async" class="{classe}">'
-        )
+    """Ícone local do app (img/apps/<slug>.svg|png|webp) ou monograma."""
+    for ext in ("svg", "png", "webp"):
+        arq = RAIZ / "img" / "apps" / f"{app['slug']}.{ext}"
+        if arq.exists():
+            return (
+                f'<img src="{raiz}img/apps/{app["slug"]}.{ext}" alt="" width="40" height="40" '
+                f'loading="lazy" decoding="async" class="{classe}">'
+            )
     return f'<span class="mono" aria-hidden="true">{esc(iniciais(app["nome"]))}</span>'
 
 
@@ -267,12 +268,16 @@ def topo(raiz: str, ativo: str = "") -> str:
       <a href="{raiz}index.html#categorias">Categorias</a>
       <a href="{raiz}categoria/celular.html"{cls('celular')}>Celular</a>
       <a href="{raiz}categoria/pagos.html"{cls('pagos')}>Pagos</a>
-      <a href="{raiz}como-verificamos.html"{cls('verificamos')}>Como verificamos</a>
+      <a href="{raiz}top100.html"{cls('top100')}>Top 100</a>
       <a href="{raiz}sobre.html"{cls('sobre')}>Sobre</a>
       <a href="{raiz}contato.html"{cls('contato')}>Contato</a>
     </nav>
+    <a class="loja-btn" href="https://loja.pennertech.com.br/" target="_blank" rel="noopener"
+       aria-label="Loja Penner Tech" title="Loja Penner Tech">
+      <img src="{raiz}img/pennertech-marca.png" alt="" width="22" height="22">
+      <span>Loja</span>
+    </a>
     <button id="btn-tema" class="tema" type="button" aria-label="Alternar tema claro e escuro" title="Ativar tema escuro">🌙</button>
-    <a class="btn btn-ghost btn-mini topo-cta" href="{raiz}index.html#catalogo">Ver catálogo</a>
   </div>
 </header>"""
 
@@ -304,6 +309,7 @@ def rodape(raiz: str, apps: list[dict], categorias: dict, atualizado: str) -> st
         <h4>O site</h4>
         <ul>
           <li><a href="{raiz}index.html#catalogo">Todos os apps</a></li>
+          <li><a href="{raiz}top100.html">Top 100 mais usados</a></li>
           <li><a href="{raiz}como-verificamos.html">Como verificamos</a></li>
           <li><a href="{raiz}sobre.html">Sobre o Baixa Certa</a></li>
           <li><a href="{raiz}contato.html">Contato e sugestões</a></li>
@@ -312,7 +318,8 @@ def rodape(raiz: str, apps: list[dict], categorias: dict, atualizado: str) -> st
       <div>
         <h4>Penner Tech</h4>
         <ul>
-          <li><a href="https://loja.pennertech.com.br/" target="_blank" rel="noopener">Loja e recomendações</a></li>
+          <li><a class="loja-link" href="https://loja.pennertech.com.br/" target="_blank" rel="noopener">
+            <img src="{raiz}img/pennertech-marca.png" alt="" width="18" height="18"> Loja Penner Tech</a></li>
           <li><a href="https://www.youtube.com/@renatopenner" target="_blank" rel="noopener">YouTube</a></li>
           <li><a href="https://www.instagram.com/pennerrenato/" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
@@ -456,6 +463,27 @@ def cta_baixar(app: dict, classe: str = "btn btn-baixar btn-grande") -> str:
 # --------------------------------------------------------------------------- #
 # páginas
 # --------------------------------------------------------------------------- #
+def escolhas_categorias(apps: list[dict], categorias: dict) -> str:
+    """Card com o nº 1 de cada categoria (primeiro item do Top 5)."""
+    melhores = carrega_melhores()
+    mapa = {a["slug"]: a for a in apps}
+    itens = []
+    for slug, cat in categorias.items():
+        for item in (melhores.get(slug) or []):
+            app = mapa.get(item.get("slug"))
+            if not app:
+                continue
+            itens.append(f"""<a class="escolha" href="categoria/{slug}.html#melhores">
+  <span class="escolha-cat">{esc(cat['curto'])}</span>
+  <span class="escolha-app">{icone_app(app)}<b>{esc(app['nome'])}</b></span>
+  <span class="escolha-funcao">{esc(item.get('funcao') or '')}</span>
+</a>""")
+            break
+    if not itens:
+        return ""
+    return '<div class="escolhas">' + "".join(itens) + "</div>"
+
+
 def pagina_index(apps, categorias, contagem, atualizado) -> str:
     destaques = [a for a in apps if a.get("destaque")][:10]
     if len(destaques) < 6:
@@ -593,7 +621,8 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
           <input id="buscaHero" type="search" placeholder="Busque por app ou tarefa: vídeo, PDF, senha, backup…" autocomplete="off" spellcheck="false">
           <kbd>/</kbd>
         </label>
-        <p class="busca-sub">Comece pela busca ou <a href="#categorias">escolha uma categoria</a>.</p>
+        <p class="busca-sub">Comece pela busca, veja o <a href="top100.html">Top 100 mais usados</a> ou
+        <a href="#categorias">escolha uma categoria</a>.</p>
       </form>
       <ul class="selos">
         {''.join(topo_selos)}
@@ -635,6 +664,20 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
       <div class="grade-cats">
         {cats}
       </div>
+    </div>
+  </section>
+
+  <section class="secao" id="escolhas">
+    <div class="wrap">
+      <div class="secao-topo">
+        <div>
+          <span class="olho">Escolha rápida</span>
+          <h2>O melhor de cada categoria</h2>
+          <p>Se for instalar só um, comece por estes. Cada categoria tem o Top 5 completo, função por função.</p>
+        </div>
+        <a class="btn btn-ghost btn-mini" href="top100.html">Ver Top 100</a>
+      </div>
+      {escolhas_categorias(apps, categorias)}
     </div>
   </section>
 
@@ -803,8 +846,56 @@ def pagina_index(apps, categorias, contagem, atualizado) -> str:
     )
 
 
+def carrega_melhores() -> dict:
+    arq = DADOS / "melhores.json"
+    if not arq.exists():
+        return {}
+    return json.loads(arq.read_text(encoding="utf-8"))
+
+
+def bloco_top5(slug: str, apps: list[dict]) -> str:
+    """Os 5 melhores da categoria, cada um com a função e o porquê."""
+    selecao = carrega_melhores().get(slug) or []
+    mapa = {a["slug"]: a for a in apps}
+    itens = []
+    for pos, item in enumerate(selecao, 1):
+        a = mapa.get(item.get("slug"))
+        if not a:
+            continue
+        licenca = ('<span class="tag tag-pago">Pago</span>' if a.get("pago")
+                   else '<span class="tag tag-ok">Grátis</span>')
+        itens.append(f"""<li class="top5-item">
+  <span class="top5-rank">{pos}</span>
+  <a class="top5-ico" href="../a/{a['slug']}.html" tabindex="-1" aria-hidden="true">{icone_app(a, '../')}</a>
+  <div class="top5-info">
+    <h3><a href="../a/{a['slug']}.html">{esc(a['nome'])}</a></h3>
+    <span class="top5-funcao">{esc(item.get('funcao') or '')}</span>
+    <p class="top5-porque">{esc(item.get('porque') or '')}</p>
+  </div>
+  <div class="top5-acoes">{licenca}<a class="btn btn-ghost btn-mini" href="../a/{a['slug']}.html">Ver ficha</a></div>
+</li>""")
+    if not itens:
+        return ""
+    return f"""<section class="melhores" id="melhores">
+  <div class="secao-topo">
+    <div>
+      <span class="olho">Top 5 da categoria</span>
+      <h2>Os melhores para cada função</h2>
+      <p>Escolha rápida: o melhor de cada tarefa, com o que ele faz e por que está aqui.</p>
+    </div>
+    <a class="btn btn-ghost btn-mini" href="#catalogo">Ver todos</a>
+  </div>
+  <ol class="top5-lista">
+    {''.join(itens)}
+  </ol>
+</section>"""
+
+
 def pagina_categoria(slug: str, cat: dict, apps: list[dict], categorias: dict, contagem: dict, atualizado: str) -> str:
-    meus = [a for a in apps if a["categoria"] == slug]
+    if slug == "pagos":  # categoria virtual: todo app pago, de qualquer área
+        meus = [a for a in apps if a.get("pago")]
+    else:
+        meus = [a for a in apps if a["categoria"] == slug]
     canonical = f"{URL_BASE}/categoria/{slug}.html"
     titulo = f"{cat['nome']} — apps grátis com download oficial | {SITE}"
     json_ld = {
@@ -860,7 +951,9 @@ def pagina_categoria(slug: str, cat: dict, apps: list[dict], categorias: dict, c
       {chips_categorias(categorias, contagem, '../', slug, modo='links')}
     </section>
     {dica}
+    {bloco_top5(slug, apps)}
     <div style="height:8px"></div>
+    <div id="catalogo"></div>
     {grade_apps(meus, '../', categorias)}
     <div class="vazio oculto" id="vazio">
       <b>Nada encontrado aqui</b>
@@ -878,6 +971,98 @@ def pagina_categoria(slug: str, cat: dict, apps: list[dict], categorias: dict, c
 </main>
 """
         + rodape("../", apps, categorias, atualizado)
+    )
+
+
+def carrega_ranking(apps: list[dict]) -> list[dict]:
+    """Lê dados/top100.json (lista de slugs na ordem) e devolve os apps na ordem."""
+    arq = DADOS / "top100.json"
+    if not arq.exists():
+        return []
+    bruto = json.loads(arq.read_text(encoding="utf-8"))
+    slugs = bruto.get("itens") or bruto.get("slugs") or []
+    mapa = {a["slug"]: a for a in apps}
+    return [mapa[s] for s in slugs if s in mapa]
+
+
+def pagina_top100(apps: list[dict], categorias: dict, atualizado: str) -> str:
+    ranking = carrega_ranking(apps)
+    canonical = f"{URL_BASE}/top100.html"
+    titulo = f"Top 100 aplicativos mais usados — download e preço oficial | {SITE}"
+    descricao = resumo(f"Os {len(ranking)} programas mais usados do mercado, gratuitos e pagos, com "
+                       "link oficial de download ou de preço e ficha completa de cada um.")
+    linhas = []
+    for pos, a in enumerate(ranking, 1):
+        cat = categorias.get(a["categoria"], {}).get("curto", a["categoria"])
+        preco = (f'<span class="tag tag-pago">Pago</span><span class="top-preco">{esc(a.get("preco") or "")}</span>'
+                 if a.get("pago") else '<span class="tag tag-ok">Grátis</span>')
+        classe_extra = " top-tres" if pos <= 3 else ""
+        busca = f"{a['nome']} {a['fabricante']} {cat} {' '.join(a.get('destaques', []))}"
+        linhas.append(f"""<li class="top-item{classe_extra}" data-cat="{esc(a['categoria'])}" data-busca="{esc(busca)}">
+  <span class="top-rank">{pos}</span>
+  <a class="top-ico" href="a/{a['slug']}.html" tabindex="-1" aria-hidden="true">{icone_app(a)}</a>
+  <div class="top-info">
+    <h3><a href="a/{a['slug']}.html">{esc(a['nome'])}</a></h3>
+    <span class="top-meta">{esc(a['fabricante'])} · {esc(cat)}</span>
+  </div>
+  <div class="top-lic">{preco}</div>
+  <a class="btn btn-ghost btn-mini" href="a/{a['slug']}.html">Ver ficha</a>
+</li>""")
+    json_ld = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Top 100 aplicativos mais usados",
+        "url": canonical,
+        "numberOfItems": len(ranking),
+        "itemListElement": [
+            {"@type": "ListItem", "position": i, "name": a["nome"],
+             "url": f"{URL_BASE}/a/{a['slug']}.html"}
+            for i, a in enumerate(ranking, 1)
+        ],
+    }
+    extra = ('<script type="application/ld+json">'
+             + json.dumps(json_ld, ensure_ascii=False, separators=(",", ":")) + "</script>\n")
+    return (
+        head(titulo, descricao, canonical, "", extra_head=extra)
+        + topo("", "top100")
+        + f"""
+<main>
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Você está aqui">
+      <a href="index.html">Início</a><span class="sep">/</span><span>Top 100</span>
+    </nav>
+    <section class="hero hero-simples" style="padding-top:22px">
+      <p class="kicker"><span class="ponto"></span>{plural(len(ranking), 'app', 'apps')} · ranking de uso</p>
+      <h1>Os 100 aplicativos mais usados</h1>
+      <p class="lead">O que aparece em praticamente todo PC e celular do mercado — gratuito ou pago.
+      Cada linha leva à ficha com link oficial de download ou de preço, versão, licença e o que
+      esperar antes de instalar.</p>
+      <div class="busca" style="margin-top:24px">
+        <label class="busca-in">
+          {ICONES['busca']}
+          <span class="sr">Buscar no ranking</span>
+          <input id="buscaApp" type="search" placeholder="Buscar no ranking por nome ou categoria…" autocomplete="off">
+        </label>
+      </div>
+    </section>
+    <ol class="top-lista" id="grade">
+      {''.join(linhas)}
+    </ol>
+    <div class="vazio oculto" id="vazio">
+      <b>Nada encontrado no ranking</b>
+      Tente outro nome ou <a href="index.html#categorias">veja as categorias</a>.
+    </div>
+    <div class="aviso" style="margin-top:26px">
+      {ICONES['info']}
+      <div><strong>Ranking de uso, não de indicação.</strong> A ordem mistura programas gratuitos e
+      pagos pela popularidade no mercado; a ficha de cada um diz o preço (quando houver) e o link
+      oficial. <a href="como-verificamos.html">Veja a metodologia.</a></div>
+    </div>
+    <div style="height:50px"></div>
+  </div>
+</main>
+"""
+        + rodape("", apps, categorias, atualizado)
     )
 
 
@@ -1093,6 +1278,7 @@ def pagina_institucional(arquivo: str, titulo: str, desc: str, corpo: str, apps,
 
 def gera_sitemap(apps, categorias, atualizado) -> str:
     urls = [(URL_BASE + "/", "1.0", "daily")]
+    urls += [(f"{URL_BASE}/top100.html", "0.9", "weekly")]
     urls += [(f"{URL_BASE}/categoria/{s}.html", "0.9", "weekly") for s in categorias]
     urls += [(f"{URL_BASE}/{p}", "0.5", "monthly") for p in ("sobre.html", "como-verificamos.html", "contato.html")]
     urls += [(f"{URL_BASE}/a/{a['slug']}.html", "0.8", "weekly") for a in apps]
@@ -1146,7 +1332,12 @@ def main(argv: list[str]) -> int:
             print(" -", e, file=sys.stderr)
         if "--check" in argv:
             return 1
-    contagem = {s: sum(1 for a in apps if a["categoria"] == s) for s in categorias}
+    contagem = {}
+    for s in categorias:
+        if s == "pagos":
+            contagem[s] = sum(1 for a in apps if a.get("pago"))
+        else:
+            contagem[s] = sum(1 for a in apps if a["categoria"] == s)
     contagem["todos"] = len(apps)
 
     # ordena: destaques primeiro, depois nome
@@ -1161,6 +1352,9 @@ def main(argv: list[str]) -> int:
     for a in apps_sorted:
         (RAIZ / "a" / f"{a['slug']}.html").write_text(
             pagina_app(a, apps_sorted, categorias, atualizado), encoding="utf-8")
+
+    (RAIZ / "top100.html").write_text(
+        pagina_top100(apps_sorted, categorias, atualizado), encoding="utf-8")
 
     (RAIZ / "sitemap.xml").write_text(gera_sitemap(apps_sorted, categorias, atualizado), encoding="utf-8")
     (RAIZ / "robots.txt").write_text(
@@ -1295,6 +1489,12 @@ compra do fabricante</strong>. O preço é conferido na página oficial de plano
 existe), com data, e a ficha diz o que o plano gratuito — se houver — não cobre. O Baixa Certa não
 vende licença, não recebe comissão e não indica revendedor de licença OEM ou "vitalícia": o botão
 leva ao site oficial do próprio fabricante.</p>
+
+<h2>9. Ranking Top 100 e Top 5</h2>
+<p>O <a href="top100.html">Top 100</a> mistura apps gratuitos e pagos pela popularidade
+de uso — é o atalho para quem quer o básico bem servido. O <strong>Top 5 de cada categoria</strong>
+é curadoria: um app por função ("melhor para editar vídeo", "melhor para gerenciar senhas"), com o
+porquê em uma frase. Nenhum dos dois é anúncio pago: a ordem não muda por dinheiro.</p>
 
 <h2>O que este site não faz</h2>
 <div class="card-bloco">

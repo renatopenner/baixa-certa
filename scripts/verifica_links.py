@@ -16,9 +16,10 @@ from __future__ import annotations
 
 import json
 import re
-import subprocess
 import sys
 import time
+import urllib.error
+import urllib.request
 from datetime import date
 from pathlib import Path
 
@@ -26,43 +27,38 @@ RAIZ = Path(__file__).resolve().parent.parent
 ARQ = RAIZ / "dados" / "apps.json"
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
-FMT = "%{http_code}|%{content_type}|%{url_effective}|%{size_download}"
 
 
 def cabeçalho(url: str) -> dict:
-    r = subprocess.run(
-        ["curl.exe", "-sSL", "--compressed", "--max-time", "45", "-A", UA,
-         "-r", "0-0", "-o", "NUL", "-w", FMT, url],
-        capture_output=True, text=True, errors="replace",
-    )
-    saida = (r.stdout or "").strip().splitlines()
-    linha = saida[-1] if saida else ""
-    partes = linha.split("|")
-    if len(partes) < 4:
-        return {"status": 0, "tipo": "", "final": url, "bytes": None}
-    status, tipo, final, tamanho = partes[0], partes[1], partes[2], partes[3]
+    """Status, content-type e URL final (segue redirects), com timeout confiável."""
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*",
+                                               "Range": "bytes=0-0"})
     try:
-        status_i = int(status)
-    except ValueError:
-        status_i = 0
-    return {
-        "status": status_i,
-        "tipo": tipo,
-        "final": final or url,
-        "bytes": int(tamanho) if tamanho.isdigit() and int(tamanho) > 1 else None,
-    }
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return {"status": resp.status,
+                    "tipo": resp.headers.get("Content-Type", "") or "",
+                    "final": resp.geturl(),
+                    "bytes": resp.headers.get("Content-Length") and
+                    int(resp.headers.get("Content-Length")) or None}
+    except urllib.error.HTTPError as exc:
+        tipo = exc.headers.get("Content-Type", "") if exc.headers else ""
+        return {"status": exc.code, "tipo": tipo or "", "final": exc.geturl() or url,
+                "bytes": None}
+    except Exception:
+        return {"status": 0, "tipo": "", "final": url, "bytes": None}
 
 
 def tamanho_por_head(url: str) -> str | None:
     """Tenta o Content-Length do HEAD do arquivo, para exibir o tamanho real."""
-    r = subprocess.run(
-        ["curl.exe", "-sSIL", "--max-time", "30", "-A", UA, url],
-        capture_output=True, text=True, errors="replace",
-    )
-    tamanhos = [int(x) for x in re.findall(r"(?im)^content-length:\s*(\d+)", r.stdout or "")]
-    if not tamanhos:
+    req = urllib.request.Request(url, headers={"User-Agent": UA}, method="HEAD")
+    try:
+        with urllib.request.urlopen(req, timeout=25) as resp:
+            tamanho = resp.headers.get("Content-Length")
+    except Exception:
         return None
-    mb = max(tamanhos) / (1024 * 1024)
+    if not tamanho or not tamanho.isdigit():
+        return None
+    mb = int(tamanho) / (1024 * 1024)
     return (f"{mb / 1024:.1f} GB" if mb >= 1024 else f"{mb:.0f} MB" if mb >= 10 else f"{mb:.1f} MB")
 
 
