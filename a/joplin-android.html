@@ -25,8 +25,10 @@
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../img/favicon-64.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="stylesheet" href="../css/estilo.css?v=1">
+<script>(function(){try{var m=document.cookie.match(/(?:^|;\s*)pt_tema=(escuro|claro)/);document.documentElement.setAttribute("data-tema",m?m[1]:"claro")}catch(e){document.documentElement.setAttribute("data-tema","claro")}})();</script>
+<link rel="stylesheet" href="../css/estilo.css?v=2">
 <script defer src="../js/site.js?v=1"></script>
+<script defer src="../js/tema.js?v=1"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Joplin","applicationCategory":"Celular","applicationSubCategory":"Software gratuito","operatingSystem":"Android","softwareVersion":"3.7.8","softwareRequirements":"Celular Android com instalação de APK liberada; a sincronização exige um destino (OneDrive, Dropbox, WebDAV ou Joplin Cloud).","downloadUrl":"https://f-droid.org/repo/net.cozic.joplin_2097817.apk","installUrl":"https://f-droid.org/repo/net.cozic.joplin_2097817.apk","url":"https://baixa.pennertech.com.br/a/joplin-android.html","description":"O Joplin é um caderno digital com Markdown, anexos, tags e pesquisa. Sincroniza entre celular e PC por OneDrive, Dropbox, WebDAV ou Joplin Cloud, com criptografia de ponta a ponta opcional. Guarda tudo em arquivos seus e exporta em Markdown ou PDF. É ótimo para notas de estudo, trabalho e diário. O app é gratuito e o plano de nuvem pago é opcional.","publisher":{"@type":"Organization","name":"Laurent Cozic"},"isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"sameAs":"https://joplinapp.org/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://baixa.pennertech.com.br/"},{"@type":"ListItem","position":2,"name":"Celular","item":"https://baixa.pennertech.com.br/categoria/celular.html"},{"@type":"ListItem","position":3,"name":"Joplin","item":"https://baixa.pennertech.com.br/a/joplin-android.html"}]}]}</script>
 </head><body>
 <header class="topo">
@@ -44,6 +46,7 @@
       <a href="../sobre.html">Sobre</a>
       <a href="../contato.html">Contato</a>
     </nav>
+    <button id="btn-tema" class="tema" type="button" aria-label="Alternar tema claro e escuro" title="Ativar tema escuro">🌙</button>
     <a class="btn btn-ghost btn-mini topo-cta" href="../index.html#catalogo">Ver catálogo</a>
   </div>
 </header>
@@ -154,7 +157,7 @@
         <h4>Penner Tech</h4>
         <ul>
           <li><a href="https://loja.pennertech.com.br/" target="_blank" rel="noopener">Loja e recomendações</a></li>
-          <li><a href="https://www.youtube.com/@renatopenner2037" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.youtube.com/@renatopenner" target="_blank" rel="noopener">YouTube</a></li>
           <li><a href="https://www.instagram.com/pennerrenato/" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </div>

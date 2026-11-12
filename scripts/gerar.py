@@ -244,8 +244,10 @@ def head(titulo: str, descricao: str, canonical: str, raiz: str, og_tipo: str = 
 <link rel="icon" href="{raiz}img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="{raiz}img/favicon-64.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="{raiz}img/apple-touch-icon.png">
-<link rel="stylesheet" href="{raiz}css/estilo.css?v=1">
+<script>(function(){{try{{var m=document.cookie.match(/(?:^|;\\s*)pt_tema=(escuro|claro)/);document.documentElement.setAttribute("data-tema",m?m[1]:"claro")}}catch(e){{document.documentElement.setAttribute("data-tema","claro")}}}})();</script>
+<link rel="stylesheet" href="{raiz}css/estilo.css?v=2">
 <script defer src="{raiz}js/site.js?v=1"></script>
+<script defer src="{raiz}js/tema.js?v=1"></script>
 {extra_head}</head>"""
 
 
@@ -269,6 +271,7 @@ def topo(raiz: str, ativo: str = "") -> str:
       <a href="{raiz}sobre.html"{cls('sobre')}>Sobre</a>
       <a href="{raiz}contato.html"{cls('contato')}>Contato</a>
     </nav>
+    <button id="btn-tema" class="tema" type="button" aria-label="Alternar tema claro e escuro" title="Ativar tema escuro">🌙</button>
     <a class="btn btn-ghost btn-mini topo-cta" href="{raiz}index.html#catalogo">Ver catálogo</a>
   </div>
 </header>"""
@@ -310,7 +313,7 @@ def rodape(raiz: str, apps: list[dict], categorias: dict, atualizado: str) -> st
         <h4>Penner Tech</h4>
         <ul>
           <li><a href="https://loja.pennertech.com.br/" target="_blank" rel="noopener">Loja e recomendações</a></li>
-          <li><a href="https://www.youtube.com/@renatopenner2037" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.youtube.com/@renatopenner" target="_blank" rel="noopener">YouTube</a></li>
           <li><a href="https://www.instagram.com/pennerrenato/" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </div>
@@ -1317,7 +1320,7 @@ suspeito: é por aqui.</p>
 
 <h2>Redes</h2>
 <ul>
-  <li><a href="https://www.youtube.com/@renatopenner2037" target="_blank" rel="noopener">YouTube — @renatopenner2037</a> (vídeos e comentários)</li>
+  <li><a href="https://www.youtube.com/@renatopenner" target="_blank" rel="noopener">YouTube — @renatopenner</a> (vídeos e comentários)</li>
   <li><a href="https://www.instagram.com/pennerrenato/" target="_blank" rel="noopener">Instagram — @pennerrenato</a></li>
   <li><a href="https://loja.pennertech.com.br/contato.html" target="_blank" rel="noopener">Contato da loja Penner Tech</a></li>
 </ul>

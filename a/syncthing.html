@@ -25,8 +25,10 @@
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../img/favicon-64.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="stylesheet" href="../css/estilo.css?v=1">
+<script>(function(){try{var m=document.cookie.match(/(?:^|;\s*)pt_tema=(escuro|claro)/);document.documentElement.setAttribute("data-tema",m?m[1]:"claro")}catch(e){document.documentElement.setAttribute("data-tema","claro")}})();</script>
+<link rel="stylesheet" href="../css/estilo.css?v=2">
 <script defer src="../js/site.js?v=1"></script>
+<script defer src="../js/tema.js?v=1"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Syncthing","applicationCategory":"Backup e arquivos","applicationSubCategory":"Software gratuito","operatingSystem":"Windows · macOS · Linux","softwareVersion":"2.1.7","softwareRequirements":"Windows 10 ou 11 (64 bits)","downloadUrl":"https://github.com/syncthing/syncthing/releases/download/v2.1.7/syncthing-windows-amd64-v2.1.7.zip","installUrl":"https://github.com/syncthing/syncthing/releases/download/v2.1.7/syncthing-windows-amd64-v2.1.7.zip","url":"https://baixa.pennertech.com.br/a/syncthing.html","description":"O Syncthing mantém pastas iguais em vários dispositivos trocando os dados diretamente entre eles, com criptografia TLS. Não existe conta nem armazenamento de terceiros: os arquivos ficam só nas máquinas que você emparelhar, e a interface é acessada pelo navegador em localhost. Funciona em segundo plano, resolve conflitos de edição e serve para backup contínuo entre o desktop e o notebook. Roda inclusive em servidor caseiro e Raspberry Pi.","publisher":{"@type":"Organization","name":"Syncthing (projeto open source)"},"isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"sameAs":"https://syncthing.net/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://baixa.pennertech.com.br/"},{"@type":"ListItem","position":2,"name":"Backup e arquivos","item":"https://baixa.pennertech.com.br/categoria/backup.html"},{"@type":"ListItem","position":3,"name":"Syncthing","item":"https://baixa.pennertech.com.br/a/syncthing.html"}]}]}</script>
 </head><body>
 <header class="topo">
@@ -44,6 +46,7 @@
       <a href="../sobre.html">Sobre</a>
       <a href="../contato.html">Contato</a>
     </nav>
+    <button id="btn-tema" class="tema" type="button" aria-label="Alternar tema claro e escuro" title="Ativar tema escuro">🌙</button>
     <a class="btn btn-ghost btn-mini topo-cta" href="../index.html#catalogo">Ver catálogo</a>
   </div>
 </header>
@@ -151,7 +154,7 @@
         <h4>Penner Tech</h4>
         <ul>
           <li><a href="https://loja.pennertech.com.br/" target="_blank" rel="noopener">Loja e recomendações</a></li>
-          <li><a href="https://www.youtube.com/@renatopenner2037" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.youtube.com/@renatopenner" target="_blank" rel="noopener">YouTube</a></li>
           <li><a href="https://www.instagram.com/pennerrenato/" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </div>

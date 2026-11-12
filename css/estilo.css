@@ -509,3 +509,74 @@ svg.i{width:18px; height:18px; flex:0 0 auto; vertical-align:-3px}
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important; transition:none !important; scroll-behavior:auto !important}
 }
+
+/* ==========================================================================
+   Tema claro (padrão) / escuro — botão no cabeçalho, cookie pt_tema
+   ========================================================================== */
+.tema{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:38px; height:38px; border-radius:999px; flex:0 0 auto;
+  border:1px solid var(--line-2); background:#fff; color:var(--ink-2);
+  font-size:16px; line-height:1; cursor:pointer;
+  transition:border-color .15s, background .15s, color .15s, transform .15s;
+}
+.tema:hover{border-color:var(--brand); color:var(--brand); transform:translateY(-1px)}
+
+html[data-tema="escuro"]{
+  --bg:#050a12; --bg-soft:#081120; --bg-softer:#0b1624;
+  --ink:#f5f9fc; --ink-2:#c6d5e2; --mut:#9fb3c8; --mut-2:#8fa6bb;
+  --line:#17334d; --line-2:#1e3a52;
+  --brand:#38bdf8; --brand-2:#0aa5c9; --brand-3:#7dd3fc; --brand-soft:#0b2237;
+  --ok:#34d399; --ok-soft:#0d2b20; --warn:#fbbf24; --warn-soft:#2a1f08;
+  --shadow:0 1px 2px rgba(0,0,0,.35);
+  --shadow-hover:0 2px 6px rgba(0,0,0,.4);
+  --surface:#0b1a2b; --surface-2:#0e2135; --borda-hover:#256a8c;
+  --on-brand:#04121d; --chip-on-bg:#38bdf8; --chip-on-fg:#04121d;
+  --brand-ink:#7dd3fc; --ok-ink:#4ade80; --warn-ink:#fcd34d;
+}
+html[data-tema="escuro"] .topo{background:rgba(5,10,18,.92)}
+html[data-tema="escuro"] .btn-ghost,html[data-tema="escuro"] .btn-claro,
+html[data-tema="escuro"] .busca-in,html[data-tema="escuro"] .hero,
+html[data-tema="escuro"] .hero-simples,html[data-tema="escuro"] .hero-ico,
+html[data-tema="escuro"] .hero-selo,html[data-tema="escuro"] .chip,
+html[data-tema="escuro"] .destaque,html[data-tema="escuro"] .app,
+html[data-tema="escuro"] .cat-card,html[data-tema="escuro"] .catalogo-topo,
+html[data-tema="escuro"] .passo,html[data-tema="escuro"] .conf,
+html[data-tema="escuro"] .faq details,html[data-tema="escuro"] .card-download,
+html[data-tema="escuro"] .mini-app,html[data-tema="escuro"] .rodape{background:var(--surface)}
+html[data-tema="escuro"] .btn-claro{border-color:var(--surface)}
+html[data-tema="escuro"] .btn-claro:hover{background:var(--surface-2)}
+html[data-tema="escuro"] .btn-baixar,html[data-tema="escuro"] .btn-baixar:hover{color:var(--on-brand)}
+html[data-tema="escuro"] .tema{background:var(--surface); border-color:#1e3a52; color:var(--ink)}
+html[data-tema="escuro"] .hero{
+  background:
+    radial-gradient(760px 380px at 82% -14%, rgba(56,189,248,.16), transparent 62%),
+    radial-gradient(620px 320px at 6% 116%, rgba(10,124,191,.12), transparent 68%),
+    var(--bg);
+}
+html[data-tema="escuro"] .hero::before{
+  background-image:radial-gradient(rgba(56,189,248,.14) 1px, transparent 1px);
+}
+html[data-tema="escuro"] .kicker{border-color:#1e4a66}
+html[data-tema="escuro"] .chip{border-color:var(--line-2)}
+html[data-tema="escuro"] .chip:hover{background:var(--surface-2); border-color:var(--brand); color:var(--brand)}
+html[data-tema="escuro"] .chip.on{background:var(--chip-on-bg); border-color:var(--chip-on-bg); color:var(--chip-on-fg)}
+html[data-tema="escuro"] .chip.on:hover{background:var(--chip-on-bg); color:var(--chip-on-fg)}
+html[data-tema="escuro"] .chip.on .n{background:rgba(0,0,0,.18); color:var(--chip-on-fg)}
+html[data-tema="escuro"] .destaque:hover,html[data-tema="escuro"] .app:hover,
+html[data-tema="escuro"] .faq details[open]{border-color:var(--borda-hover)}
+html[data-tema="escuro"] .card-download .oficial:hover{background:var(--surface-2)}
+html[data-tema="escuro"] .app-ico:has(.mono) .mono,
+html[data-tema="escuro"] .destaque .ico:has(.mono) .mono,
+html[data-tema="escuro"] .app-hero-ico:has(.mono) .mono,
+html[data-tema="escuro"] .mini-app .ico:has(.mono) .mono,
+html[data-tema="escuro"] .hero-ico:has(.mono) .mono{color:var(--on-brand)}
+html[data-tema="escuro"] .aviso{border-color:#1e4a66; color:#bae6fd}
+html[data-tema="escuro"] .aviso strong{color:#e0f2fe}
+html[data-tema="escuro"] .tag-ok{background:var(--ok-soft); color:var(--ok-ink); border-color:#1f6b45}
+html[data-tema="escuro"] .tag-link{background:var(--brand-soft); color:var(--brand-ink); border-color:#1e4a66}
+html[data-tema="escuro"] .tag-pago{background:var(--warn-soft); color:var(--warn); border-color:#6b4a12}
+html[data-tema="escuro"] .app-preco{color:var(--warn-ink)}
+html[data-tema="escuro"] .conf .ico{color:var(--ok-ink)}
+html[data-tema="escuro"] ::selection{background:#0c4a6e; color:#e0f2fe}
+@media (max-width:640px){ .tema{width:34px; height:34px} }
