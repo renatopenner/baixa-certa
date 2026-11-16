@@ -8445,7 +8445,7 @@
         {
           "rotulo": "Baixar na Google Play Store",
           "url": "https://play.google.com/store/apps/details?id=org.cutwire.drift",
-          "icone": "phone"
+          "icone": "playstore"
         }
       ],
       "pago": false
