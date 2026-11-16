@@ -1196,6 +1196,13 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
             del bloco[k]
     extra = ('<script type="application/ld+json">'
              + json.dumps(json_ld, ensure_ascii=False, separators=(",", ":")) + "</script>\n")
+    links_extras_html = "".join(
+        f'\n        <a class="oficial" href="{esc(item["url"])}" target="_blank" rel="noopener">\n'
+        f'          {ICONES.get(item.get("icone", "link"), ICONES["link"])} {esc(item["rotulo"])}\n'
+        f'        </a>'
+        for item in (app.get("links_extras") or [])
+        if item.get("url") and item.get("rotulo")
+    )
     return (
         head(titulo, descricao, canonical, "../", og_tipo="article", extra_head=extra)
         + topo("../", "")
@@ -1221,7 +1228,7 @@ def pagina_app(app: dict, apps: list[dict], categorias: dict, atualizado: str) -
         <div class="ou">ou</div>
         <a class="oficial" href="{esc(app.get('site_oficial') or url_app(app))}" target="_blank" rel="noopener">
           {ICONES['link']} Site oficial do projeto
-        </a>
+        </a>{links_extras_html}
         <dl>{dl}</dl>
         <div class="verificado">
           {ICONES['escudo']}

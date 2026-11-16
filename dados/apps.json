@@ -8440,7 +8440,14 @@
         "Código aberto (GPL-3.0)"
       ],
       "requisitos": "Android 64-bit (ARM64-v8a); cerca de 150 MB livres",
-      "observacoes": "APK oficial para celulares Android 64-bit (ARM64-v8a) publicado nas releases do GitHub da CutWire Studios (cerca de 81 MB).",
+      "observacoes": "APK oficial para celulares Android 64-bit (ARM64-v8a) publicado nas releases do GitHub da CutWire Studios (cerca de 81 MB). Também disponível na Google Play Store.",
+      "links_extras": [
+        {
+          "rotulo": "Baixar na Google Play Store",
+          "url": "https://play.google.com/store/apps/details?id=org.cutwire.drift",
+          "icone": "phone"
+        }
+      ],
       "pago": false
     }
   ]
