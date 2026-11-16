@@ -277,6 +277,11 @@ def topo(raiz: str, ativo: str = "") -> str:
       <img src="{raiz}img/pennertech-marca.png" alt="" width="22" height="22">
       <span>Loja</span>
     </a>
+    <a class="loja-btn baixatube-btn" href="https://baixatube.pennertech.com.br/" target="_blank" rel="noopener"
+       aria-label="BaixaTube Web" title="BaixaTube Web">
+      <img src="{raiz}img/baixatube-ico.svg" alt="" width="22" height="22">
+      <span>BaixaTube</span>
+    </a>
     <button id="btn-tema" class="tema" type="button" aria-label="Alternar tema claro e escuro" title="Ativar tema escuro">🌙</button>
   </div>
 </header>"""

@@ -1,6 +1,6 @@
 {
   "atualizado": "2026-11-12",
-  "total": 229,
+  "total": 231,
   "apps": [
     {
       "slug": "0ad",
@@ -8377,6 +8377,71 @@
       "icone": "zotero",
       "destaque": false,
       "url_verificado_em": "2026-11-12"
+    },
+    {
+      "slug": "drift",
+      "nome": "Drift",
+      "fabricante": "CutWire Studios",
+      "categoria": "multimidia",
+      "site_oficial": "https://cutwire.org/",
+      "url_download": "https://github.com/CutWire-Studios/Drift/releases/download/v0.9.2/Drift-Setup-0.9.2-x64.exe",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/CutWire-Studios/Drift/releases/download/v0.9.2/Drift-Setup-0.9.2-x64.exe",
+      "status_http": 200,
+      "content_type": "application/octet-stream",
+      "tamanho_arquivo": "104 MB",
+      "versao": "0.9.2",
+      "so": [
+        "windows",
+        "mac",
+        "linux",
+        "android"
+      ],
+      "arquitetura": "x86-64",
+      "licenca": "GPL-3.0",
+      "gratis": "100% grátis e open source, sem marca d'água e sem conta",
+      "resumo": "Editor de vídeo gratuito e aberto para computador e celular, com timeline em várias trilhas, legendas com IA local e sem marca d'água.",
+      "descricao": "O Drift é um editor de vídeo gratuito e de código aberto desenvolvido pela CutWire Studios em Qt 6 e FFmpeg. Traz timeline multitrack com corte, divisão, animação por keyframes, remoção de ruído, recorte de fundo e legendas automáticas com IA rodando localmente no dispositivo, sem enviar vídeos para a nuvem, sem exigir login e sem marca d'água na exportação.",
+      "destaques": [
+        "Sem marca d'água e sem conta",
+        "Timeline com várias trilhas e keyframes",
+        "Legendas automáticas e IA local (Whisper)",
+        "Windows, Mac, Linux e Android"
+      ],
+      "requisitos": "Windows 10/11 64-bit; 4 GB de RAM (8 GB recomendado para IA local)",
+      "observacoes": "Instalador oficial no GitHub do projeto (cerca de 104 MB). Também há versão portátil em .zip e aplicativo para Android.",
+      "pago": false
+    },
+    {
+      "slug": "drift-android",
+      "nome": "Drift",
+      "fabricante": "CutWire Studios",
+      "categoria": "celular",
+      "site_oficial": "https://cutwire.org/",
+      "url_download": "https://github.com/CutWire-Studios/Drift/releases/download/v0.9.2/Drift-0.9.2-arm64-v8a.apk",
+      "tipo_download": "direto",
+      "url_download_final": "https://github.com/CutWire-Studios/Drift/releases/download/v0.9.2/Drift-0.9.2-arm64-v8a.apk",
+      "status_http": 200,
+      "content_type": "application/vnd.android.package-archive",
+      "tamanho_arquivo": "80,6 MB",
+      "versao": "0.9.2",
+      "so": [
+        "android"
+      ],
+      "arquitetura": "arm64-v8a",
+      "licenca": "GPL-3.0",
+      "gratis": "100% grátis e open source, sem anúncios e sem marca d'água",
+      "resumo": "Editor de vídeo gratuito para Android sem marca d'água, sem login obrigatório e com ferramentas baseadas em FFmpeg.",
+      "descricao": "Versão mobile do Drift, editor de vídeo gratuito e de código aberto da CutWire Studios construído com Qt 6 e FFmpeg. Permite cortar, dividir e montar clipes em várias trilhas direto no celular, sem assinatura, sem anúncios e sem marca d'água ao exportar.",
+      "destaques": [
+        "100% grátis e sem anúncios",
+        "Sem marca d'água na exportação",
+        "Não exige login nem nuvem",
+        "Código aberto (GPL-3.0)"
+      ],
+      "requisitos": "Android 64-bit (ARM64-v8a); cerca de 150 MB livres",
+      "observacoes": "APK oficial para celulares Android 64-bit (ARM64-v8a) publicado nas releases do GitHub da CutWire Studios (cerca de 81 MB).",
+      "pago": false
     }
   ]
 }

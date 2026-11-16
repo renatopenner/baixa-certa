@@ -591,6 +591,7 @@ html[data-tema="escuro"] ::selection{background:#0c4a6e; color:#e0f2fe}
   transition:border-color .15s, transform .15s, background .15s, color .15s;
 }
 .loja-btn img{width:22px; height:22px; border-radius:6px; object-fit:contain; background:#050a12}
+.loja-btn.baixatube-btn img{background:transparent}
 .loja-btn:hover{border-color:var(--brand); transform:translateY(-1px); color:var(--brand)}
 .loja-link{display:inline-flex; align-items:center; gap:8px}
 .loja-link img{width:18px; height:18px; border-radius:5px; object-fit:contain; background:#050a12}

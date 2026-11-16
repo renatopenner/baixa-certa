@@ -325,5 +325,11 @@
   },
   "acrobat-reader": {
     "wiki": "Adobe Acrobat"
+  },
+  "drift": {
+    "logo": "https://raw.githubusercontent.com/CutWire-Studios/Drift/main/flatpak/share/icons/hicolor/256x256/apps/org.cutwire.Drift.png"
+  },
+  "drift-android": {
+    "logo": "https://raw.githubusercontent.com/CutWire-Studios/Drift/main/flatpak/share/icons/hicolor/256x256/apps/org.cutwire.Drift.png"
   }
 }
